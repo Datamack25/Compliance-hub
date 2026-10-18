@@ -6,7 +6,7 @@ import streamlit as st
 from agents.registry import log
 from core import auth
 from core.data import load
-from core.ui import footer, hero, kpi, section
+from core.ui import footer, hero, kpi, section, table
 from generators import pdf, word
 
 u = auth.current_user()
@@ -89,7 +89,7 @@ with t1:
 with t2:
     with auth.conn() as c:
         rows = [dict(r) for r in c.execute("SELECT cert_id,name,module,score,issued FROM certificates WHERE email=? ORDER BY issued DESC", (u["email"],))]
-    st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True) if rows else st.info("Aucun certificat pour le moment.")
+    table(pd.DataFrame(rows), hide_index=True, use_container_width=True) if rows else st.info("Aucun certificat pour le moment.")
 with t3:
     cid = st.text_input("N° de certificat")
     if st.button("Vérifier", key="verif") and cid:

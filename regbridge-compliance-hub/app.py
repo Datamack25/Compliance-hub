@@ -4,12 +4,15 @@ Lancement : streamlit run app.py
 """
 import streamlit as st
 
+from core.ui import force_light_theme  # noqa: E402
+
+force_light_theme()
 st.set_page_config(page_title="RegBridge Compliance Hub", page_icon="🛡️", layout="wide", initial_sidebar_state="expanded")
 
 from agents.registry import AGENTS  # noqa: E402
 from core import auth  # noqa: E402
 from core.data import SECTOR_LABELS  # noqa: E402
-from core.paths import APP_NAME, APP_TAGLINE  # noqa: E402
+from core.paths import APP_AUTHOR, APP_NAME, APP_RELEASE, APP_TAGLINE, APP_VERSION  # noqa: E402
 from core.ui import card, footer, hero, inject_css, section  # noqa: E402
 
 inject_css()
@@ -18,7 +21,7 @@ auth.init_db()
 
 def landing():
     hero(APP_NAME, APP_TAGLINE + " — 15 agents spécialisés, IA auto-apprenante, générateurs Word/Excel/PDF/ZIP.",
-         kicker="RegBridge Conseil · Plateforme RegTech", badge="AMLR / AMLA ready · 10/07/2027")
+         kicker=f"RegBridge Conseil · Plateforme RegTech · v{APP_VERSION} · par {APP_AUTHOR}", badge="AMLR / AMLA ready · 10/07/2027")
     left, right = st.columns([1.35, 1], gap="large")
     with left:
         section("Ce que fait la plateforme")
@@ -107,6 +110,8 @@ with st.sidebar:
     st.markdown(f"**{user.get('name') or user['email']}**  \n{user.get('company') or ''}")
     exp = user.get("plan_expiry") or ""
     st.markdown(f"Offre : **{auth.PLANS[plan]['label']}**" + (f" · jusqu'au {exp}" if plan != "free" and exp < "2099" else ""))
+    st.markdown(f'<div class="rb-version">Version {APP_VERSION} · {APP_RELEASE}<br>Conçu et développé par {APP_AUTHOR}</div>',
+                unsafe_allow_html=True)
     if st.button("Se déconnecter", use_container_width=True):
         auth.end_session(st.session_state.get("sid"))
         st.query_params.clear()

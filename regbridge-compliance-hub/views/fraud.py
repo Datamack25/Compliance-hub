@@ -4,7 +4,7 @@ import streamlit as st
 from agents.registry import log
 from core import auth
 from core.data import SECTOR_LABELS, load
-from core.ui import PLOTLY_LAYOUT, footer, hero, section
+from core.ui import PLOTLY_LAYOUT, chart, footer, hero, section, table
 from generators import excel
 
 hero("Fraude sectorielle", "Scénarios de fraude par secteur, indicateurs, contrôles recommandés et simulateur de scoring d'opération.",
@@ -15,9 +15,9 @@ fr, typ = load("fraud_scenarios.csv"), load("typologies.csv")
 sec = st.selectbox("Secteur", list(SECTOR_LABELS), format_func=SECTOR_LABELS.get)
 sub = fr[fr["secteur"] == sec]
 section("Scénarios de fraude")
-st.dataframe(sub[["fraude", "indicateurs", "controles"]], hide_index=True, use_container_width=True)
+table(sub[["fraude", "indicateurs", "controles"]], hide_index=True, use_container_width=True)
 section("Typologies BC-FT liées")
-st.dataframe(typ[typ["secteurs"].str.contains(sec)][["theme", "intitule", "criteres_alerte"]], hide_index=True, use_container_width=True)
+table(typ[typ["secteurs"].str.contains(sec)][["theme", "intitule", "criteres_alerte"]], hide_index=True, use_container_width=True)
 
 section("Simulateur de scoring d'une opération")
 c1, c2, c3 = st.columns(3)
@@ -37,7 +37,7 @@ g = go.Figure(go.Indicator(mode="gauge+number", value=score, title={"text": deci
                            gauge={"axis": {"range": [0, 100]}, "bar": {"color": "#0B1F3A"},
                                   "steps": [{"range": [0, 40], "color": "#D1FADF"}, {"range": [40, 70], "color": "#FEF0C7"}, {"range": [70, 100], "color": "#FECDCA"}]}))
 g.update_layout(**PLOTLY_LAYOUT, height=260)
-st.plotly_chart(g, use_container_width=True)
+chart(g, use_container_width=True)
 if st.button("Journaliser la simulation"):
     log("A10", "Simulation fraude", details=f"{sec} score {score:.0f}")
 st.download_button("⬇️ Référentiel fraude & typologies (Excel)", excel.dfs_to_xlsx({"Fraude": fr, "Typologies": typ}, "Référentiel fraude"), "Referentiel_fraude.xlsx")

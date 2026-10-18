@@ -3,7 +3,7 @@ import streamlit as st
 from agents.registry import log
 from core import auth
 from core.data import SECTOR_LABELS, load
-from core.ui import footer, hero, section
+from core.ui import footer, hero, section, table
 from generators import word
 
 hero("Examen renforcé", "Trames d'examen renforcé (CMF L.561-10-2 · AMLR art. 34) adaptées au type de client et au secteur, avec typologies Tracfin.",
@@ -26,7 +26,7 @@ k = kyc[(kyc["type_client"].isin([ct, "PPE (tout type)"] if "PPE" in " ".join(tr
 l, r = st.columns([1.3, 1])
 with l:
     section("Typologies Tracfin intégrées à la trame")
-    st.dataframe(t[["intitule", "criteres_alerte", "source"]], hide_index=True, use_container_width=True, height=300)
+    table(t[["intitule", "criteres_alerte", "source"]], hide_index=True, use_container_width=True, height=300)
 with r:
     section("Pièces renforcées demandées")
     for p in k.itertuples():

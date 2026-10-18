@@ -5,7 +5,7 @@ import streamlit as st
 from agents.registry import log
 from core import auth, ml
 from core.data import append_row, load
-from core.ui import PLOTLY_LAYOUT, footer, hero, kpi, section
+from core.ui import PLOTLY_LAYOUT, chart, footer, hero, kpi, section, table
 from generators import excel
 
 hero("Surveillance transactionnelle", "Scénarios experts (structuration, comptes de passage, pays à risque, embargos) + Isolation Forest — les poids s'ajustent avec vos retours.",
@@ -42,19 +42,19 @@ with g1:
                    hover_data=["regles"], color_discrete_map={"Critique": "#B42318", "Haute": "#F79009", "Moyenne": "#FEC84B", "Faible": "#0E7490"})
     f.update_layout(**PLOTLY_LAYOUT, height=360, title="Clients : anomalie statistique × règles expertes", xaxis_title="Score Isolation Forest",
                     yaxis_title="Score règles (pondéré)")
-    st.plotly_chart(f, use_container_width=True)
+    chart(f, use_container_width=True)
 with g2:
     rules = alerts["regles"].str.split(", ").explode().replace("", pd.NA).dropna().value_counts().reset_index()
     rules.columns = ["règle", "clients"]
     rules["libellé"] = rules["règle"].map(ml.RULES)
     f = px.bar(rules, x="clients", y="règle", orientation="h", hover_data=["libellé"], color_discrete_sequence=["#0B1F3A"])
     f.update_layout(**PLOTLY_LAYOUT, height=360, title="Déclenchements par règle", yaxis_title="")
-    st.plotly_chart(f, use_container_width=True)
+    chart(f, use_container_width=True)
 
 section("File d'alertes priorisée")
 view = alerts[alerts["score_alerte"] >= 40][["client_id", "priorite", "score_alerte", "regles", "score_anomalie", "nb_operations", "volume_total",
                                               "especes", "flux_pays_risque", "nb_embargo"]]
-st.dataframe(view, hide_index=True, use_container_width=True, height=330,
+table(view, hide_index=True, use_container_width=True, height=330,
              column_config={"score_alerte": st.column_config.ProgressColumn("Score", min_value=0, max_value=100, format="%.0f"),
                             "volume_total": st.column_config.NumberColumn(format="%.0f €"), "especes": st.column_config.NumberColumn(format="%.0f €"),
                             "flux_pays_risque": st.column_config.NumberColumn(format="%.0f €")})
@@ -67,7 +67,7 @@ with l:
     st.markdown(f"**Règles déclenchées :** {row['regles'] or 'aucune'}")
     for rr in [x for x in row["regles"].split(", ") if x]:
         st.markdown(f"- `{rr}` {ml.RULES[rr]} — poids appris **{ml.rule_weight_value(w, rr):.2f}**")
-    st.dataframe(tx[tx["client_id"] == cid].sort_values("date"), hide_index=True, use_container_width=True, height=240)
+    table(tx[tx["client_id"] == cid].sort_values("date"), hide_index=True, use_container_width=True, height=240)
     a, b = st.columns(2)
     hits = [x for x in row["regles"].split(", ") if x]
     if a.button("✅ Vrai positif (suspect)", type="primary"):
@@ -88,7 +88,7 @@ with r:
     section("Poids appris des règles (Bêta-Binomial)")
     wt = pd.DataFrame([{"règle": k, "libellé": v, "poids": ml.rule_weight_value(w, k), "VP": w[k]["alpha"] - 2, "FP": w[k]["beta"] - 2}
                        for k, v in ml.RULES.items()])
-    st.dataframe(wt, hide_index=True, use_container_width=True, height=300,
+    table(wt, hide_index=True, use_container_width=True, height=300,
                  column_config={"poids": st.column_config.ProgressColumn(min_value=0, max_value=1, format="%.2f")})
     st.caption("Chaque retour « vrai positif » augmente la précision estimée de la règle, chaque « faux positif » la diminue : le score des futures alertes s'adapte.")
     pre = pd.DataFrame({"N° alerte": [f"AL-{i:04d}" for i in range(1, len(view) + 1)], "Date": pd.Timestamp.today().strftime("%d/%m/%Y"),

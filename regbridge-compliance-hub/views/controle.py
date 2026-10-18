@@ -7,7 +7,7 @@ import streamlit as st
 from agents.registry import log
 from core import auth
 from core.data import SECTOR_LABELS, load
-from core.ui import PLOTLY_LAYOUT, footer, hero, kpi, section
+from core.ui import PLOTLY_LAYOUT, chart, footer, hero, kpi, section, table
 from generators import excel
 from generators import plan as P
 
@@ -47,17 +47,17 @@ with t1:
                     color_discrete_map={ph: P.PHASE_COLORS[int(ph.split(".")[0]) - 1] for ph in phases})
     f.update_yaxes(autorange="reversed")
     f.update_layout(**PLOTLY_LAYOUT, height=40 + 30 * len(plan), yaxis_title="", xaxis_title="", legend_title="Phase")
-    st.plotly_chart(f, use_container_width=True)
+    chart(f, use_container_width=True)
     for r in plan.itertuples():
         with st.expander(f"Étape {r.n} · {r.etape}  —  {r.date_debut:%d/%m/%Y} → {r.date_fin:%d/%m/%Y} ({r.duree} sem.)"):
             st.markdown(f"**Phase :** {r.phase}  \n**Description :** {r.description}  \n**Livrables :** {r.livrables}  \n**Responsable :** {r.responsable}")
 with t2:
     lv = st.multiselect("Lignes de maîtrise", list(P.LINES), default=list(P.LINES), format_func=lambda k: f"{k} — {P.LINES[k]}")
     view = controls[controls["niveau"].isin(lv)]
-    st.dataframe(view.drop(columns=["secteur"]), hide_index=True, use_container_width=True, height=460)
+    table(view.drop(columns=["secteur"]), hide_index=True, use_container_width=True, height=460)
     b = px.histogram(view, x="domaine", color="niveau", color_discrete_sequence=["#0E7490", "#5925DC", "#0B1F3A"])
     b.update_layout(**PLOTLY_LAYOUT, height=300, xaxis_title="", yaxis_title="Contrôles", title="Répartition des contrôles par domaine")
-    st.plotly_chart(b, use_container_width=True)
+    chart(b, use_container_width=True)
 with t3:
     st.write("Le PDF contient la synthèse, le diagramme de Gantt, les fiches étape par étape et le dispositif de contrôle complet. "
              "Le JPEG est une infographie d'une page, prête à intégrer dans une proposition commerciale.")

@@ -10,3 +10,7 @@ for p in (DATA, CACHE, MODELS):
 
 APP_NAME = "RegBridge Compliance Hub"
 APP_TAGLINE = "Architecture complète de conformité LCB-FT, sanctions, embargos & fraude"
+
+APP_VERSION = "1.1.0"
+APP_AUTHOR = "Mackenson CINEUS"
+APP_RELEASE = "Octobre 2026"

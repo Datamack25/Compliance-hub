@@ -109,6 +109,7 @@ def risk_map(company: str, sector_code: str, sector_label: str, typology: str, c
             ("Coefficient typologie", coef), ("Date d'édition", date.today().strftime("%d/%m/%Y")), ("Version", "1.0"),
             ("Méthodologie", "Croisement menace × vulnérabilité (GAFI / ACPR ASR 2023), échelle 1-4, risque brut puis net"),
             ("Références", "CMF L.561-4-1 ; arrêté du 6 janvier 2021 ; Règl. (UE) 2024/1624 (AMLR) art. 10 ; ASR ACPR 2023"),
+            ("Plateforme", "RegBridge Compliance Hub — conçue et développée par Mackenson CINEUS"),
             ("Validation", "À approuver par l'organe de direction (AMLR art. 9-11) — revue au moins annuelle")]
     for i, (k, v) in enumerate(info, 6):
         ws.cell(row=i, column=2, value=k).font = Font(bold=True, color=NAVY)

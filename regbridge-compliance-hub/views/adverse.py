@@ -7,7 +7,7 @@ from agents.registry import log
 from core import auth, ml
 from core.data import load
 from core.feeds import search_news
-from core.ui import footer, hero, kpi, section
+from core.ui import footer, hero, kpi, section, table
 from generators import word
 
 hero("Presse négative", "Détection d'informations négatives (corruption, fraude, blanchiment, sanctions, terrorisme) en sources ouvertes, avec pondération auto-apprenante.",
@@ -71,5 +71,5 @@ if "adv" in st.session_state:
                            type="primary")
 
 section("Dictionnaire de mots-clés (pondérations apprises)")
-st.dataframe(load("adverse_keywords.csv").sort_values("poids", ascending=False), hide_index=True, use_container_width=True, height=300)
+table(load("adverse_keywords.csv").sort_values("poids", ascending=False), hide_index=True, use_container_width=True, height=300)
 footer()

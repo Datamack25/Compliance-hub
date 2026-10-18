@@ -16,7 +16,7 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import KeepTogether, PageBreak, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
-from core.paths import ASSETS
+from core.paths import APP_AUTHOR, APP_VERSION, ASSETS
 
 FONT_DIR = ASSETS / "fonts"
 try:
@@ -81,7 +81,7 @@ def _styles():
 
 
 def _gantt(plan: pd.DataFrame, width: float) -> Drawing:
-    rowh, label_w, top = 15, 7.2 * cm, 26
+    rowh, label_w, top = 15, 8.4 * cm, 26
     total = int(plan["fin_sem"].max())
     h = top + rowh * len(plan) + 10
     d = Drawing(width, h)
@@ -94,10 +94,16 @@ def _gantt(plan: pd.DataFrame, width: float) -> Drawing:
     for i, r in enumerate(plan.itertuples()):
         y = h - top - (i + 1) * rowh + 4
         col = colors.HexColor(PHASE_COLORS[(r.n_phase - 1) % len(PHASE_COLORS)])
-        lab = f"{r.n:>2}. {r.etape}"
-        d.add(String(4, y + 3, lab[:46], fontName=F, fontSize=7, fillColor=colors.HexColor("#15233B")))
+        lab = f"{r.n}. {r.etape}"
+        while pdfmetrics.stringWidth(lab, F, 7) > label_w - 14 and len(lab) > 4:
+            lab = lab[:-2].rstrip() + "…"
+        d.add(String(4, y + 3, lab, fontName=F, fontSize=7, fillColor=colors.HexColor("#15233B")))
         d.add(Rect(label_w + r.debut_sem * scale, y, max(r.duree * scale, 3), rowh - 5, fillColor=col, strokeColor=None, rx=3, ry=3))
-        d.add(String(label_w + r.fin_sem * scale + 3, y + 3, f"{r.duree} sem.", fontName=F, fontSize=6, fillColor=colors.HexColor(GREY)))
+        bw = r.duree * scale
+        if bw >= 34:
+            d.add(String(label_w + r.debut_sem * scale + bw / 2, y + 3, f"{r.duree} sem.", fontName=FB, fontSize=6, fillColor=colors.white, textAnchor="middle"))
+        else:
+            d.add(String(label_w + r.fin_sem * scale + 3, y + 3, f"{r.duree} sem.", fontName=F, fontSize=6, fillColor=colors.HexColor(GREY)))
     return d
 
 
@@ -113,7 +119,7 @@ def _on_page(company, sector_label):
         c.setFont(F, 8)
         c.drawRightString(W - 1.2 * cm, H - 0.65 * cm, f"{company} · {sector_label}")
         c.setFillColor(colors.HexColor(GREY))
-        c.drawString(1.2 * cm, 0.6 * cm, f"Document confidentiel — généré le {date.today():%d/%m/%Y}")
+        c.drawString(1.2 * cm, 0.6 * cm, f"Document confidentiel — généré le {date.today():%d/%m/%Y} · RegBridge Compliance Hub v{APP_VERSION} · conçu par {APP_AUTHOR}")
         c.drawRightString(W - 1.2 * cm, 0.6 * cm, f"Page {doc.page}")
         c.restoreState()
     return draw
@@ -135,10 +141,13 @@ def plan_pdf(company: str, sector_label: str, size: str, maturity: float | None,
     kpis = [("Étapes", str(len(plan))), ("Durée totale", f"{int(plan['fin_sem'].max())} semaines"),
             ("Fin prévisionnelle", end.strftime("%d/%m/%Y")), ("Points de contrôle", str(len(controls))),
             ("Échéance AMLR", "10/07/2027")]
-    t = Table([[Paragraph(f"<font size=7 color='{GREY}'>{k.upper()}</font><br/><font size=15 name='{FB}' color='{NAVY}'>{v}</font>", S["p"])
-                for k, v in kpis]], colWidths=[(W - 2.4 * cm) / 5] * 5, rowHeights=[1.7 * cm])
-    t.setStyle(TableStyle([("BOX", (0, 0), (-1, -1), 0.6, colors.HexColor("#E3E8F0")), ("INNERGRID", (0, 0), (-1, -1), 0.6, colors.HexColor("#E3E8F0")),
-                           ("BACKGROUND", (0, 0), (-1, -1), colors.white), ("VALIGN", (0, 0), (-1, -1), "MIDDLE"), ("LEFTPADDING", (0, 0), (-1, -1), 10)]))
+    lab = ParagraphStyle("kl", fontName=FB, fontSize=7, leading=9, textColor=colors.HexColor(GREY))
+    val = ParagraphStyle("kv", fontName=FB, fontSize=15, leading=18, textColor=colors.HexColor(NAVY))
+    t = Table([[Paragraph(k.upper(), lab) for k, _ in kpis], [Paragraph(v, val) for _, v in kpis]],
+              colWidths=[(W - 2.4 * cm) / 5] * 5, rowHeights=[0.75 * cm, 1.0 * cm])
+    t.setStyle(TableStyle([("BOX", (0, 0), (-1, -1), 0.6, colors.HexColor("#E3E8F0")), ("LINEAFTER", (0, 0), (-2, -1), 0.6, colors.HexColor("#E3E8F0")),
+                           ("BACKGROUND", (0, 0), (-1, -1), colors.white), ("VALIGN", (0, 0), (-1, 0), "BOTTOM"), ("VALIGN", (0, 1), (-1, 1), "TOP"),
+                           ("LEFTPADDING", (0, 0), (-1, -1), 10), ("TOPPADDING", (0, 0), (-1, -1), 4), ("BOTTOMPADDING", (0, 0), (-1, -1), 4)]))
     el += [t, Spacer(1, 14), Paragraph("Feuille de route (diagramme de Gantt)", S["h2"]), _gantt(plan, W - 2.4 * cm)]
     el.append(Paragraph("Les phases dépendantes s'enchaînent ; la remédiation KYC, les outils, la formation et le contrôle se déroulent en parallèle "
                         "après la rédaction des procédures. Durées ajustées selon la taille de l'entité et sa maturité.", S["small"]))
@@ -244,7 +253,10 @@ def plan_jpeg(company: str, sector_label: str, size: str, plan: pd.DataFrame) ->
     for i, r in enumerate(plan.itertuples()):
         y = gy + i * 26
         col = PHASE_COLORS[(r.n_phase - 1) % len(PHASE_COLORS)]
-        d.text((margin, y + 3), f"{r.n:>2}. {r.etape}"[:52], font=_font(16), fill="#15233B")
+        lab, fl = f"{r.n}. {r.etape}", _font(16)
+        while d.textlength(lab, font=fl) > lx - margin - 16 and len(lab) > 4:
+            lab = lab[:-2].rstrip() + "…"
+        d.text((margin, y + 3), lab, font=fl, fill="#15233B")
         d.rounded_rectangle([lx + r.debut_sem * sc, y + 3, lx + r.fin_sem * sc, y + 21], radius=6, fill=col)
     # cartes étape par étape
     y = gy + 26 * len(plan) + 50
@@ -263,12 +275,15 @@ def plan_jpeg(company: str, sector_label: str, size: str, plan: pd.DataFrame) ->
         d.text((cx + 58 - d.textlength(num, font=f) / 2, cy + 36), num, font=f, fill="white")
         tx = cx + 110
         d.text((tx, cy + 16), r.phase.upper(), font=_font(14, True), fill=col)
-        d.text((tx, cy + 38), r.etape[:60], font=_font(21, True), fill=NAVY)
+        tt, ft = r.etape, _font(21, True)
+        while d.textlength(tt, font=ft) > cw - 130 and len(tt) > 4:
+            tt = tt[:-2].rstrip() + "…"
+        d.text((tx, cy + 38), tt, font=ft, fill=NAVY)
         for k, line in enumerate(_wrap(d, r.description, _font(15), cw - 130)[:2]):
             d.text((tx, cy + 70 + k * 20), line, font=_font(15), fill="#344054")
         d.text((tx, cy + card_h - 30), f"{r.responsable}  ·  {r.date_debut:%d/%m/%Y} → {r.date_fin:%d/%m/%Y}  ·  {r.duree} sem.",
                font=_font(14), fill=GREY)
-    d.text((margin, H - 50), f"RegBridge Compliance Hub — généré le {date.today():%d/%m/%Y} — document d'aide à la décision", font=_font(15), fill=GREY)
+    d.text((margin, H - 50), f"RegBridge Compliance Hub v{APP_VERSION} — conçu et développé par {APP_AUTHOR} — généré le {date.today():%d/%m/%Y} — document d'aide à la décision", font=_font(15), fill=GREY)
     bio = io.BytesIO()
     img.save(bio, "JPEG", quality=92, optimize=True)
     return bio.getvalue()

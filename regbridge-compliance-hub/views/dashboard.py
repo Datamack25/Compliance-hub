@@ -8,7 +8,7 @@ import streamlit as st
 from core import auth
 from core.data import RISK_COLORS, load
 from core.feeds import fetch_news
-from core.ui import PLOTLY_LAYOUT, geo_chart, footer, hero, js_counters, js_ticker, section
+from core.ui import PLOTLY_LAYOUT, chart, footer, geo_chart, hero, js_counters, js_ticker, section, table
 
 u = auth.current_user()
 hero("Tableau de bord sécurité financière", "Situation mondiale LCB-FT, sanctions et embargos — actualités, cartographie dynamique, jauge d'évolution.",
@@ -83,20 +83,21 @@ with c1:
 
 with c2:
     g = go.Figure(go.Indicator(
-        mode="gauge+number+delta", value=glob_now, number={"suffix": "/100", "font": {"size": 34, "color": "#0B1F3A"}},
+        mode="gauge+number+delta", value=glob_now, number={"font": {"size": 30, "color": "#0B1F3A"}, "valueformat": ".1f"},
+        domain={"x": [0.06, 0.94], "y": [0, 0.9]},
         delta={"reference": prev, "valueformat": ".2f", "increasing": {"color": "#067647"}, "decreasing": {"color": "#B42318"}},
-        title={"text": "Indice mondial de sécurité financière", "font": {"size": 13}},
-        gauge={"axis": {"range": [0, 100]}, "bar": {"color": "#0B1F3A", "thickness": 0.28},
+        title={"text": "Indice mondial de sécurité financière (/100)", "font": {"size": 13, "color": "#0B1F3A"}},
+        gauge={"axis": {"range": [0, 100]}, "bar": {"color": "#0B1F3A", "thickness": 0.22},
                "steps": [{"range": [0, 42], "color": "#FECDCA"}, {"range": [42, 62], "color": "#FDDCAB"},
                          {"range": [62, 80], "color": "#FEF0C7"}, {"range": [80, 100], "color": "#D1FADF"}],
                "threshold": {"line": {"color": "#0E7490", "width": 3}, "value": prev}}))
-    g.update_layout(**{**PLOTLY_LAYOUT, "margin": dict(l=34, r=34, t=56, b=6)}, height=260)
-    st.plotly_chart(g, use_container_width=True)
+    g.update_layout(**{**PLOTLY_LAYOUT, "margin": dict(l=30, r=30, t=46, b=10)}, height=250)
+    chart(g, use_container_width=True)
     ev = pd.concat([snap[["date", "indice"]], pd.DataFrame([{"date": pd.Timestamp.today().strftime("%Y-%m-%d"), "indice": glob_now}])])
     line = px.line(ev, x="date", y="indice", markers=True)
     line.update_traces(line_color="#0E7490")
     line.update_layout(**PLOTLY_LAYOUT, height=190, yaxis_title="", xaxis_title="", title=dict(text="Évolution de l'indice", font=dict(size=13)))
-    st.plotly_chart(line, use_container_width=True)
+    chart(line, use_container_width=True)
     st.caption("Indice composite : statut GAFI, liste UE, sanctions, IPC, conflits, opacité. Nouveau point à chaque mise à jour (onglet Sanctions).")
 
 # ------------------------------------------------------------------ régions & pays
@@ -107,11 +108,11 @@ with r1:
     b = px.bar(reg, x="indice_securite_financiere", y="region", orientation="h", text_auto=".1f",
                color="indice_securite_financiere", color_continuous_scale=["#B42318", "#FACC15", "#067647"], range_color=(30, 95))
     b.update_layout(**PLOTLY_LAYOUT, height=300, coloraxis_showscale=False, xaxis_title="Indice /100", yaxis_title="")
-    st.plotly_chart(b, use_container_width=True)
+    chart(b, use_container_width=True)
 with r2:
     section("Juridictions les plus exposées")
     top = cs.nsmallest(10, "indice_securite_financiere")[["pays", "gafi_statut", "regimes_sanctions", "indice_securite_financiere", "niveau_risque_pays"]]
-    st.dataframe(top, hide_index=True, use_container_width=True, height=300,
+    table(top, hide_index=True, use_container_width=True, height=300,
                  column_config={"indice_securite_financiere": st.column_config.ProgressColumn("Indice", min_value=0, max_value=100, format="%.1f"),
                                 "gafi_statut": "GAFI", "regimes_sanctions": "Sanctions", "niveau_risque_pays": "Niveau", "pays": "Pays"})
 

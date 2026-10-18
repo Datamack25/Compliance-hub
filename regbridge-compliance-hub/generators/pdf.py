@@ -9,6 +9,8 @@ from reportlab.lib.colors import HexColor
 from reportlab.lib.pagesizes import A4, landscape
 from reportlab.pdfgen import canvas
 
+from core.paths import APP_AUTHOR, APP_VERSION
+
 NAVY, TEAL, GOLD, GREY = HexColor("#0B1F3A"), HexColor("#0E7490"), HexColor("#B8891B"), HexColor("#5B6B82")
 
 
@@ -89,6 +91,8 @@ def certificate(name: str, module: str, score: float, company: str = "", hours: 
     c.setFont("Helvetica", 8.5)
     c.setFillColor(GREY)
     c.drawCentredString(W / 2, 66, "Vérifiable dans RegBridge Compliance Hub › Formation › Vérifier un certificat")
+    c.setFont("Helvetica", 7)
+    c.drawCentredString(W / 2, 44, f"RegBridge Compliance Hub v{APP_VERSION} — plateforme conçue et développée par {APP_AUTHOR}")
     c.showPage()
     c.save()
     return bio.getvalue(), cid

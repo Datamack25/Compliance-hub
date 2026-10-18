@@ -1,5 +1,7 @@
 # 🛡️ RegBridge Compliance Hub
 
+**Version 1.1.0 — octobre 2026 · conçue et développée par Mackenson CINEUS**
+
 **Plateforme RegTech de conformité LCB-FT, sanctions, embargos et fraude** — Streamlit · Python · HTML/CSS · JavaScript · Machine Learning.
 
 15 agents spécialisés construisent l'architecture complète de conformité d'une entité (banque, fintech de paiement, assurance, jeux & hasard, immobilier, transfert d'argent, crypto-actifs, change manuel, entreprise) : cartographies des risques Excel, trames Word, certificats PDF, kits ZIP, surveillance des sanctions/PPE/presse négative, scoring ML auto-apprenant, tableau de bord mondial de la sécurité financière, comptes utilisateurs et offres payantes.
@@ -85,6 +87,8 @@ streamlit run app.py
 Compte administrateur par défaut : `admin@regbridge.fr` / `Admin!2026` — **à remplacer** via les secrets.
 
 ### Déploiement Streamlit Community Cloud
+> Le dossier caché `.streamlit/` est facultatif depuis la v1.1 : le thème clair est imposé par le code et le fond de carte est chargé depuis le CDN Plotly. Pensez néanmoins à le pousser (`git add .streamlit`) pour les réglages serveur.
+
 1. Pousser le dépôt sur GitHub.
 2. Sur share.streamlit.io : *New app* → dépôt → `app.py`.
 3. *Settings → Secrets* : copier `.streamlit/secrets.toml.example` et renseigner les valeurs.
@@ -133,3 +137,8 @@ Les valeurs IPC sont **indicatives** (à actualiser avec la publication annuelle
 Outil d'aide à la décision : il ne se substitue ni à l'analyse humaine, ni aux textes officiels, ni aux listes officielles de gel des avoirs. Les données de démonstration (clients, transactions, PPE, entités « TEST ») sont **fictives**.
 
 © RegBridge Conseil — tous droits réservés.
+
+
+## 📝 Historique des versions
+- **1.1.0** — thème clair forcé (lisible même en mode sombre), bandeau supérieur masqué, tableaux HTML élégants, graphiques à fond blanc, cartes mondiales via CDN, jauge corrigée, cartographie enrichie (produits, canaux, pays, clientèle, secteurs clients), agent A15 (plan de mise en conformité PDF/JPEG), version et auteur affichés.
+- **1.0.0** — première version (14 agents).

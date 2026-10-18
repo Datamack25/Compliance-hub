@@ -5,7 +5,7 @@ import streamlit as st
 from agents.registry import log
 from core import auth, screening, updater
 from core.data import load, recompute_countries, save
-from core.ui import PLOTLY_LAYOUT, geo_chart, footer, hero, kpi, section
+from core.ui import PLOTLY_LAYOUT, chart, footer, geo_chart, hero, kpi, section, table
 from generators import excel, word
 
 hero("Sanctions, embargos & listes GAFI", "Pays sous sanctions (UE, ONU, OFAC, France), listes grise/noire du GAFI, pays tiers à haut risque UE, filtrage de noms et mises à jour.",
@@ -30,7 +30,7 @@ with t1:
     v = reg[reg["autorite"].isin(auth_f) & reg["intensite"].isin(int_f)]
     if q:
         v = v[v.apply(lambda r: q.lower() in " ".join(map(str, r.values)).lower(), axis=1)]
-    st.dataframe(v, hide_index=True, use_container_width=True, height=380)
+    table(v, hide_index=True, use_container_width=True, height=380)
     m = px.choropleth(cs, locations="iso3", color="niveau_sanctions", hover_name="pays", hover_data={"regimes_sanctions": True, "iso3": False},
                       color_continuous_scale=["#F2F4F7", "#FEC84B", "#F04438", "#7A271A"], range_color=(0, 3))
     m.update_geos(showframe=False, showcoastlines=False, projection_type="natural earth", landcolor="#EEF2F6", showland=True)
@@ -43,13 +43,13 @@ with t2:
     a, b, c = st.columns(3)
     with a:
         section("Liste noire GAFI")
-        st.dataframe(cs[cs["gafi_statut"] == "noire"][["pays", "region"]], hide_index=True, use_container_width=True)
+        table(cs[cs["gafi_statut"] == "noire"][["pays", "region"]], hide_index=True, use_container_width=True)
     with b:
         section("Liste grise GAFI")
-        st.dataframe(cs[cs["gafi_statut"] == "grise"][["pays", "region"]], hide_index=True, use_container_width=True, height=420)
+        table(cs[cs["gafi_statut"] == "grise"][["pays", "region"]], hide_index=True, use_container_width=True, height=420)
     with c:
         section("Pays tiers à haut risque UE")
-        st.dataframe(cs[cs["ue_pays_tiers_haut_risque"] == 1][["pays", "region"]], hide_index=True, use_container_width=True, height=420)
+        table(cs[cs["ue_pays_tiers_haut_risque"] == 1][["pays", "region"]], hide_index=True, use_container_width=True, height=420)
     st.info("Prochaine plénière du GAFI : fin octobre 2026 (première sous présidence britannique). Sorties pressenties par la presse : "
             "Monaco, Bulgarie, Côte d'Ivoire — à confirmer après publication officielle.")
     section("Mettre à jour")
@@ -108,7 +108,7 @@ with t3:
         c1, c2 = st.columns([1, 1.3])
         with c1:
             section("Listes officielles")
-            st.dataframe(screening.list_status(), hide_index=True, use_container_width=True)
+            table(screening.list_status(), hide_index=True, use_container_width=True)
             if st.button("🔄 Mettre à jour ONU · OFAC · UE · DG Trésor", type="primary"):
                 with st.spinner("Téléchargement des listes officielles…"):
                     for ok, msg in updater.update_all():
@@ -124,7 +124,7 @@ with t3:
                 res = screening.screen(name, lists, thr)
                 if len(res):
                     st.error(f"{len(res)} correspondance(s) potentielle(s) — analyse discriminante requise.")
-                    st.dataframe(res, hide_index=True, use_container_width=True)
+                    table(res, hide_index=True, use_container_width=True)
                 else:
                     st.success("Aucune correspondance au-dessus du seuil.")
                 log("A06", "Filtrage", details=f"{name} → {len(res)}")
@@ -140,7 +140,7 @@ with t3:
                 out.append({"nom": n, "alerte": "OUI" if len(r) else "non", "meilleure_correspondance": r.iloc[0]["nom_liste"] if len(r) else "",
                             "source": r.iloc[0]["source"] if len(r) else "", "score": r.iloc[0]["score"] if len(r) else 0})
             out = pd.DataFrame(out)
-            st.dataframe(out, hide_index=True, use_container_width=True)
+            table(out, hide_index=True, use_container_width=True)
             st.download_button("⬇️ Résultats (Excel)", excel.dfs_to_xlsx({"Filtrage": out}, "Filtrage sanctions"), "Filtrage_sanctions.xlsx")
             log("A06", "Filtrage par lot", details=f"{len(out)} noms, {int((out.alerte == 'OUI').sum())} alertes")
         st.download_button("Fiche de traitement d'alerte (Word)", word.sanctions_alert_form(u.get("company") or ""), "Fiche_alerte_filtrage.docx")
@@ -151,8 +151,8 @@ with t4:
     h = hist[hist["iso3"].isin(pays)].merge(cs[["iso3", "pays"]], on="iso3")
     f = px.line(h, x="date", y="indice", color="pays", markers=True, hover_data=["evenement", "gafi_statut", "ue_pays_tiers_haut_risque"])
     f.update_layout(**PLOTLY_LAYOUT, height=380, yaxis_title="Indice de sécurité financière", xaxis_title="")
-    st.plotly_chart(f, use_container_width=True)
-    st.dataframe(hist.groupby(["date", "evenement"], as_index=False).agg(indice_moyen=("indice", "mean"), liste_grise=("gafi_statut", lambda s: (s == "grise").sum()),
+    chart(f, use_container_width=True)
+    table(hist.groupby(["date", "evenement"], as_index=False).agg(indice_moyen=("indice", "mean"), liste_grise=("gafi_statut", lambda s: (s == "grise").sum()),
                                                                           liste_ue=("ue_pays_tiers_haut_risque", "sum")).round(2),
                  hide_index=True, use_container_width=True)
 footer()

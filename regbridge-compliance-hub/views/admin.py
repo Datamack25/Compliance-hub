@@ -5,7 +5,7 @@ import streamlit as st
 
 from core import auth
 from core.data import load
-from core.ui import footer, hero, kpi, section
+from core.ui import footer, hero, kpi, section, table
 
 u = auth.current_user()
 if u.get("role") != "admin":
@@ -22,7 +22,7 @@ with k3: kpi("Exécutions d'agents", len(load("agent_log.csv")), "", "teal")
 
 t1, t2 = st.tabs(["👥 Utilisateurs", "🎟️ Codes d'activation"])
 with t1:
-    st.dataframe(users, hide_index=True, use_container_width=True)
+    table(users, hide_index=True, use_container_width=True)
     c1, c2, c3, c4 = st.columns(4)
     em = c1.selectbox("Utilisateur", users["email"])
     pl = c2.selectbox("Offre", list(auth.PLANS), format_func=lambda k: auth.PLANS[k]["label"])
@@ -43,5 +43,5 @@ with t2:
         codes = [auth.create_code(pl, int(days)) for _ in range(int(n))]
         st.code("\n".join(codes))
     section("Codes émis")
-    st.dataframe(pd.DataFrame(auth.list_codes()), hide_index=True, use_container_width=True)
+    table(pd.DataFrame(auth.list_codes()), hide_index=True, use_container_width=True)
 footer()

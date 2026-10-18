@@ -8,7 +8,7 @@ import streamlit as st
 from agents.registry import log
 from core import auth
 from core.data import load, save
-from core.ui import PLOTLY_LAYOUT, geo_chart, footer, hero, kpi, section
+from core.ui import PLOTLY_LAYOUT, footer, geo_chart, hero, kpi, section, table
 from generators import excel, word
 
 hero("Surveillance des PPE", "Personnes politiquement exposées par pays : fonctions publiques importantes (JOUE C/2023/724), registre, échéances de revue et contrôle de noms.",
@@ -40,11 +40,11 @@ with t1:
     with c2:
         by = reg.groupby("pays").size().reset_index(name="PPE").sort_values("PPE", ascending=False)
         st.markdown("**PPE suivies par pays**")
-        st.dataframe(by, hide_index=True, use_container_width=True, height=360)
+        table(by, hide_index=True, use_container_width=True, height=360)
     section("Fonctions publiques importantes")
     src = st.radio("Source", ["France — JOUE C/2023/724", "Catégories GAFI / AMLR (tous pays)"], horizontal=True)
     f = funcs[funcs["iso3"] == "FRA"] if src.startswith("France") else funcs[funcs["iso3"] == "*"]
-    st.dataframe(f[["fonction", "niveau_risque", "source"]], hide_index=True, use_container_width=True)
+    table(f[["fonction", "niveau_risque", "source"]], hide_index=True, use_container_width=True)
 
 with t2:
     if len(overdue):
@@ -93,7 +93,7 @@ with t3:
                 hits = [{"libellé": e.get("label"), "description": e.get("description", ""),
                          "indice PPE": "⚠️ probable" if any(k in e.get("description", "").lower() for k in kw) else "—",
                          "lien": "https://www.wikidata.org/wiki/" + e["id"]} for e in r.get("search", [])]
-                st.dataframe(pd.DataFrame(hits), hide_index=True, use_container_width=True) if hits else st.info("Aucun résultat.")
+                table(pd.DataFrame(hits), hide_index=True, use_container_width=True) if hits else st.info("Aucun résultat.")
                 log("A07", "Recherche PPE", details=name)
             except Exception:
                 st.warning("Recherche en ligne indisponible (pas d'accès Internet).")
@@ -102,5 +102,5 @@ with t3:
             m = reg[reg["nom"].str.lower().str.contains(name.lower().split(" ")[0])]
             if len(m):
                 st.warning("Présent(e) dans le registre interne :")
-                st.dataframe(m, hide_index=True)
+                table(m, hide_index=True)
 footer()

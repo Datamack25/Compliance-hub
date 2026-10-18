@@ -4,7 +4,7 @@ import streamlit as st
 from agents.registry import AGENTS, log, stats
 from core import auth
 from core.data import SECTOR_LABELS, load
-from core.ui import agent_card, footer, hero, section
+from core.ui import agent_card, footer, hero, section, table
 from generators import zipkit
 
 u = auth.current_user()
@@ -54,7 +54,7 @@ c1, c2 = st.columns([1, 1.6])
 with c1:
     s = stats()
     s["taux de succès"] = s["taux de succès"].map(lambda x: "—" if pd.isna(x) else f"{x:.0%}")
-    st.dataframe(s, hide_index=True, use_container_width=True, height=420)
+    table(s, hide_index=True, use_container_width=True, height=420)
 with c2:
-    st.dataframe(lg.sort_values("date", ascending=False).head(200) if len(lg) else lg, hide_index=True, use_container_width=True, height=420)
+    table(lg.sort_values("date", ascending=False).head(200) if len(lg) else lg, hide_index=True, use_container_width=True, height=420)
 footer()

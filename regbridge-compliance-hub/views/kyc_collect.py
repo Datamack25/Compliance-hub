@@ -4,7 +4,7 @@ import streamlit as st
 from agents.registry import log
 from core import auth
 from core.data import load
-from core.ui import footer, hero, section
+from core.ui import footer, hero, section, table
 from generators import excel, word
 
 hero("Recueil des éléments KYC", "Fiches de recueil et listes de pièces par typologie de client : personnes physiques, morales, trusts, associations, PPE, contreparties régulées.",
@@ -25,7 +25,7 @@ for t in sel:
     if lvl != "Tous":
         sub = sub[sub["niveau_vigilance"] == lvl]
     with st.expander(f"🪪 {t} — {len(sub)} éléments", expanded=len(sel) == 1):
-        st.dataframe(sub[["piece", "niveau_vigilance", "reference"]], hide_index=True, use_container_width=True)
+        table(sub[["piece", "niveau_vigilance", "reference"]], hide_index=True, use_container_width=True)
         st.download_button(f"Fiche de recueil Word — {t}", word.kyc_form(t, company, kyc[kyc["type_client"] == t]),
                            f"Fiche_KYC_{t[:30]}.docx", key=f"dl_{t}")
 

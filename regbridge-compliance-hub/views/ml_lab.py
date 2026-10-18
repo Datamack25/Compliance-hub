@@ -5,7 +5,7 @@ import streamlit as st
 from agents.registry import log, stats
 from core import auth, ml
 from core.data import SECTOR_LABELS, load
-from core.ui import PLOTLY_LAYOUT, footer, hero, kpi, section
+from core.ui import PLOTLY_LAYOUT, chart, footer, hero, kpi, section, table
 
 hero("Laboratoire ML & auto-amélioration", "Scoring client par apprentissage automatique, retours analystes, champion/challenger, détection de dérive et réentraînement.",
      kicker="Agent A14 · Auto-amélioration")
@@ -54,7 +54,7 @@ with t1:
         f = px.bar(ex, x="contribution", y="variable", orientation="h", color="contribution", color_continuous_scale=["#067647", "#F2F4F7", "#B42318"],
                    color_continuous_midpoint=0)
         f.update_layout(**PLOTLY_LAYOUT, height=380, coloraxis_showscale=False, title="Contribution de chaque variable (explicabilité locale)", yaxis_title="")
-        st.plotly_chart(f, use_container_width=True)
+        chart(f, use_container_width=True)
 with t2:
     fb = ml._feedback()
     st.write(f"**{len(fb)}** retour(s) analyste en attente d'intégration. Le challenger n'est promu que si son AUC n'est pas dégradée.")
@@ -65,20 +65,20 @@ with t2:
         (st.success if e["statut"] == "champion" else st.warning)(f"{e['version']} : {e['statut']} (AUC {e['auc']})")
     reg = ml.registry()
     if len(reg):
-        st.dataframe(reg, hide_index=True, use_container_width=True)
+        table(reg, hide_index=True, use_container_width=True)
         f = px.line(reg, x="version", y=["auc", "f1", "precision", "rappel"], markers=True)
         f.update_layout(**PLOTLY_LAYOUT, height=300, title="Performance par version", yaxis_title="", xaxis_title="")
-        st.plotly_chart(f, use_container_width=True)
+        chart(f, use_container_width=True)
     st.caption("Auto-amélioration : (1) les retours analystes sont ajoutés aux données d'entraînement avec un poids x3 ; (2) les poids des règles de surveillance "
                "et des mots-clés de presse négative s'ajustent à chaque qualification ; (3) la dérive des populations déclenche une alerte de réentraînement.")
 with t3:
     fb = ml._feedback()
     recent = fb if len(fb) >= 5 else load("training_clients.csv").sample(300, random_state=1).assign(part_especes=lambda d: d["part_especes"] * 1.6)
     st.markdown("**Indice de stabilité des populations (PSI)** — " + ("retours analystes" if len(fb) >= 5 else "simulation sur un échantillon décalé"))
-    st.dataframe(ml.drift_report(recent), hide_index=True, use_container_width=True)
+    table(ml.drift_report(recent), hide_index=True, use_container_width=True)
     section("Performance opérationnelle des agents")
     s = stats()
     f = px.bar(s, x="code", y="exécutions", hover_data=["agent"], color_discrete_sequence=["#0E7490"])
     f.update_layout(**PLOTLY_LAYOUT, height=300, xaxis_title="", yaxis_title="Exécutions")
-    st.plotly_chart(f, use_container_width=True)
+    chart(f, use_container_width=True)
 footer()

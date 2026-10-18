@@ -7,7 +7,7 @@ import streamlit as st
 from agents.registry import log
 from core import auth
 from core.data import load
-from core.ui import PLOTLY_LAYOUT, footer, hero, kpi, section
+from core.ui import PLOTLY_LAYOUT, chart, footer, hero, kpi, section, table
 from generators import excel, word
 
 hero("Remédiation KYC", "Diagnostic du stock clients, priorisation fondée sur les risques (AMLR art. 26), plan de remédiation et courriers.",
@@ -81,16 +81,16 @@ with g1:
     ex.columns = ["anomalie", "nb"]
     f = px.bar(ex, x="nb", y="anomalie", orientation="h", color_discrete_sequence=["#0E7490"])
     f.update_layout(**PLOTLY_LAYOUT, height=320, yaxis_title="", xaxis_title="Dossiers", title="Anomalies par type")
-    st.plotly_chart(f, use_container_width=True)
+    chart(f, use_container_width=True)
 with g2:
     p = res.groupby(["niveau_risque", "priorite"], observed=True).size().reset_index(name="n")
     f = px.bar(p, x="niveau_risque", y="n", color="priorite", color_discrete_map={"P1": "#B42318", "P2": "#F79009", "P3": "#0E7490"})
     f.update_layout(**PLOTLY_LAYOUT, height=320, title="Dossiers par risque et priorité", xaxis_title="", yaxis_title="")
-    st.plotly_chart(f, use_container_width=True)
+    chart(f, use_container_width=True)
 
 section("Plan de remédiation priorisé")
 show = to_fix[["client_id", "nom", "type", "pays", "niveau_risque", "ppe", "priorite", "anomalies", "pieces_manquantes"]]
-st.dataframe(show, hide_index=True, use_container_width=True, height=380)
+table(show, hide_index=True, use_container_width=True, height=380)
 pre = pd.DataFrame({"ID client": to_fix["client_id"], "Nom": to_fix["nom"], "Type": to_fix["type"], "Niveau de risque": to_fix["niveau_risque"],
                     "Anomalie(s)": to_fix["anomalies"], "Pièces manquantes": to_fix["pieces_manquantes"], "Priorité (AMLR art. 26)": to_fix["priorite"].astype(str),
                     "Date de relance 1": (today + pd.Timedelta(days=7)).strftime("%d/%m/%Y"), "Date de relance 2": (today + pd.Timedelta(days=30)).strftime("%d/%m/%Y"),

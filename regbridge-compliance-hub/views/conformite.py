@@ -5,7 +5,7 @@ import streamlit as st
 from agents.registry import log
 from core import auth
 from core.data import SECTOR_LABELS, load
-from core.ui import PLOTLY_LAYOUT, footer, hero, kpi, section
+from core.ui import PLOTLY_LAYOUT, chart, footer, hero, kpi, section, table
 from generators import word
 
 hero("Mise en conformité sectorielle", "Diagnostic de maturité LCB-FT et préparation AMLR pour fintech de paiement, banque, assurance, jeux, immobilier, transfert d'argent, crypto, corporate.",
@@ -40,11 +40,11 @@ if len(by) >= 3:
     f = go.Figure(go.Scatterpolar(r=list(by["v"]) + [by["v"].iloc[0]], theta=list(by["domaine"]) + [by["domaine"].iloc[0]], fill="toself",
                                   line_color="#0E7490", fillcolor="rgba(14,116,144,.25)"))
     f.update_layout(**PLOTLY_LAYOUT, height=420, polar=dict(radialaxis=dict(range=[0, 100])), title="Maturité par domaine (%)")
-    st.plotly_chart(f, use_container_width=True)
+    chart(f, use_container_width=True)
 section("Feuille de route")
 gaps = res[res["statut"].isin(["Partiel", "Non conforme"])].copy()
 gaps["priorité"] = gaps["domaine"].map(lambda d: "P1" if d in ("Gel des avoirs", "Déclaration", "Vigilance renforcée", "Surveillance") else "P2")
-st.dataframe(gaps.sort_values("priorité"), hide_index=True, use_container_width=True)
+table(gaps.sort_values("priorité"), hide_index=True, use_container_width=True)
 if st.button("Générer le rapport de mise en conformité (Word)", type="primary"):
     log("A12", "Diagnostic", details=f"{company} / {sec} / {score:.0f}%")
     st.download_button("⬇️ Télécharger le rapport", word.gap_report(company, SECTOR_LABELS[sec], res, score), f"Rapport_conformite_{sec}.docx", type="primary")

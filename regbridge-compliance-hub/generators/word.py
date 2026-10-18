@@ -12,6 +12,8 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Cm, Pt, RGBColor
 
+from core.paths import APP_AUTHOR, APP_VERSION
+
 NAVY = RGBColor(0x0B, 0x1F, 0x3A)
 TEAL = RGBColor(0x0E, 0x74, 0x90)
 GREY = RGBColor(0x5B, 0x6B, 0x82)
@@ -43,7 +45,8 @@ def new_doc(title: str, company: str, subtitle: str = "", confid: str = "Documen
     hp.text = f"{company or 'Entité'}  ·  {title}"
     hp.runs[0].font.size, hp.runs[0].font.color.rgb = Pt(8.5), GREY
     fp = sec.footer.paragraphs[0]
-    fp.text = f"{confid} — généré par RegBridge Compliance Hub le {date.today():%d/%m/%Y}"
+    fp.text = (f"{confid} — généré par RegBridge Compliance Hub v{APP_VERSION} le {date.today():%d/%m/%Y} "
+               f"· conçu par {APP_AUTHOR}")
     fp.runs[0].font.size, fp.runs[0].font.color.rgb = Pt(8), GREY
     fp.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p = d.add_paragraph()
