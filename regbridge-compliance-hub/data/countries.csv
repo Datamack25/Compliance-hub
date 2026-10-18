@@ -1,0 +1,166 @@
+iso3,pays,region,gafi_statut,ue_pays_tiers_haut_risque,niveau_sanctions,regimes_sanctions,ipc_indicatif,zone_conflit,opacite_financiere,membre_ue,indice_securite_financiere,niveau_risque_pays,risque_ppe
+FRA,France,Europe,-,0,0,,67,0,0,1,86.8,Faible,Standard
+DEU,Allemagne,Europe,-,0,0,,75,0,0,1,90.0,Faible,Standard
+ITA,Italie,Europe,-,0,0,,54,0,0,1,81.6,Faible,Modéré
+ESP,Espagne,Europe,-,0,0,,56,0,0,1,82.4,Faible,Standard
+PRT,Portugal,Europe,-,0,0,,57,0,0,1,82.8,Faible,Standard
+BEL,Belgique,Europe,-,0,0,,69,0,0,1,87.6,Faible,Standard
+NLD,Pays-Bas,Europe,-,0,0,,78,0,1,1,85.2,Faible,Standard
+LUX,Luxembourg,Europe,-,0,0,,81,0,1,1,86.4,Faible,Standard
+IRL,Irlande,Europe,-,0,0,,77,0,1,1,84.8,Faible,Standard
+AUT,Autriche,Europe,-,0,0,,67,0,0,1,86.8,Faible,Standard
+DNK,Danemark,Europe,-,0,0,,90,0,0,1,96.0,Faible,Standard
+SWE,Suède,Europe,-,0,0,,80,0,0,1,92.0,Faible,Standard
+FIN,Finlande,Europe,-,0,0,,88,0,0,1,95.2,Faible,Standard
+POL,Pologne,Europe,-,0,0,,53,0,0,1,81.2,Faible,Modéré
+CZE,Tchéquie,Europe,-,0,0,,56,0,0,1,82.4,Faible,Standard
+SVK,Slovaquie,Europe,-,0,0,,49,0,0,1,79.6,Modéré,Modéré
+HUN,Hongrie,Europe,-,0,0,,41,0,0,1,76.4,Modéré,Modéré
+ROU,Roumanie,Europe,-,0,0,,46,0,0,1,78.4,Modéré,Modéré
+BGR,Bulgarie,Europe,grise,0,0,,43,0,0,1,61.2,Élevé,Modéré
+GRC,Grèce,Europe,-,0,0,,49,0,0,1,79.6,Modéré,Modéré
+HRV,Croatie,Europe,-,0,0,,47,0,0,1,78.8,Modéré,Modéré
+SVN,Slovénie,Europe,-,0,0,,60,0,0,1,84.0,Faible,Standard
+EST,Estonie,Europe,-,0,0,,76,0,0,1,90.4,Faible,Standard
+LVA,Lettonie,Europe,-,0,0,,59,0,0,1,83.6,Faible,Standard
+LTU,Lituanie,Europe,-,0,0,,63,0,0,1,85.2,Faible,Standard
+CYP,Chypre,Europe,-,0,0,,56,0,1,1,76.4,Modéré,Standard
+MLT,Malte,Europe,-,0,0,,46,0,1,1,72.4,Modéré,Modéré
+GBR,Royaume-Uni,Europe,-,0,0,,71,0,0,0,88.4,Faible,Standard
+CHE,Suisse,Europe,-,0,0,,81,0,1,0,86.4,Faible,Standard
+NOR,Norvège,Europe,-,0,0,,81,0,0,0,92.4,Faible,Standard
+ISL,Islande,Europe,-,0,0,,77,0,0,0,90.8,Faible,Standard
+MCO,Monaco,Europe,grise,1,0,,0,0,1,0,50.0,Élevé,Modéré
+LIE,Liechtenstein,Europe,-,0,0,,0,0,1,0,76.0,Modéré,Modéré
+AND,Andorre,Europe,-,0,0,,0,0,1,0,76.0,Modéré,Modéré
+SRB,Serbie,Europe,-,0,0,,35,0,0,0,74.0,Modéré,Modéré
+BIH,Bosnie-Herzégovine,Europe,grise,0,1,UE (atteinte à la stabilité),33,0,0,0,48.2,Élevé,Élevé
+ALB,Albanie,Europe,-,0,0,,42,0,0,0,76.8,Modéré,Modéré
+MKD,Macédoine du Nord,Europe,-,0,0,,40,0,0,0,76.0,Modéré,Modéré
+MNE,Monténégro,Europe,-,0,0,,46,0,0,0,78.4,Modéré,Modéré
+MDA,Moldavie,Europe,-,0,1,UE (déstabilisation),43,0,0,0,68.2,Modéré,Modéré
+UKR,Ukraine,Europe,-,0,2,"UE/OFAC (territoires occupés, Crimée)",35,1,0,0,46.0,Élevé,Élevé
+BLR,Biélorussie,Europe,-,0,2,"UE/OFAC/UK (sectoriel, gel d'avoirs)",33,0,0,0,55.2,Élevé,Élevé
+RUS,Russie,Europe,-,1,3,"UE (20+ paquets), OFAC, UK, ONU partiel",22,1,0,0,21.8,Très élevé,Élevé
+TUR,Turquie,Europe,-,0,1,UE (forages Méditerranée orientale),34,0,0,0,64.6,Modéré,Élevé
+GEO,Géorgie,Europe,-,0,0,,53,0,0,0,81.2,Faible,Modéré
+ARM,Arménie,Asie,-,0,0,,47,0,0,0,78.8,Modéré,Modéré
+AZE,Azerbaïdjan,Asie,-,0,0,,22,0,0,0,68.8,Modéré,Élevé
+USA,États-Unis,Amériques,-,0,0,,65,0,0,0,86.0,Faible,Standard
+CAN,Canada,Amériques,-,0,0,,75,0,0,0,90.0,Faible,Standard
+MEX,Mexique,Amériques,-,0,1,OFAC (cartels désignés FTO),26,1,0,0,51.4,Élevé,Élevé
+BRA,Brésil,Amériques,-,0,0,,34,0,0,0,73.6,Modéré,Élevé
+ARG,Argentine,Amériques,-,0,0,,37,0,0,0,74.8,Modéré,Modéré
+CHL,Chili,Amériques,-,0,0,,63,0,0,0,85.2,Faible,Standard
+COL,Colombie,Amériques,-,0,0,,39,1,0,0,65.6,Modéré,Modéré
+PER,Pérou,Amériques,-,0,0,,31,0,0,0,72.4,Modéré,Élevé
+ECU,Équateur,Amériques,-,0,0,,32,1,0,0,62.8,Modéré,Élevé
+BOL,Bolivie,Amériques,grise,1,0,,28,0,0,0,45.2,Élevé,Élevé
+VEN,Venezuela,Amériques,grise,1,2,"UE/OFAC (sectoriel, gel d'avoirs)",10,0,0,0,20.0,Très élevé,Élevé
+PRY,Paraguay,Amériques,-,0,0,,24,0,0,0,69.6,Modéré,Élevé
+URY,Uruguay,Amériques,-,0,0,,76,0,0,0,90.4,Faible,Standard
+PAN,Panama,Amériques,-,0,0,,33,0,1,0,67.2,Modéré,Élevé
+CRI,Costa Rica,Amériques,-,0,0,,58,0,0,0,83.2,Faible,Standard
+GTM,Guatemala,Amériques,-,0,1,UE (atteinte à la démocratie),25,0,0,0,61.0,Élevé,Élevé
+HND,Honduras,Amériques,-,0,0,,22,0,0,0,68.8,Modéré,Élevé
+SLV,Salvador,Amériques,-,0,0,,30,0,0,0,72.0,Modéré,Élevé
+NIC,Nicaragua,Amériques,-,0,1,UE/OFAC (gel d'avoirs),14,0,0,0,56.6,Élevé,Élevé
+CUB,Cuba,Caraïbes,-,0,3,"OFAC (embargo global), UE (aucun)",26,0,0,0,43.4,Élevé,Élevé
+HTI,Haïti,Caraïbes,grise,1,1,"ONU (rés. 2653 - gangs), UE, OFAC",16,1,0,0,21.4,Très élevé,Élevé
+DOM,République dominicaine,Caraïbes,-,0,0,,36,0,0,0,74.4,Modéré,Modéré
+JAM,Jamaïque,Caraïbes,-,0,0,,44,0,0,0,77.6,Modéré,Modéré
+TTO,Trinité-et-Tobago,Caraïbes,-,1,0,,41,0,0,0,66.4,Modéré,Modéré
+BHS,Bahamas,Caraïbes,-,0,0,,64,0,1,0,79.6,Modéré,Standard
+BRB,Barbade,Caraïbes,-,0,0,,68,0,1,0,81.2,Faible,Standard
+VGB,Îles Vierges britanniques,Caraïbes,grise,1,0,,0,0,1,0,50.0,Élevé,Modéré
+CYM,Îles Caïmans,Caraïbes,-,0,0,,0,0,1,0,76.0,Modéré,Modéré
+PRI,Porto Rico,Caraïbes,-,0,0,,0,0,0,0,82.0,Faible,Modéré
+CHN,Chine,Asie,-,0,1,"UE (droits de l'homme), OFAC (listes ciblées)",43,0,0,0,68.2,Modéré,Modéré
+HKG,Hong Kong,Asie,-,0,1,OFAC (ciblé),74,0,1,0,74.6,Modéré,Standard
+JPN,Japon,Asie,-,0,0,,71,0,0,0,88.4,Faible,Standard
+KOR,Corée du Sud,Asie,-,0,0,,64,0,0,0,85.6,Faible,Standard
+PRK,Corée du Nord,Asie,noire,1,3,"ONU, UE, OFAC (embargo global)",15,0,0,0,0.0,Très élevé,Élevé
+IND,Inde,Asie,-,0,0,,38,0,0,0,75.2,Modéré,Modéré
+PAK,Pakistan,Asie,-,0,0,,27,1,0,0,60.8,Élevé,Élevé
+AFG,Afghanistan,Asie,-,1,2,"ONU (régime 1988 Taliban), UE, OFAC",17,1,0,0,28.8,Très élevé,Élevé
+BGD,Bangladesh,Asie,-,0,0,,23,0,0,0,69.2,Modéré,Élevé
+LKA,Sri Lanka,Asie,-,0,0,,32,0,0,0,72.8,Modéré,Élevé
+NPL,Népal,Asie,grise,1,0,,34,0,0,0,47.6,Élevé,Élevé
+MMR,Myanmar,Asie,noire,1,2,"UE/OFAC/UK (embargo armes, gel)",16,1,0,0,0.0,Très élevé,Élevé
+THA,Thaïlande,Asie,-,0,0,,34,0,0,0,73.6,Modéré,Élevé
+VNM,Vietnam,Asie,grise,1,0,,40,0,0,0,50.0,Élevé,Modéré
+LAO,Laos,Asie,grise,1,0,,33,0,0,0,47.2,Élevé,Élevé
+KHM,Cambodge,Asie,-,0,0,,21,0,0,0,68.4,Modéré,Élevé
+MYS,Malaisie,Asie,-,0,0,,50,0,0,0,80.0,Faible,Modéré
+SGP,Singapour,Asie,-,0,0,,84,0,1,0,87.6,Faible,Standard
+IDN,Indonésie,Asie,-,0,0,,37,0,0,0,74.8,Modéré,Modéré
+PHL,Philippines,Asie,-,0,0,,33,0,0,0,73.2,Modéré,Élevé
+KAZ,Kazakhstan,Asie,-,0,0,,40,0,0,0,76.0,Modéré,Modéré
+UZB,Ouzbékistan,Asie,-,0,0,,32,0,0,0,72.8,Modéré,Élevé
+KGZ,Kirghizistan,Asie,-,0,0,,25,0,0,0,70.0,Modéré,Élevé
+TJK,Tadjikistan,Asie,-,0,0,,19,0,0,0,67.6,Modéré,Élevé
+TKM,Turkménistan,Asie,-,0,0,,17,0,0,0,66.8,Modéré,Élevé
+MNG,Mongolie,Asie,-,0,0,,33,0,0,0,73.2,Modéré,Élevé
+ARE,Émirats arabes unis,Moyen-Orient,-,0,0,,68,0,1,0,81.2,Faible,Standard
+SAU,Arabie saoudite,Moyen-Orient,-,0,0,,59,0,0,0,83.6,Faible,Standard
+QAT,Qatar,Moyen-Orient,-,0,0,,59,0,0,0,83.6,Faible,Standard
+KWT,Koweït,Moyen-Orient,grise,0,0,,46,0,0,0,62.4,Modéré,Modéré
+BHR,Bahreïn,Moyen-Orient,-,0,0,,53,0,0,0,81.2,Faible,Modéré
+OMN,Oman,Moyen-Orient,-,0,0,,55,0,0,0,82.0,Faible,Standard
+JOR,Jordanie,Moyen-Orient,-,0,0,,49,0,0,0,79.6,Modéré,Modéré
+ISR,Israël,Moyen-Orient,-,0,0,,64,1,0,0,75.6,Modéré,Standard
+PSE,Palestine,Moyen-Orient,-,0,1,UE/OFAC (Hamas - gel ciblé),0,1,0,0,63.0,Modéré,Modéré
+LBN,Liban,Moyen-Orient,grise,1,1,UE/OFAC (Hezbollah - ciblé),22,1,0,0,23.8,Très élevé,Élevé
+SYR,Syrie,Moyen-Orient,grise,1,2,"ONU (HTS), UE/OFAC (allègements 2025, ciblé)",12,1,0,0,10.8,Très élevé,Élevé
+IRQ,Irak,Moyen-Orient,grise,0,1,"ONU (résiduel), OFAC (ciblé)",26,1,0,0,35.4,Très élevé,Élevé
+IRN,Iran,Moyen-Orient,noire,1,3,"ONU (snapback 2025), UE, OFAC (embargo global)",23,1,0,0,0.0,Très élevé,Élevé
+YEM,Yémen,Moyen-Orient,grise,1,1,ONU (Houthis - rés. 2140),13,1,0,0,20.2,Très élevé,Élevé
+EGY,Égypte,Afrique,-,0,0,,30,0,0,0,72.0,Modéré,Élevé
+LBY,Libye,Afrique,-,0,2,"ONU (embargo armes, gel), UE",13,1,0,0,37.2,Très élevé,Élevé
+TUN,Tunisie,Afrique,-,0,1,UE (détournement de fonds publics),39,0,0,0,66.6,Modéré,Modéré
+DZA,Algérie,Afrique,-,1,0,,34,0,0,0,63.6,Modéré,Élevé
+MAR,Maroc,Afrique,-,0,0,,37,0,0,0,74.8,Modéré,Modéré
+MRT,Mauritanie,Afrique,-,0,0,,30,0,0,0,72.0,Modéré,Élevé
+SEN,Sénégal,Afrique,-,0,0,,45,0,0,0,78.0,Modéré,Modéré
+MLI,Mali,Afrique,-,0,1,UE (gel ciblé),27,1,0,0,51.8,Élevé,Élevé
+BFA,Burkina Faso,Afrique,-,0,0,,41,1,0,0,66.4,Modéré,Modéré
+NER,Niger,Afrique,-,0,1,UE (gel ciblé),34,1,0,0,54.6,Élevé,Élevé
+TCD,Tchad,Afrique,-,0,0,,21,1,0,0,58.4,Élevé,Élevé
+NGA,Nigeria,Afrique,-,0,0,,26,1,0,0,60.4,Élevé,Élevé
+GHA,Ghana,Afrique,-,0,0,,42,0,0,0,76.8,Modéré,Modéré
+CIV,Côte d'Ivoire,Afrique,grise,1,0,,45,0,0,0,52.0,Élevé,Modéré
+GIN,Guinée,Afrique,-,0,1,UE (gel ciblé),28,0,0,0,62.2,Modéré,Élevé
+GNB,Guinée-Bissau,Afrique,-,0,1,ONU/UE (gel ciblé),21,0,0,0,59.4,Élevé,Élevé
+SLE,Sierra Leone,Afrique,-,0,0,,33,0,0,0,73.2,Modéré,Élevé
+LBR,Liberia,Afrique,-,0,0,,25,0,0,0,70.0,Modéré,Élevé
+TGO,Togo,Afrique,-,0,0,,32,0,0,0,72.8,Modéré,Élevé
+BEN,Bénin,Afrique,-,0,0,,45,0,0,0,78.0,Modéré,Modéré
+CMR,Cameroun,Afrique,grise,1,0,,26,1,0,0,34.4,Très élevé,Élevé
+GAB,Gabon,Afrique,-,0,0,,27,0,0,0,70.8,Modéré,Élevé
+COG,Congo,Afrique,-,0,0,,23,0,0,0,69.2,Modéré,Élevé
+COD,RD Congo,Afrique,grise,1,1,"ONU/UE (embargo armes, gel)",20,1,0,0,23.0,Très élevé,Élevé
+CAF,Centrafrique,Afrique,-,0,1,ONU/UE (embargo armes),24,1,0,0,50.6,Élevé,Élevé
+SDN,Soudan,Afrique,-,0,2,"ONU/UE/OFAC (Darfour, RSF)",15,1,0,0,38.0,Très élevé,Élevé
+SSD,Soudan du Sud,Afrique,grise,1,1,ONU (embargo armes),8,1,0,0,18.2,Très élevé,Élevé
+ETH,Éthiopie,Afrique,-,0,0,,37,1,0,0,64.8,Modéré,Modéré
+ERI,Érythrée,Afrique,-,0,1,UE (gel ciblé),13,0,0,0,56.2,Élevé,Élevé
+SOM,Somalie,Afrique,-,0,1,"ONU (Al-Shabaab, embargo armes)",9,1,0,0,44.6,Élevé,Élevé
+KEN,Kenya,Afrique,grise,1,0,,32,0,0,0,46.8,Élevé,Élevé
+UGA,Ouganda,Afrique,-,0,0,,26,0,0,0,70.4,Modéré,Élevé
+TZA,Tanzanie,Afrique,-,0,0,,41,0,0,0,76.4,Modéré,Modéré
+RWA,Rwanda,Afrique,-,0,0,,57,0,0,0,82.8,Faible,Standard
+BDI,Burundi,Afrique,-,0,1,UE (gel ciblé),17,0,0,0,57.8,Élevé,Élevé
+AGO,Angola,Afrique,grise,1,0,,32,0,0,0,46.8,Élevé,Élevé
+ZMB,Zambie,Afrique,-,0,0,,39,0,0,0,75.6,Modéré,Modéré
+ZWE,Zimbabwe,Afrique,-,0,1,UE (embargo armes),21,0,0,0,59.4,Élevé,Élevé
+MOZ,Mozambique,Afrique,-,0,0,,25,1,0,0,60.0,Élevé,Élevé
+MDG,Madagascar,Afrique,-,0,0,,26,0,0,0,70.4,Modéré,Élevé
+MUS,Maurice,Afrique,-,0,0,,51,0,1,0,74.4,Modéré,Modéré
+NAM,Namibie,Afrique,-,1,0,,49,0,0,0,69.6,Modéré,Modéré
+BWA,Botswana,Afrique,-,0,0,,57,0,0,0,82.8,Faible,Standard
+ZAF,Afrique du Sud,Afrique,-,0,0,,41,0,0,0,76.4,Modéré,Modéré
+AUS,Australie,Océanie,-,0,0,,77,0,0,0,90.8,Faible,Standard
+NZL,Nouvelle-Zélande,Océanie,-,0,0,,83,0,0,0,93.2,Faible,Standard
+PNG,Papouasie-Nouvelle-Guinée,Océanie,grise,0,0,,31,0,0,0,56.4,Élevé,Élevé
+VUT,Vanuatu,Océanie,-,1,0,,0,0,1,0,66.0,Modéré,Modéré
+FJI,Fidji,Océanie,-,0,0,,0,0,0,0,82.0,Faible,Modéré

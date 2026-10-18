@@ -1,0 +1,38 @@
+id,secteur,domaine,point_de_controle,niveau,frequence,methode_echantillon,indicateur,seuil_alerte,reference
+CTL-001,COMMUN,Gouvernance,Validation annuelle de la classification des risques par l'organe de direction,2e niveau,Annuelle,Revue du PV de validation,Date de dernière validation,> 12 mois,CMF L.561-4-1; AMLR art. 9-11
+CTL-002,COMMUN,Gouvernance,Rapport annuel LCB-FT et gel (RACI) transmis au superviseur,2e niveau,Annuelle,Contrôle de complétude du rapport,Rapport transmis dans les délais,Retard,Arrêté 6 janv. 2021
+CTL-003,COMMUN,KYC,Complétude des dossiers à l'entrée en relation (4 yeux),1er niveau,Continue,"100 % des ouvertures risque élevé, 5 % des autres",Taux de dossiers complets,< 95 %,CMF L.561-5
+CTL-004,COMMUN,KYC,Contrôle qualité des dossiers KYC,2e niveau,Trimestrielle,Échantillon aléatoire de 30 dossiers stratifié par risque,Taux d'anomalies,> 5 %,CMF R.561-5
+CTL-005,COMMUN,KYC,Respect des échéances de revue périodique,2e niveau,Mensuelle,Extraction des dossiers échus,Dossiers en retard de revue,> 2 % du portefeuille,CMF L.561-6; AMLR art. 26
+CTL-006,COMMUN,Bénéficiaires effectifs,Identification des BE et rapprochement RBE (signalement des divergences),2e niveau,Semestrielle,Échantillon de 20 personnes morales,Taux de BE identifiés,< 98 %,CMF L.561-46; AMLR art. 51-58
+CTL-007,COMMUN,PPE,Détection PPE et accord de la direction,2e niveau,Trimestrielle,100 % des nouvelles PPE,PPE sans accord direction,> 0,CMF R.561-20-2; AMLR art. 42
+CTL-008,COMMUN,PPE,Revue annuelle des PPE (origine du patrimoine),2e niveau,Annuelle,100 % du registre PPE,Revues PPE en retard,> 0,AMLR art. 44
+CTL-009,COMMUN,Gel des avoirs,Mise à jour des listes de gel dans l'outil (UE/ONU/DG Trésor),1er niveau,Quotidienne,Journal de chargement des listes,Délai de prise en compte d'une nouvelle désignation,> 24 h,CMF L.562-4-1
+CTL-010,COMMUN,Gel des avoirs,Test d'efficacité du filtrage (jeu de noms tests),2e niveau,Semestrielle,"Injection de 50 noms tests (variantes, translittérations)",Taux de détection,< 100 % des vrais positifs,Arrêté 6 janv. 2021 art. 12
+CTL-011,COMMUN,Gel des avoirs,Traitement des alertes de filtrage,1er niveau,Continue,Revue des alertes et justifications de faux positifs,Alertes > 24 h non traitées,> 0,CMF L.562-4
+CTL-012,COMMUN,Surveillance,"Calibrage des scénarios (profil financier, pays effectifs)",2e niveau,Annuelle,Revue below/above-the-line,Scénarios revus dans l'année,< 100 %,Décision ACPR Delubac 2025 (griefs 1 et 3)
+CTL-013,COMMUN,Surveillance,Stock et délais de traitement des alertes,2e niveau,Mensuelle,Tableau de bord des alertes,Alertes > 30 jours,> 5 % du stock,Décision ACPR Delubac 2025 (grief 2)
+CTL-014,COMMUN,Examen renforcé,Finalisation des examens renforcés dans les délais,2e niveau,Mensuelle,100 % des examens ouverts,Examens > 60 jours,> 0,CMF L.561-10-2; décision Delubac (grief 5)
+CTL-015,COMMUN,Déclarations,Qualité et délai des déclarations de soupçon,2e niveau,Trimestrielle,Revue de 100 % des DS et de 10 % des classements sans suite,Délai moyen détection → DS,> 30 jours,CMF L.561-15
+CTL-016,COMMUN,Déclarations,Fins de relation pour motif LCB-FT précédées d'un examen de l'opportunité d'une DS,2e niveau,Trimestrielle,100 % des clôtures LCB-FT,Clôtures sans analyse DS,> 0,Décision ACPR Delubac 2025 (grief 2)
+CTL-017,COMMUN,Formation,Taux de formation annuelle des collaborateurs exposés,2e niveau,Annuelle,Registre des formations et certificats,Taux de collaborateurs formés,< 95 %,CMF L.561-34
+CTL-018,COMMUN,Externalisation,"Contrôle des prestataires (KYC, filtrage, PSEE)",2e niveau,Annuelle,Audit / questionnaire prestataire,Prestataires critiques contrôlés,< 100 %,Arrêté 3 nov. 2014; DORA
+CTL-019,COMMUN,Contrôle périodique,Mission d'audit interne du dispositif LCB-FT,3e niveau,Tous les 2 à 3 ans,Mission d'audit sur l'ensemble du dispositif,Recommandations soldées dans les délais,< 80 %,Arrêté 3 nov. 2014
+CTL-020,COMMUN,Modèles & IA,"Validation et suivi des modèles de scoring (dérive, biais)",2e niveau,Semestrielle,"PSI, back-testing, revue des seuils",PSI maximal,"> 0,25",AI Act 2024/1689; bonnes pratiques
+CTL-021,BANQUE,Spécifique,Due diligence des correspondants bancaires hors UE,2e niveau,Annuelle,100 % des correspondants hors UE,Questionnaires Wolfsberg à jour,< 100 %,CMF L.561-10-3
+CTL-022,BANQUE,Spécifique,Origine du patrimoine en banque privée,2e niveau,Semestrielle,Échantillon de 20 clients patrimoniaux,Dossiers justifiés,< 95 %,ASR 2023 §3.2.3
+CTL-023,FINTECH,Spécifique,Contrôle des agents et distributeurs de monnaie électronique,2e niveau,Semestrielle,Visites / audits sur échantillon d'agents,Agents audités,< 20 % par an,CMF L.523-1; L.525-8
+CTL-024,FINTECH,Spécifique,Détection des comptes de passage / mules,1er niveau,Continue,Revue des alertes ratio entrées/sorties,Comptes mules détectés après fraude signalée,Hausse,ASR 2023 §3.3
+CTL-025,FINTECH,Spécifique,Traçabilité des IBAN virtuels jusqu'au donneur d'ordre,2e niveau,Trimestrielle,Échantillon de 30 flux IBAN virtuels,Flux tracés,< 100 %,ASR 2023 §2.2.2
+CTL-026,ASSURANCE,Spécifique,Contrôle des rachats anticipés et tiers payeurs,2e niveau,Trimestrielle,100 % des rachats < 2 ans au-delà du seuil,Rachats analysés,< 100 %,Lignes directrices ACPR
+CTL-027,ASSURANCE,Spécifique,Identification du bénéficiaire au dénouement,1er niveau,Continue,Contrôle avant paiement,Paiements sans identification,> 0,CMF R.561-12
+CTL-028,JEUX,Spécifique,Identification des joueurs au-delà des seuils et origine des fonds,1er niveau,Continue,Contrôle des paiements de gains,Gains payés sans identification,> 0,CMF R.561-10; ANJ
+CTL-029,JEUX,Spécifique,Détection du chip dumping et des paris anormaux,2e niveau,Mensuelle,Requêtes sur transferts inter-joueurs,Alertes traitées,< 100 %,ANJ
+CTL-030,IMMOBILIER,Spécifique,Origine des fonds de l'acquéreur et cohérence du prix (DVF),2e niveau,Trimestrielle,Échantillon de 15 transactions,Dossiers conformes,< 95 %,CMF L.561-2 8°; Tracfin cas 7
+CTL-031,TRANSFERT,Spécifique,Complétude des informations TFR,1er niveau,Continue,Contrôle automatique des messages,Transferts incomplets exécutés,> 0,Règl. (UE) 2023/1113
+CTL-032,TRANSFERT,Spécifique,Scoring et audit des agents,2e niveau,Trimestrielle,Agents à volumes atypiques,Agents à risque audités,< 100 %,ASR 2023 §3.3.3
+CTL-033,CRYPTO,Spécifique,Travel Rule et vérification des wallets non hébergés,1er niveau,Continue,Contrôle des transferts > 1 000 €,Transferts sans vérification,> 0,TFR art. 14
+CTL-034,CRYPTO,Spécifique,"Analyse blockchain des dépôts (mixeurs, darknet, sanctions)",1er niveau,Continue,100 % des dépôts entrants,Dépôts à risque non bloqués,> 0,MiCA; GAFI R.15
+CTL-035,CHANGE,Spécifique,Agrégation des opérations multi-guichets,2e niveau,Mensuelle,Requête sur identités récurrentes,Fractionnements détectés,Hausse,ASR 2023 §3.5
+CTL-036,ENTREPRISE,Spécifique,"Évaluation des tiers (anticorruption, sanctions, export)",2e niveau,Annuelle,Échantillon de 25 tiers à risque,Tiers évalués avant contrat,< 100 %,Loi Sapin II art. 17; Règl. 2021/821
+CTL-037,ENTREPRISE,Spécifique,Contrôles comptables anticorruption,2e niveau,Trimestrielle,"Revue des comptes sensibles (commissions, cadeaux)",Écritures sans justificatif,> 0,Recommandations AFA

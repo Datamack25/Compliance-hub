@@ -1,0 +1,106 @@
+type_client,piece,niveau_vigilance,reference
+Personne physique résidente,Pièce d'identité officielle en cours de validité avec photo,Standard,CMF R.561-5
+Personne physique résidente,Justificatif de domicile < 3 mois,Standard,Bonnes pratiques ACPR
+Personne physique résidente,"Profession, revenus et patrimoine estimés",Standard,CMF R.561-12
+Personne physique résidente,Objet et nature envisagée de la relation d'affaires,Standard,CMF L.561-5-1
+Personne physique résidente,Filtrage PPE / sanctions / presse négative,Standard,CMF L.561-10; L.562-4-1
+Personne physique résidente,Justificatif d'origine des fonds (au-delà des seuils internes),Renforcée,CMF L.561-10-2
+Personne physique résidente,Justificatif d'origine du patrimoine,Renforcée,AMLR art. 34
+Personne physique résidente,Second document d'identité / vérification indépendante,Renforcée,CMF R.561-5-2
+Personne physique non-résidente,Pièce d'identité officielle en cours de validité avec photo,Standard,CMF R.561-5
+Personne physique non-résidente,Justificatif de domicile < 3 mois,Standard,Bonnes pratiques ACPR
+Personne physique non-résidente,"Profession, revenus et patrimoine estimés",Standard,CMF R.561-12
+Personne physique non-résidente,Objet et nature envisagée de la relation d'affaires,Standard,CMF L.561-5-1
+Personne physique non-résidente,Filtrage PPE / sanctions / presse négative,Standard,CMF L.561-10; L.562-4-1
+Personne physique non-résidente,Justificatif d'origine des fonds (au-delà des seuils internes),Renforcée,CMF L.561-10-2
+Personne physique non-résidente,Justificatif d'origine du patrimoine,Renforcée,AMLR art. 34
+Personne physique non-résidente,Second document d'identité / vérification indépendante,Renforcée,CMF R.561-5-2
+Mineur / majeur protégé,Pièce d'identité officielle en cours de validité avec photo,Standard,CMF R.561-5
+Mineur / majeur protégé,Justificatif de domicile < 3 mois,Standard,Bonnes pratiques ACPR
+Mineur / majeur protégé,"Profession, revenus et patrimoine estimés",Standard,CMF R.561-12
+Mineur / majeur protégé,Objet et nature envisagée de la relation d'affaires,Standard,CMF L.561-5-1
+Mineur / majeur protégé,Filtrage PPE / sanctions / presse négative,Standard,CMF L.561-10; L.562-4-1
+Mineur / majeur protégé,Justificatif d'origine des fonds (au-delà des seuils internes),Renforcée,CMF L.561-10-2
+Mineur / majeur protégé,Justificatif d'origine du patrimoine,Renforcée,AMLR art. 34
+Mineur / majeur protégé,Second document d'identité / vérification indépendante,Renforcée,CMF R.561-5-2
+Entrepreneur individuel / profession libérale,Pièce d'identité officielle en cours de validité avec photo,Standard,CMF R.561-5
+Entrepreneur individuel / profession libérale,Justificatif de domicile < 3 mois,Standard,Bonnes pratiques ACPR
+Entrepreneur individuel / profession libérale,"Profession, revenus et patrimoine estimés",Standard,CMF R.561-12
+Entrepreneur individuel / profession libérale,Objet et nature envisagée de la relation d'affaires,Standard,CMF L.561-5-1
+Entrepreneur individuel / profession libérale,Filtrage PPE / sanctions / presse négative,Standard,CMF L.561-10; L.562-4-1
+Entrepreneur individuel / profession libérale,Justificatif d'origine des fonds (au-delà des seuils internes),Renforcée,CMF L.561-10-2
+Entrepreneur individuel / profession libérale,Justificatif d'origine du patrimoine,Renforcée,AMLR art. 34
+Entrepreneur individuel / profession libérale,Second document d'identité / vérification indépendante,Renforcée,CMF R.561-5-2
+Personne physique non-résidente,Justificatif de résidence fiscale / NIF,Standard,CRS/FATCA
+Mineur / majeur protégé,Jugement de tutelle/curatelle ou livret de famille,Standard,Code civil
+Mineur / majeur protégé,Identité du représentant légal,Standard,CMF R.561-5
+Entrepreneur individuel / profession libérale,Extrait INSEE/RNE ou inscription à l'ordre,Standard,CMF R.561-5
+"Société commerciale (SAS, SARL, SA)",Extrait Kbis < 3 mois ou équivalent étranger,Standard,CMF R.561-5
+"Société commerciale (SAS, SARL, SA)",Statuts certifiés conformes,Standard,CMF R.561-5
+"Société commerciale (SAS, SARL, SA)",Identité et pouvoirs du représentant légal,Standard,CMF R.561-5
+"Société commerciale (SAS, SARL, SA)",Identification des bénéficiaires effectifs (≥ 25 % ou contrôle) + RBE,Standard,CMF R.561-1; AMLR art. 51
+"Société commerciale (SAS, SARL, SA)",Organigramme de détention jusqu'aux personnes physiques,Standard,AMLR art. 52
+"Société commerciale (SAS, SARL, SA)","Activité, chiffre d'affaires, pays d'activité, principaux partenaires",Standard,CMF R.561-12
+"Société commerciale (SAS, SARL, SA)",Derniers comptes annuels / liasse fiscale,Renforcée,Bonnes pratiques
+"Société commerciale (SAS, SARL, SA)",Origine des fonds et cohérence des flux attendus,Renforcée,CMF L.561-10-2
+"Société commerciale (SAS, SARL, SA)",Visite sur site / entretien avec le dirigeant,Renforcée,Bonnes pratiques
+Société cotée,Extrait Kbis < 3 mois ou équivalent étranger,Standard,CMF R.561-5
+Société cotée,Statuts certifiés conformes,Standard,CMF R.561-5
+Société cotée,Identité et pouvoirs du représentant légal,Standard,CMF R.561-5
+Société cotée,Identification des bénéficiaires effectifs (≥ 25 % ou contrôle) + RBE,Standard,CMF R.561-1; AMLR art. 51
+Société cotée,Organigramme de détention jusqu'aux personnes physiques,Standard,AMLR art. 52
+Société cotée,"Activité, chiffre d'affaires, pays d'activité, principaux partenaires",Standard,CMF R.561-12
+Société cotée,Derniers comptes annuels / liasse fiscale,Renforcée,Bonnes pratiques
+Société cotée,Origine des fonds et cohérence des flux attendus,Renforcée,CMF L.561-10-2
+Société cotée,Visite sur site / entretien avec le dirigeant,Renforcée,Bonnes pratiques
+Société civile / SCI,Extrait Kbis < 3 mois ou équivalent étranger,Standard,CMF R.561-5
+Société civile / SCI,Statuts certifiés conformes,Standard,CMF R.561-5
+Société civile / SCI,Identité et pouvoirs du représentant légal,Standard,CMF R.561-5
+Société civile / SCI,Identification des bénéficiaires effectifs (≥ 25 % ou contrôle) + RBE,Standard,CMF R.561-1; AMLR art. 51
+Société civile / SCI,Organigramme de détention jusqu'aux personnes physiques,Standard,AMLR art. 52
+Société civile / SCI,"Activité, chiffre d'affaires, pays d'activité, principaux partenaires",Standard,CMF R.561-12
+Société civile / SCI,Derniers comptes annuels / liasse fiscale,Renforcée,Bonnes pratiques
+Société civile / SCI,Origine des fonds et cohérence des flux attendus,Renforcée,CMF L.561-10-2
+Société civile / SCI,Visite sur site / entretien avec le dirigeant,Renforcée,Bonnes pratiques
+Association / fondation / fonds de dotation,Extrait Kbis < 3 mois ou équivalent étranger,Standard,CMF R.561-5
+Association / fondation / fonds de dotation,Statuts certifiés conformes,Standard,CMF R.561-5
+Association / fondation / fonds de dotation,Identité et pouvoirs du représentant légal,Standard,CMF R.561-5
+Association / fondation / fonds de dotation,Identification des bénéficiaires effectifs (≥ 25 % ou contrôle) + RBE,Standard,CMF R.561-1; AMLR art. 51
+Association / fondation / fonds de dotation,Organigramme de détention jusqu'aux personnes physiques,Standard,AMLR art. 52
+Association / fondation / fonds de dotation,"Activité, chiffre d'affaires, pays d'activité, principaux partenaires",Standard,CMF R.561-12
+Association / fondation / fonds de dotation,Derniers comptes annuels / liasse fiscale,Renforcée,Bonnes pratiques
+Association / fondation / fonds de dotation,Origine des fonds et cohérence des flux attendus,Renforcée,CMF L.561-10-2
+Association / fondation / fonds de dotation,Visite sur site / entretien avec le dirigeant,Renforcée,Bonnes pratiques
+Trust / fiducie / construction juridique,Extrait Kbis < 3 mois ou équivalent étranger,Standard,CMF R.561-5
+Trust / fiducie / construction juridique,Statuts certifiés conformes,Standard,CMF R.561-5
+Trust / fiducie / construction juridique,Identité et pouvoirs du représentant légal,Standard,CMF R.561-5
+Trust / fiducie / construction juridique,Identification des bénéficiaires effectifs (≥ 25 % ou contrôle) + RBE,Standard,CMF R.561-1; AMLR art. 51
+Trust / fiducie / construction juridique,Organigramme de détention jusqu'aux personnes physiques,Standard,AMLR art. 52
+Trust / fiducie / construction juridique,"Activité, chiffre d'affaires, pays d'activité, principaux partenaires",Standard,CMF R.561-12
+Trust / fiducie / construction juridique,Derniers comptes annuels / liasse fiscale,Renforcée,Bonnes pratiques
+Trust / fiducie / construction juridique,Origine des fonds et cohérence des flux attendus,Renforcée,CMF L.561-10-2
+Trust / fiducie / construction juridique,Visite sur site / entretien avec le dirigeant,Renforcée,Bonnes pratiques
+Personne morale étrangère,Extrait Kbis < 3 mois ou équivalent étranger,Standard,CMF R.561-5
+Personne morale étrangère,Statuts certifiés conformes,Standard,CMF R.561-5
+Personne morale étrangère,Identité et pouvoirs du représentant légal,Standard,CMF R.561-5
+Personne morale étrangère,Identification des bénéficiaires effectifs (≥ 25 % ou contrôle) + RBE,Standard,CMF R.561-1; AMLR art. 51
+Personne morale étrangère,Organigramme de détention jusqu'aux personnes physiques,Standard,AMLR art. 52
+Personne morale étrangère,"Activité, chiffre d'affaires, pays d'activité, principaux partenaires",Standard,CMF R.561-12
+Personne morale étrangère,Derniers comptes annuels / liasse fiscale,Renforcée,Bonnes pratiques
+Personne morale étrangère,Origine des fonds et cohérence des flux attendus,Renforcée,CMF L.561-10-2
+Personne morale étrangère,Visite sur site / entretien avec le dirigeant,Renforcée,Bonnes pratiques
+Société cotée,Preuve de cotation sur marché réglementé (vigilance simplifiée possible),Simplifiée,CMF R.561-15
+Association / fondation / fonds de dotation,Récépissé de déclaration en préfecture / JOAFE,Standard,Loi 1901
+Association / fondation / fonds de dotation,Liste des dirigeants et principaux donateurs/bénéficiaires,Renforcée,GAFI R.8
+Trust / fiducie / construction juridique,"Acte constitutif, constituant, fiduciaire, bénéficiaires, protecteur",Standard,CMF R.561-3-0
+Trust / fiducie / construction juridique,Enregistrement au registre des fiducies / trusts,Standard,CGI 1649 AB
+Personne morale étrangère,Traduction certifiée et apostille des documents,Standard,Bonnes pratiques
+PSAN / CASP (contrepartie),"Agrément / enregistrement (AMF, ACPR, REGAFI)",Standard,MiCA; CMF L.522-6
+PSAN / CASP (contrepartie),Questionnaire LCB-FT (type Wolfsberg CBDDQ),Standard,CMF L.561-10-3
+PSAN / CASP (contrepartie),Politique Travel Rule et outil blockchain analytics,Renforcée,Règl. (UE) 2023/1113
+Établissement de paiement / EME (contrepartie),"Agrément / enregistrement (AMF, ACPR, REGAFI)",Standard,MiCA; CMF L.522-6
+Établissement de paiement / EME (contrepartie),Questionnaire LCB-FT (type Wolfsberg CBDDQ),Standard,CMF L.561-10-3
+Établissement de paiement / EME (contrepartie),Politique Travel Rule et outil blockchain analytics,Renforcée,Règl. (UE) 2023/1113
+PPE (tout type),Accord d'un membre de la direction pour l'entrée en relation,Renforcée,CMF R.561-20-2; AMLR art. 42
+PPE (tout type),Origine du patrimoine et des fonds,Renforcée,AMLR art. 42
+PPE (tout type),Surveillance renforcée continue + revue annuelle,Renforcée,AMLR art. 42

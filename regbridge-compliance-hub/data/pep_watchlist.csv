@@ -1,0 +1,31 @@
+id,nom,iso3,pays,fonction,statut,date_identification,prochaine_revue,risque_pays_ppe,relation
+PPE-001,Marc Diallo (fictif),VUT,Vanuatu,Ministre / secrétaire d'État,En fonction,2026-08-24,2027-08-24,Modéré,Client actif
+PPE-002,Sofia Pierre-Louis (fictif),BIH,Bosnie-Herzégovine,Élu régional / maire > 50 000 hab. (AMLR art. 2),Ancienne PPE (> 12 mois),2026-06-06,2027-06-06,Élevé,Client actif
+PPE-003,Camille Mbeki (fictif),AGO,Angola,Dirigeant d'entreprise publique,En fonction,2026-08-17,2027-08-17,Élevé,Client actif
+PPE-004,Olga Martin (fictif),CIV,Côte d'Ivoire,Membre de la famille d'une PPE,Ancienne PPE (> 12 mois),2026-08-22,2027-08-22,Modéré,Bénéficiaire effectif
+PPE-005,Rafael Mensah (fictif),COD,RD Congo,Dirigeant d'entreprise publique,Ancienne PPE (< 12 mois),2026-02-05,2027-02-05,Élevé,Client actif
+PPE-006,Lucas Diallo (fictif),UKR,Ukraine,Élu régional / maire > 50 000 hab. (AMLR art. 2),En fonction,2025-07-13,2026-07-13,Élevé,Client actif
+PPE-007,Nadia Mbeki (fictif),NPL,Népal,Ministre / secrétaire d'État,Ancienne PPE (< 12 mois),2026-06-16,2027-06-16,Élevé,Prospect
+PPE-008,Camille Pierre-Louis (fictif),MOZ,Mozambique,Dirigeant de banque centrale,Ancienne PPE (< 12 mois),2024-06-14,2025-06-14,Élevé,Bénéficiaire effectif
+PPE-009,Olga Diallo (fictif),MCO,Monaco,Dirigeant d'entreprise publique,Ancienne PPE (> 12 mois),2026-06-30,2027-06-30,Modéré,Bénéficiaire effectif
+PPE-010,Marc Mbeki (fictif),MYS,Malaisie,Membre de la famille d'une PPE,En fonction,2026-03-06,2027-03-06,Modéré,Bénéficiaire effectif
+PPE-011,Pierre Mbeki (fictif),PRY,Paraguay,Dirigeant de banque centrale,Ancienne PPE (< 12 mois),2026-06-29,2027-06-29,Élevé,Prospect
+PPE-012,Lucas Joseph (fictif),EGY,Égypte,Personne étroitement associée à une PPE,Ancienne PPE (< 12 mois),2024-05-17,2025-05-17,Élevé,Prospect
+PPE-013,Marc Rossi (fictif),COL,Colombie,Personne étroitement associée à une PPE,Ancienne PPE (> 12 mois),2025-12-19,2026-12-19,Modéré,Client actif
+PPE-014,Olga Pierre-Louis (fictif),MDG,Madagascar,Personne étroitement associée à une PPE,En fonction,2026-03-27,2027-03-27,Élevé,Client actif
+PPE-015,Sofia Pierre-Louis (fictif),TUN,Tunisie,Dirigeant d'entreprise publique,Ancienne PPE (> 12 mois),2025-12-16,2026-12-16,Modéré,Client actif
+PPE-016,Camille Lefèvre (fictif),AFG,Afghanistan,Chef d'État / de gouvernement,Ancienne PPE (< 12 mois),2026-01-27,2027-01-27,Élevé,Prospect
+PPE-017,Marc Lefèvre (fictif),HUN,Hongrie,Membre d'une cour suprême / constitutionnelle,En fonction,2025-02-15,2026-02-15,Modéré,Bénéficiaire effectif
+PPE-018,Rafael Joseph (fictif),NGA,Nigeria,Dirigeant d'entreprise publique,Ancienne PPE (< 12 mois),2024-11-29,2025-11-29,Élevé,Client actif
+PPE-019,Olga Diallo (fictif),HND,Honduras,Élu régional / maire > 50 000 hab. (AMLR art. 2),Ancienne PPE (> 12 mois),2025-02-21,2026-02-21,Élevé,Bénéficiaire effectif
+PPE-020,Lucas Martin (fictif),ISR,Israël,Membre de la famille d'une PPE,En fonction,2025-08-06,2026-08-06,Standard,Bénéficiaire effectif
+PPE-021,Camille Mbeki (fictif),TCD,Tchad,Ministre / secrétaire d'État,En fonction,2024-08-06,2025-08-06,Élevé,Bénéficiaire effectif
+PPE-022,Kwame Mbeki (fictif),UKR,Ukraine,Personne étroitement associée à une PPE,Ancienne PPE (< 12 mois),2025-07-13,2026-07-13,Élevé,Prospect
+PPE-023,Fatou Ivanova (fictif),ZMB,Zambie,Dirigeant de parti politique,En fonction,2025-03-26,2026-03-26,Modéré,Bénéficiaire effectif
+PPE-024,Fatou Rossi (fictif),NOR,Norvège,Personne étroitement associée à une PPE,Ancienne PPE (< 12 mois),2025-03-18,2026-03-18,Standard,Client actif
+PPE-025,Rafael Durand (fictif),PRI,Porto Rico,Dirigeant d'entreprise publique,Ancienne PPE (> 12 mois),2026-04-10,2027-04-10,Modéré,Bénéficiaire effectif
+PPE-026,Aminata Ivanova (fictif),HTI,Haïti,Dirigeant d'organisation internationale,En fonction,2024-07-30,2025-07-30,Élevé,Bénéficiaire effectif
+PPE-027,Kwame Martin (fictif),CHN,Chine,Personne étroitement associée à une PPE,En fonction,2025-04-17,2026-04-17,Modéré,Prospect
+PPE-028,Olga Durand (fictif),BLR,Biélorussie,Dirigeant d'organisation internationale,Ancienne PPE (> 12 mois),2024-07-13,2025-07-13,Élevé,Prospect
+PPE-029,Lucas Diallo (fictif),NER,Niger,Chef d'État / de gouvernement,En fonction,2026-05-27,2027-05-27,Élevé,Client actif
+PPE-030,Jean Pierre-Louis (fictif),CRI,Costa Rica,Membre de la famille d'une PPE,Ancienne PPE (< 12 mois),2026-06-30,2027-06-30,Standard,Client actif

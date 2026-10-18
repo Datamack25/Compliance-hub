@@ -1,0 +1,37 @@
+id,secteur,domaine,exigence,reference
+COMMUN-01,COMMUN,Gouvernance,Responsable LCB-FT désigné et membre de la direction responsable (AMLR art. 11),AMLR art. 11; arrêté 6 janv. 2021 art. 4
+COMMUN-02,COMMUN,Gouvernance,Classification des risques LCB-FT formalisée et mise à jour,CMF L.561-4-1
+COMMUN-03,COMMUN,Gouvernance,"Procédures écrites (KYC, EDD, DS, gel) approuvées",Arrêté 6 janv. 2021
+COMMUN-04,COMMUN,KYC,Identification et vérification à l'entrée en relation,CMF L.561-5
+COMMUN-05,COMMUN,KYC,Identification des bénéficiaires effectifs et consultation RBE,CMF L.561-46
+COMMUN-06,COMMUN,KYC,Mise à jour périodique des dossiers selon le niveau de risque,CMF L.561-6
+COMMUN-07,COMMUN,Vigilance renforcée,"Dispositif PPE (détection, accord direction, origine du patrimoine)",CMF L.561-10
+COMMUN-08,COMMUN,Vigilance renforcée,Pays tiers à haut risque (UE/GAFI) – mesures renforcées,CMF L.561-10 4°
+COMMUN-09,COMMUN,Surveillance,Surveillance des opérations calibrée sur le profil client,Décision ACPR Delubac 2025
+COMMUN-10,COMMUN,Surveillance,Délais de traitement des alertes pilotés (SLA),Décision ACPR Delubac 2025
+COMMUN-11,COMMUN,Surveillance,Examen renforcé documenté (L.561-10-2),CMF L.561-10-2
+COMMUN-12,COMMUN,Déclaration,Processus de DS Tracfin (Ermes) et traçabilité des décisions,CMF L.561-15
+COMMUN-13,COMMUN,Gel des avoirs,Filtrage des clients et des opérations contre les listes UE/ONU/France,CMF L.562-4-1
+COMMUN-14,COMMUN,Formation,Plan de formation annuel et attestations,CMF L.561-34
+COMMUN-15,COMMUN,Contrôle,Contrôle permanent et périodique du dispositif,Arrêté 3 nov. 2014
+COMMUN-16,COMMUN,AMLR 2027,Gap analysis AMLR réalisée et feuille de route validée,Règl. (UE) 2024/1624
+COMMUN-17,COMMUN,AMLR 2027,Plan de remédiation du stock clients (art. 26),AMLR art. 26
+FINTECH-01,FINTECH,Spécifique,Contrôle des agents et distributeurs de monnaie électronique,CMF L.523-1
+FINTECH-02,FINTECH,Spécifique,Traçabilité des IBAN virtuels jusqu'au donneur d'ordre final,ASR 2023
+FINTECH-03,FINTECH,Spécifique,Détection des mules financières et comptes de passage,ASR 2023
+BANQUE-01,BANQUE,Spécifique,Due diligence correspondants bancaires hors UE,CMF L.561-10-3
+BANQUE-02,BANQUE,Spécifique,Origine du patrimoine pour la banque privée,ASR 2023 §3.2.3
+ASSURANCE-01,ASSURANCE,Spécifique,Contrôle des rachats anticipés et tiers payeurs,Lignes directrices ACPR
+ASSURANCE-02,ASSURANCE,Spécifique,Identification du bénéficiaire au dénouement,CMF R.561-12
+JEUX-01,JEUX,Spécifique,Identification des joueurs au-delà des seuils (2 000 €),CMF R.561-10
+JEUX-02,JEUX,Spécifique,Suivi des gains et remboursements de mises,ANJ
+IMMOBILIER-01,IMMOBILIER,Spécifique,Vérification de l'origine des fonds de l'acquéreur,CMF L.561-2 8°
+IMMOBILIER-02,IMMOBILIER,Spécifique,Analyse du prix au regard du marché (DVF),Tracfin cas 7
+TRANSFERT-01,TRANSFERT,Spécifique,Identification dès le premier euro et contrôle TFR,Règl. (UE) 2023/1113
+TRANSFERT-02,TRANSFERT,Spécifique,Scoring des corridors et des agents,ASR 2023 §3.3.3
+CRYPTO-01,CRYPTO,Spécifique,Agrément CASP MiCA obtenu,MiCA art. 59
+CRYPTO-02,CRYPTO,Spécifique,Travel Rule et vérification des wallets non hébergés,TFR art. 14
+CRYPTO-03,CRYPTO,Spécifique,Outil d'analyse blockchain,Bonnes pratiques AMF
+CHANGE-01,CHANGE,Spécifique,Agrégation des opérations multi-guichets,ASR 2023 §3.5
+ENTREPRISE-01,ENTREPRISE,Spécifique,Cartographie anticorruption Sapin II,Loi Sapin II art. 17
+ENTREPRISE-02,ENTREPRISE,Spécifique,Évaluation des tiers et filtrage sanctions/export,Règl. (UE) 2021/821

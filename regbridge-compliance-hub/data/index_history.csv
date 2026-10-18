@@ -1,0 +1,496 @@
+date,evenement,iso3,gafi_statut,ue_pays_tiers_haut_risque,indice
+2025-12-31,Avant MAJ liste UE (déc. 2025),FRA,-,0,86.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),DEU,-,0,90.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),ITA,-,0,81.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),ESP,-,0,82.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),PRT,-,0,82.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),BEL,-,0,87.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),NLD,-,0,85.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),LUX,-,0,86.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),IRL,-,0,84.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),AUT,-,0,86.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),DNK,-,0,96.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),SWE,-,0,92.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),FIN,-,0,95.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),POL,-,0,81.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),CZE,-,0,82.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),SVK,-,0,79.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),HUN,-,0,76.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),ROU,-,0,78.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),BGR,grise,0,61.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),GRC,-,0,79.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),HRV,-,0,78.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),SVN,-,0,84.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),EST,-,0,90.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),LVA,-,0,83.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),LTU,-,0,85.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),CYP,-,0,76.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),MLT,-,0,72.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),GBR,-,0,88.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),CHE,-,0,86.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),NOR,-,0,92.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),ISL,-,0,90.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),MCO,grise,1,50.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),LIE,-,0,76.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),AND,-,0,76.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),SRB,-,0,74.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),BIH,-,0,64.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),ALB,-,0,76.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),MKD,-,0,76.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),MNE,-,0,78.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),MDA,-,0,68.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),UKR,-,0,46.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),BLR,-,0,55.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),RUS,-,0,31.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),TUR,-,0,64.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),GEO,-,0,81.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),ARM,-,0,78.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),AZE,-,0,68.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),USA,-,0,86.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),CAN,-,0,90.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),MEX,-,0,51.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),BRA,-,0,73.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),ARG,-,0,74.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),CHL,-,0,85.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),COL,-,0,65.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),PER,-,0,72.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),ECU,-,0,62.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),BOL,grise,0,55.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),VEN,grise,1,20.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),PRY,-,0,69.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),URY,-,0,90.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),PAN,-,0,67.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),CRI,-,0,83.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),GTM,-,0,61.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),HND,-,0,68.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),SLV,-,0,72.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),NIC,-,0,56.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),CUB,-,0,43.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),HTI,grise,1,21.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),DOM,-,0,74.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),JAM,-,0,77.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),TTO,-,1,66.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),BHS,-,0,79.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),BRB,-,0,81.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),VGB,grise,0,60.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),CYM,-,0,76.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),PRI,-,0,82.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),CHN,-,0,68.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),HKG,-,0,74.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),JPN,-,0,88.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),KOR,-,0,85.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),PRK,noire,1,0.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),IND,-,0,75.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),PAK,-,0,60.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),AFG,-,1,28.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),BGD,-,0,69.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),LKA,-,0,72.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),NPL,grise,1,47.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),MMR,noire,1,0.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),THA,-,0,73.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),VNM,grise,1,50.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),LAO,grise,1,47.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),KHM,-,0,68.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),MYS,-,0,80.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),SGP,-,0,87.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),IDN,-,0,74.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),PHL,-,0,73.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),KAZ,-,0,76.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),UZB,-,0,72.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),KGZ,-,0,70.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),TJK,-,0,67.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),TKM,-,0,66.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),MNG,-,0,73.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),ARE,-,0,81.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),SAU,-,0,83.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),QAT,-,0,83.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),KWT,grise,0,62.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),BHR,-,0,81.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),OMN,-,0,82.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),JOR,-,0,79.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),ISR,-,0,75.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),PSE,-,0,63.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),LBN,grise,1,23.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),SYR,grise,1,10.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),IRQ,-,0,51.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),IRN,noire,1,0.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),YEM,grise,1,20.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),EGY,-,0,72.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),LBY,-,0,37.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),TUN,-,0,66.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),DZA,grise,1,47.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),MAR,-,0,74.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),MRT,-,0,72.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),SEN,-,0,78.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),MLI,-,1,41.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),BFA,-,1,56.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),NER,-,0,54.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),TCD,-,0,58.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),NGA,-,1,50.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),GHA,-,0,76.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),CIV,grise,1,52.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),GIN,-,0,62.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),GNB,-,0,59.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),SLE,-,0,73.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),LBR,-,0,70.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),TGO,-,0,72.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),BEN,-,0,78.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),CMR,grise,1,34.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),GAB,-,0,70.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),COG,-,0,69.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),COD,grise,1,23.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),CAF,-,0,50.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),SDN,-,0,38.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),SSD,grise,1,18.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),ETH,-,0,64.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),ERI,-,0,56.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),SOM,-,0,44.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),KEN,grise,1,46.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),UGA,-,0,70.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),TZA,-,1,66.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),RWA,-,0,82.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),BDI,-,0,57.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),AGO,grise,1,46.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),ZMB,-,0,75.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),ZWE,-,0,59.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),MOZ,-,1,50.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),MDG,-,0,70.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),MUS,-,0,74.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),NAM,grise,1,53.6
+2025-12-31,Avant MAJ liste UE (déc. 2025),BWA,-,0,82.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),ZAF,-,1,66.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),AUS,-,0,90.8
+2025-12-31,Avant MAJ liste UE (déc. 2025),NZL,-,0,93.2
+2025-12-31,Avant MAJ liste UE (déc. 2025),PNG,grise,0,56.4
+2025-12-31,Avant MAJ liste UE (déc. 2025),VUT,-,1,66.0
+2025-12-31,Avant MAJ liste UE (déc. 2025),FJI,-,0,82.0
+2026-01-29,Liste UE 2026/46 & 2026/83,FRA,-,0,86.8
+2026-01-29,Liste UE 2026/46 & 2026/83,DEU,-,0,90.0
+2026-01-29,Liste UE 2026/46 & 2026/83,ITA,-,0,81.6
+2026-01-29,Liste UE 2026/46 & 2026/83,ESP,-,0,82.4
+2026-01-29,Liste UE 2026/46 & 2026/83,PRT,-,0,82.8
+2026-01-29,Liste UE 2026/46 & 2026/83,BEL,-,0,87.6
+2026-01-29,Liste UE 2026/46 & 2026/83,NLD,-,0,85.2
+2026-01-29,Liste UE 2026/46 & 2026/83,LUX,-,0,86.4
+2026-01-29,Liste UE 2026/46 & 2026/83,IRL,-,0,84.8
+2026-01-29,Liste UE 2026/46 & 2026/83,AUT,-,0,86.8
+2026-01-29,Liste UE 2026/46 & 2026/83,DNK,-,0,96.0
+2026-01-29,Liste UE 2026/46 & 2026/83,SWE,-,0,92.0
+2026-01-29,Liste UE 2026/46 & 2026/83,FIN,-,0,95.2
+2026-01-29,Liste UE 2026/46 & 2026/83,POL,-,0,81.2
+2026-01-29,Liste UE 2026/46 & 2026/83,CZE,-,0,82.4
+2026-01-29,Liste UE 2026/46 & 2026/83,SVK,-,0,79.6
+2026-01-29,Liste UE 2026/46 & 2026/83,HUN,-,0,76.4
+2026-01-29,Liste UE 2026/46 & 2026/83,ROU,-,0,78.4
+2026-01-29,Liste UE 2026/46 & 2026/83,BGR,grise,0,61.2
+2026-01-29,Liste UE 2026/46 & 2026/83,GRC,-,0,79.6
+2026-01-29,Liste UE 2026/46 & 2026/83,HRV,-,0,78.8
+2026-01-29,Liste UE 2026/46 & 2026/83,SVN,-,0,84.0
+2026-01-29,Liste UE 2026/46 & 2026/83,EST,-,0,90.4
+2026-01-29,Liste UE 2026/46 & 2026/83,LVA,-,0,83.6
+2026-01-29,Liste UE 2026/46 & 2026/83,LTU,-,0,85.2
+2026-01-29,Liste UE 2026/46 & 2026/83,CYP,-,0,76.4
+2026-01-29,Liste UE 2026/46 & 2026/83,MLT,-,0,72.4
+2026-01-29,Liste UE 2026/46 & 2026/83,GBR,-,0,88.4
+2026-01-29,Liste UE 2026/46 & 2026/83,CHE,-,0,86.4
+2026-01-29,Liste UE 2026/46 & 2026/83,NOR,-,0,92.4
+2026-01-29,Liste UE 2026/46 & 2026/83,ISL,-,0,90.8
+2026-01-29,Liste UE 2026/46 & 2026/83,MCO,grise,1,50.0
+2026-01-29,Liste UE 2026/46 & 2026/83,LIE,-,0,76.0
+2026-01-29,Liste UE 2026/46 & 2026/83,AND,-,0,76.0
+2026-01-29,Liste UE 2026/46 & 2026/83,SRB,-,0,74.0
+2026-01-29,Liste UE 2026/46 & 2026/83,BIH,-,0,64.2
+2026-01-29,Liste UE 2026/46 & 2026/83,ALB,-,0,76.8
+2026-01-29,Liste UE 2026/46 & 2026/83,MKD,-,0,76.0
+2026-01-29,Liste UE 2026/46 & 2026/83,MNE,-,0,78.4
+2026-01-29,Liste UE 2026/46 & 2026/83,MDA,-,0,68.2
+2026-01-29,Liste UE 2026/46 & 2026/83,UKR,-,0,46.0
+2026-01-29,Liste UE 2026/46 & 2026/83,BLR,-,0,55.2
+2026-01-29,Liste UE 2026/46 & 2026/83,RUS,-,1,21.8
+2026-01-29,Liste UE 2026/46 & 2026/83,TUR,-,0,64.6
+2026-01-29,Liste UE 2026/46 & 2026/83,GEO,-,0,81.2
+2026-01-29,Liste UE 2026/46 & 2026/83,ARM,-,0,78.8
+2026-01-29,Liste UE 2026/46 & 2026/83,AZE,-,0,68.8
+2026-01-29,Liste UE 2026/46 & 2026/83,USA,-,0,86.0
+2026-01-29,Liste UE 2026/46 & 2026/83,CAN,-,0,90.0
+2026-01-29,Liste UE 2026/46 & 2026/83,MEX,-,0,51.4
+2026-01-29,Liste UE 2026/46 & 2026/83,BRA,-,0,73.6
+2026-01-29,Liste UE 2026/46 & 2026/83,ARG,-,0,74.8
+2026-01-29,Liste UE 2026/46 & 2026/83,CHL,-,0,85.2
+2026-01-29,Liste UE 2026/46 & 2026/83,COL,-,0,65.6
+2026-01-29,Liste UE 2026/46 & 2026/83,PER,-,0,72.4
+2026-01-29,Liste UE 2026/46 & 2026/83,ECU,-,0,62.8
+2026-01-29,Liste UE 2026/46 & 2026/83,BOL,grise,1,45.2
+2026-01-29,Liste UE 2026/46 & 2026/83,VEN,grise,1,20.0
+2026-01-29,Liste UE 2026/46 & 2026/83,PRY,-,0,69.6
+2026-01-29,Liste UE 2026/46 & 2026/83,URY,-,0,90.4
+2026-01-29,Liste UE 2026/46 & 2026/83,PAN,-,0,67.2
+2026-01-29,Liste UE 2026/46 & 2026/83,CRI,-,0,83.2
+2026-01-29,Liste UE 2026/46 & 2026/83,GTM,-,0,61.0
+2026-01-29,Liste UE 2026/46 & 2026/83,HND,-,0,68.8
+2026-01-29,Liste UE 2026/46 & 2026/83,SLV,-,0,72.0
+2026-01-29,Liste UE 2026/46 & 2026/83,NIC,-,0,56.6
+2026-01-29,Liste UE 2026/46 & 2026/83,CUB,-,0,43.4
+2026-01-29,Liste UE 2026/46 & 2026/83,HTI,grise,1,21.4
+2026-01-29,Liste UE 2026/46 & 2026/83,DOM,-,0,74.4
+2026-01-29,Liste UE 2026/46 & 2026/83,JAM,-,0,77.6
+2026-01-29,Liste UE 2026/46 & 2026/83,TTO,-,1,66.4
+2026-01-29,Liste UE 2026/46 & 2026/83,BHS,-,0,79.6
+2026-01-29,Liste UE 2026/46 & 2026/83,BRB,-,0,81.2
+2026-01-29,Liste UE 2026/46 & 2026/83,VGB,grise,1,50.0
+2026-01-29,Liste UE 2026/46 & 2026/83,CYM,-,0,76.0
+2026-01-29,Liste UE 2026/46 & 2026/83,PRI,-,0,82.0
+2026-01-29,Liste UE 2026/46 & 2026/83,CHN,-,0,68.2
+2026-01-29,Liste UE 2026/46 & 2026/83,HKG,-,0,74.6
+2026-01-29,Liste UE 2026/46 & 2026/83,JPN,-,0,88.4
+2026-01-29,Liste UE 2026/46 & 2026/83,KOR,-,0,85.6
+2026-01-29,Liste UE 2026/46 & 2026/83,PRK,noire,1,0.0
+2026-01-29,Liste UE 2026/46 & 2026/83,IND,-,0,75.2
+2026-01-29,Liste UE 2026/46 & 2026/83,PAK,-,0,60.8
+2026-01-29,Liste UE 2026/46 & 2026/83,AFG,-,1,28.8
+2026-01-29,Liste UE 2026/46 & 2026/83,BGD,-,0,69.2
+2026-01-29,Liste UE 2026/46 & 2026/83,LKA,-,0,72.8
+2026-01-29,Liste UE 2026/46 & 2026/83,NPL,grise,1,47.6
+2026-01-29,Liste UE 2026/46 & 2026/83,MMR,noire,1,0.0
+2026-01-29,Liste UE 2026/46 & 2026/83,THA,-,0,73.6
+2026-01-29,Liste UE 2026/46 & 2026/83,VNM,grise,1,50.0
+2026-01-29,Liste UE 2026/46 & 2026/83,LAO,grise,1,47.2
+2026-01-29,Liste UE 2026/46 & 2026/83,KHM,-,0,68.4
+2026-01-29,Liste UE 2026/46 & 2026/83,MYS,-,0,80.0
+2026-01-29,Liste UE 2026/46 & 2026/83,SGP,-,0,87.6
+2026-01-29,Liste UE 2026/46 & 2026/83,IDN,-,0,74.8
+2026-01-29,Liste UE 2026/46 & 2026/83,PHL,-,0,73.2
+2026-01-29,Liste UE 2026/46 & 2026/83,KAZ,-,0,76.0
+2026-01-29,Liste UE 2026/46 & 2026/83,UZB,-,0,72.8
+2026-01-29,Liste UE 2026/46 & 2026/83,KGZ,-,0,70.0
+2026-01-29,Liste UE 2026/46 & 2026/83,TJK,-,0,67.6
+2026-01-29,Liste UE 2026/46 & 2026/83,TKM,-,0,66.8
+2026-01-29,Liste UE 2026/46 & 2026/83,MNG,-,0,73.2
+2026-01-29,Liste UE 2026/46 & 2026/83,ARE,-,0,81.2
+2026-01-29,Liste UE 2026/46 & 2026/83,SAU,-,0,83.6
+2026-01-29,Liste UE 2026/46 & 2026/83,QAT,-,0,83.6
+2026-01-29,Liste UE 2026/46 & 2026/83,KWT,grise,0,62.4
+2026-01-29,Liste UE 2026/46 & 2026/83,BHR,-,0,81.2
+2026-01-29,Liste UE 2026/46 & 2026/83,OMN,-,0,82.0
+2026-01-29,Liste UE 2026/46 & 2026/83,JOR,-,0,79.6
+2026-01-29,Liste UE 2026/46 & 2026/83,ISR,-,0,75.6
+2026-01-29,Liste UE 2026/46 & 2026/83,PSE,-,0,63.0
+2026-01-29,Liste UE 2026/46 & 2026/83,LBN,grise,1,23.8
+2026-01-29,Liste UE 2026/46 & 2026/83,SYR,grise,1,10.8
+2026-01-29,Liste UE 2026/46 & 2026/83,IRQ,-,0,51.4
+2026-01-29,Liste UE 2026/46 & 2026/83,IRN,noire,1,0.0
+2026-01-29,Liste UE 2026/46 & 2026/83,YEM,grise,1,20.2
+2026-01-29,Liste UE 2026/46 & 2026/83,EGY,-,0,72.0
+2026-01-29,Liste UE 2026/46 & 2026/83,LBY,-,0,37.2
+2026-01-29,Liste UE 2026/46 & 2026/83,TUN,-,0,66.6
+2026-01-29,Liste UE 2026/46 & 2026/83,DZA,grise,1,47.6
+2026-01-29,Liste UE 2026/46 & 2026/83,MAR,-,0,74.8
+2026-01-29,Liste UE 2026/46 & 2026/83,MRT,-,0,72.0
+2026-01-29,Liste UE 2026/46 & 2026/83,SEN,-,0,78.0
+2026-01-29,Liste UE 2026/46 & 2026/83,MLI,-,0,51.8
+2026-01-29,Liste UE 2026/46 & 2026/83,BFA,-,0,66.4
+2026-01-29,Liste UE 2026/46 & 2026/83,NER,-,0,54.6
+2026-01-29,Liste UE 2026/46 & 2026/83,TCD,-,0,58.4
+2026-01-29,Liste UE 2026/46 & 2026/83,NGA,-,0,60.4
+2026-01-29,Liste UE 2026/46 & 2026/83,GHA,-,0,76.8
+2026-01-29,Liste UE 2026/46 & 2026/83,CIV,grise,1,52.0
+2026-01-29,Liste UE 2026/46 & 2026/83,GIN,-,0,62.2
+2026-01-29,Liste UE 2026/46 & 2026/83,GNB,-,0,59.4
+2026-01-29,Liste UE 2026/46 & 2026/83,SLE,-,0,73.2
+2026-01-29,Liste UE 2026/46 & 2026/83,LBR,-,0,70.0
+2026-01-29,Liste UE 2026/46 & 2026/83,TGO,-,0,72.8
+2026-01-29,Liste UE 2026/46 & 2026/83,BEN,-,0,78.0
+2026-01-29,Liste UE 2026/46 & 2026/83,CMR,grise,1,34.4
+2026-01-29,Liste UE 2026/46 & 2026/83,GAB,-,0,70.8
+2026-01-29,Liste UE 2026/46 & 2026/83,COG,-,0,69.2
+2026-01-29,Liste UE 2026/46 & 2026/83,COD,grise,1,23.0
+2026-01-29,Liste UE 2026/46 & 2026/83,CAF,-,0,50.6
+2026-01-29,Liste UE 2026/46 & 2026/83,SDN,-,0,38.0
+2026-01-29,Liste UE 2026/46 & 2026/83,SSD,grise,1,18.2
+2026-01-29,Liste UE 2026/46 & 2026/83,ETH,-,0,64.8
+2026-01-29,Liste UE 2026/46 & 2026/83,ERI,-,0,56.2
+2026-01-29,Liste UE 2026/46 & 2026/83,SOM,-,0,44.6
+2026-01-29,Liste UE 2026/46 & 2026/83,KEN,grise,1,46.8
+2026-01-29,Liste UE 2026/46 & 2026/83,UGA,-,0,70.4
+2026-01-29,Liste UE 2026/46 & 2026/83,TZA,-,0,76.4
+2026-01-29,Liste UE 2026/46 & 2026/83,RWA,-,0,82.8
+2026-01-29,Liste UE 2026/46 & 2026/83,BDI,-,0,57.8
+2026-01-29,Liste UE 2026/46 & 2026/83,AGO,grise,1,46.8
+2026-01-29,Liste UE 2026/46 & 2026/83,ZMB,-,0,75.6
+2026-01-29,Liste UE 2026/46 & 2026/83,ZWE,-,0,59.4
+2026-01-29,Liste UE 2026/46 & 2026/83,MOZ,-,0,60.0
+2026-01-29,Liste UE 2026/46 & 2026/83,MDG,-,0,70.4
+2026-01-29,Liste UE 2026/46 & 2026/83,MUS,-,0,74.4
+2026-01-29,Liste UE 2026/46 & 2026/83,NAM,grise,1,53.6
+2026-01-29,Liste UE 2026/46 & 2026/83,BWA,-,0,82.8
+2026-01-29,Liste UE 2026/46 & 2026/83,ZAF,-,0,76.4
+2026-01-29,Liste UE 2026/46 & 2026/83,AUS,-,0,90.8
+2026-01-29,Liste UE 2026/46 & 2026/83,NZL,-,0,93.2
+2026-01-29,Liste UE 2026/46 & 2026/83,PNG,grise,0,56.4
+2026-01-29,Liste UE 2026/46 & 2026/83,VUT,-,1,66.0
+2026-01-29,Liste UE 2026/46 & 2026/83,FJI,-,0,82.0
+2026-06-19,Plénière GAFI juin 2026,FRA,-,0,86.8
+2026-06-19,Plénière GAFI juin 2026,DEU,-,0,90.0
+2026-06-19,Plénière GAFI juin 2026,ITA,-,0,81.6
+2026-06-19,Plénière GAFI juin 2026,ESP,-,0,82.4
+2026-06-19,Plénière GAFI juin 2026,PRT,-,0,82.8
+2026-06-19,Plénière GAFI juin 2026,BEL,-,0,87.6
+2026-06-19,Plénière GAFI juin 2026,NLD,-,0,85.2
+2026-06-19,Plénière GAFI juin 2026,LUX,-,0,86.4
+2026-06-19,Plénière GAFI juin 2026,IRL,-,0,84.8
+2026-06-19,Plénière GAFI juin 2026,AUT,-,0,86.8
+2026-06-19,Plénière GAFI juin 2026,DNK,-,0,96.0
+2026-06-19,Plénière GAFI juin 2026,SWE,-,0,92.0
+2026-06-19,Plénière GAFI juin 2026,FIN,-,0,95.2
+2026-06-19,Plénière GAFI juin 2026,POL,-,0,81.2
+2026-06-19,Plénière GAFI juin 2026,CZE,-,0,82.4
+2026-06-19,Plénière GAFI juin 2026,SVK,-,0,79.6
+2026-06-19,Plénière GAFI juin 2026,HUN,-,0,76.4
+2026-06-19,Plénière GAFI juin 2026,ROU,-,0,78.4
+2026-06-19,Plénière GAFI juin 2026,BGR,grise,0,61.2
+2026-06-19,Plénière GAFI juin 2026,GRC,-,0,79.6
+2026-06-19,Plénière GAFI juin 2026,HRV,-,0,78.8
+2026-06-19,Plénière GAFI juin 2026,SVN,-,0,84.0
+2026-06-19,Plénière GAFI juin 2026,EST,-,0,90.4
+2026-06-19,Plénière GAFI juin 2026,LVA,-,0,83.6
+2026-06-19,Plénière GAFI juin 2026,LTU,-,0,85.2
+2026-06-19,Plénière GAFI juin 2026,CYP,-,0,76.4
+2026-06-19,Plénière GAFI juin 2026,MLT,-,0,72.4
+2026-06-19,Plénière GAFI juin 2026,GBR,-,0,88.4
+2026-06-19,Plénière GAFI juin 2026,CHE,-,0,86.4
+2026-06-19,Plénière GAFI juin 2026,NOR,-,0,92.4
+2026-06-19,Plénière GAFI juin 2026,ISL,-,0,90.8
+2026-06-19,Plénière GAFI juin 2026,MCO,grise,1,50.0
+2026-06-19,Plénière GAFI juin 2026,LIE,-,0,76.0
+2026-06-19,Plénière GAFI juin 2026,AND,-,0,76.0
+2026-06-19,Plénière GAFI juin 2026,SRB,-,0,74.0
+2026-06-19,Plénière GAFI juin 2026,BIH,grise,0,48.2
+2026-06-19,Plénière GAFI juin 2026,ALB,-,0,76.8
+2026-06-19,Plénière GAFI juin 2026,MKD,-,0,76.0
+2026-06-19,Plénière GAFI juin 2026,MNE,-,0,78.4
+2026-06-19,Plénière GAFI juin 2026,MDA,-,0,68.2
+2026-06-19,Plénière GAFI juin 2026,UKR,-,0,46.0
+2026-06-19,Plénière GAFI juin 2026,BLR,-,0,55.2
+2026-06-19,Plénière GAFI juin 2026,RUS,-,1,21.8
+2026-06-19,Plénière GAFI juin 2026,TUR,-,0,64.6
+2026-06-19,Plénière GAFI juin 2026,GEO,-,0,81.2
+2026-06-19,Plénière GAFI juin 2026,ARM,-,0,78.8
+2026-06-19,Plénière GAFI juin 2026,AZE,-,0,68.8
+2026-06-19,Plénière GAFI juin 2026,USA,-,0,86.0
+2026-06-19,Plénière GAFI juin 2026,CAN,-,0,90.0
+2026-06-19,Plénière GAFI juin 2026,MEX,-,0,51.4
+2026-06-19,Plénière GAFI juin 2026,BRA,-,0,73.6
+2026-06-19,Plénière GAFI juin 2026,ARG,-,0,74.8
+2026-06-19,Plénière GAFI juin 2026,CHL,-,0,85.2
+2026-06-19,Plénière GAFI juin 2026,COL,-,0,65.6
+2026-06-19,Plénière GAFI juin 2026,PER,-,0,72.4
+2026-06-19,Plénière GAFI juin 2026,ECU,-,0,62.8
+2026-06-19,Plénière GAFI juin 2026,BOL,grise,1,45.2
+2026-06-19,Plénière GAFI juin 2026,VEN,grise,1,20.0
+2026-06-19,Plénière GAFI juin 2026,PRY,-,0,69.6
+2026-06-19,Plénière GAFI juin 2026,URY,-,0,90.4
+2026-06-19,Plénière GAFI juin 2026,PAN,-,0,67.2
+2026-06-19,Plénière GAFI juin 2026,CRI,-,0,83.2
+2026-06-19,Plénière GAFI juin 2026,GTM,-,0,61.0
+2026-06-19,Plénière GAFI juin 2026,HND,-,0,68.8
+2026-06-19,Plénière GAFI juin 2026,SLV,-,0,72.0
+2026-06-19,Plénière GAFI juin 2026,NIC,-,0,56.6
+2026-06-19,Plénière GAFI juin 2026,CUB,-,0,43.4
+2026-06-19,Plénière GAFI juin 2026,HTI,grise,1,21.4
+2026-06-19,Plénière GAFI juin 2026,DOM,-,0,74.4
+2026-06-19,Plénière GAFI juin 2026,JAM,-,0,77.6
+2026-06-19,Plénière GAFI juin 2026,TTO,-,1,66.4
+2026-06-19,Plénière GAFI juin 2026,BHS,-,0,79.6
+2026-06-19,Plénière GAFI juin 2026,BRB,-,0,81.2
+2026-06-19,Plénière GAFI juin 2026,VGB,grise,1,50.0
+2026-06-19,Plénière GAFI juin 2026,CYM,-,0,76.0
+2026-06-19,Plénière GAFI juin 2026,PRI,-,0,82.0
+2026-06-19,Plénière GAFI juin 2026,CHN,-,0,68.2
+2026-06-19,Plénière GAFI juin 2026,HKG,-,0,74.6
+2026-06-19,Plénière GAFI juin 2026,JPN,-,0,88.4
+2026-06-19,Plénière GAFI juin 2026,KOR,-,0,85.6
+2026-06-19,Plénière GAFI juin 2026,PRK,noire,1,0.0
+2026-06-19,Plénière GAFI juin 2026,IND,-,0,75.2
+2026-06-19,Plénière GAFI juin 2026,PAK,-,0,60.8
+2026-06-19,Plénière GAFI juin 2026,AFG,-,1,28.8
+2026-06-19,Plénière GAFI juin 2026,BGD,-,0,69.2
+2026-06-19,Plénière GAFI juin 2026,LKA,-,0,72.8
+2026-06-19,Plénière GAFI juin 2026,NPL,grise,1,47.6
+2026-06-19,Plénière GAFI juin 2026,MMR,noire,1,0.0
+2026-06-19,Plénière GAFI juin 2026,THA,-,0,73.6
+2026-06-19,Plénière GAFI juin 2026,VNM,grise,1,50.0
+2026-06-19,Plénière GAFI juin 2026,LAO,grise,1,47.2
+2026-06-19,Plénière GAFI juin 2026,KHM,-,0,68.4
+2026-06-19,Plénière GAFI juin 2026,MYS,-,0,80.0
+2026-06-19,Plénière GAFI juin 2026,SGP,-,0,87.6
+2026-06-19,Plénière GAFI juin 2026,IDN,-,0,74.8
+2026-06-19,Plénière GAFI juin 2026,PHL,-,0,73.2
+2026-06-19,Plénière GAFI juin 2026,KAZ,-,0,76.0
+2026-06-19,Plénière GAFI juin 2026,UZB,-,0,72.8
+2026-06-19,Plénière GAFI juin 2026,KGZ,-,0,70.0
+2026-06-19,Plénière GAFI juin 2026,TJK,-,0,67.6
+2026-06-19,Plénière GAFI juin 2026,TKM,-,0,66.8
+2026-06-19,Plénière GAFI juin 2026,MNG,-,0,73.2
+2026-06-19,Plénière GAFI juin 2026,ARE,-,0,81.2
+2026-06-19,Plénière GAFI juin 2026,SAU,-,0,83.6
+2026-06-19,Plénière GAFI juin 2026,QAT,-,0,83.6
+2026-06-19,Plénière GAFI juin 2026,KWT,grise,0,62.4
+2026-06-19,Plénière GAFI juin 2026,BHR,-,0,81.2
+2026-06-19,Plénière GAFI juin 2026,OMN,-,0,82.0
+2026-06-19,Plénière GAFI juin 2026,JOR,-,0,79.6
+2026-06-19,Plénière GAFI juin 2026,ISR,-,0,75.6
+2026-06-19,Plénière GAFI juin 2026,PSE,-,0,63.0
+2026-06-19,Plénière GAFI juin 2026,LBN,grise,1,23.8
+2026-06-19,Plénière GAFI juin 2026,SYR,grise,1,10.8
+2026-06-19,Plénière GAFI juin 2026,IRQ,grise,0,35.4
+2026-06-19,Plénière GAFI juin 2026,IRN,noire,1,0.0
+2026-06-19,Plénière GAFI juin 2026,YEM,grise,1,20.2
+2026-06-19,Plénière GAFI juin 2026,EGY,-,0,72.0
+2026-06-19,Plénière GAFI juin 2026,LBY,-,0,37.2
+2026-06-19,Plénière GAFI juin 2026,TUN,-,0,66.6
+2026-06-19,Plénière GAFI juin 2026,DZA,-,1,63.6
+2026-06-19,Plénière GAFI juin 2026,MAR,-,0,74.8
+2026-06-19,Plénière GAFI juin 2026,MRT,-,0,72.0
+2026-06-19,Plénière GAFI juin 2026,SEN,-,0,78.0
+2026-06-19,Plénière GAFI juin 2026,MLI,-,0,51.8
+2026-06-19,Plénière GAFI juin 2026,BFA,-,0,66.4
+2026-06-19,Plénière GAFI juin 2026,NER,-,0,54.6
+2026-06-19,Plénière GAFI juin 2026,TCD,-,0,58.4
+2026-06-19,Plénière GAFI juin 2026,NGA,-,0,60.4
+2026-06-19,Plénière GAFI juin 2026,GHA,-,0,76.8
+2026-06-19,Plénière GAFI juin 2026,CIV,grise,1,52.0
+2026-06-19,Plénière GAFI juin 2026,GIN,-,0,62.2
+2026-06-19,Plénière GAFI juin 2026,GNB,-,0,59.4
+2026-06-19,Plénière GAFI juin 2026,SLE,-,0,73.2
+2026-06-19,Plénière GAFI juin 2026,LBR,-,0,70.0
+2026-06-19,Plénière GAFI juin 2026,TGO,-,0,72.8
+2026-06-19,Plénière GAFI juin 2026,BEN,-,0,78.0
+2026-06-19,Plénière GAFI juin 2026,CMR,grise,1,34.4
+2026-06-19,Plénière GAFI juin 2026,GAB,-,0,70.8
+2026-06-19,Plénière GAFI juin 2026,COG,-,0,69.2
+2026-06-19,Plénière GAFI juin 2026,COD,grise,1,23.0
+2026-06-19,Plénière GAFI juin 2026,CAF,-,0,50.6
+2026-06-19,Plénière GAFI juin 2026,SDN,-,0,38.0
+2026-06-19,Plénière GAFI juin 2026,SSD,grise,1,18.2
+2026-06-19,Plénière GAFI juin 2026,ETH,-,0,64.8
+2026-06-19,Plénière GAFI juin 2026,ERI,-,0,56.2
+2026-06-19,Plénière GAFI juin 2026,SOM,-,0,44.6
+2026-06-19,Plénière GAFI juin 2026,KEN,grise,1,46.8
+2026-06-19,Plénière GAFI juin 2026,UGA,-,0,70.4
+2026-06-19,Plénière GAFI juin 2026,TZA,-,0,76.4
+2026-06-19,Plénière GAFI juin 2026,RWA,-,0,82.8
+2026-06-19,Plénière GAFI juin 2026,BDI,-,0,57.8
+2026-06-19,Plénière GAFI juin 2026,AGO,grise,1,46.8
+2026-06-19,Plénière GAFI juin 2026,ZMB,-,0,75.6
+2026-06-19,Plénière GAFI juin 2026,ZWE,-,0,59.4
+2026-06-19,Plénière GAFI juin 2026,MOZ,-,0,60.0
+2026-06-19,Plénière GAFI juin 2026,MDG,-,0,70.4
+2026-06-19,Plénière GAFI juin 2026,MUS,-,0,74.4
+2026-06-19,Plénière GAFI juin 2026,NAM,-,1,69.6
+2026-06-19,Plénière GAFI juin 2026,BWA,-,0,82.8
+2026-06-19,Plénière GAFI juin 2026,ZAF,-,0,76.4
+2026-06-19,Plénière GAFI juin 2026,AUS,-,0,90.8
+2026-06-19,Plénière GAFI juin 2026,NZL,-,0,93.2
+2026-06-19,Plénière GAFI juin 2026,PNG,grise,0,56.4
+2026-06-19,Plénière GAFI juin 2026,VUT,-,1,66.0
+2026-06-19,Plénière GAFI juin 2026,FJI,-,0,82.0

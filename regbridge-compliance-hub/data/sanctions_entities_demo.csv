@@ -1,0 +1,9 @@
+id,nom,type,pays,liste,programme,date_naissance
+TEST-001,TEST Ivan Petrovitch Volkov,Personne,RUS,UE,Gel d'avoirs (démo),1968-03-12
+TEST-002,TEST Golden Crescent Trading LLC,Entité,ARE,OFAC,SDN (démo),
+TEST-003,TEST Ali Reza Tehrani,Personne,IRN,ONU,Prolifération (démo),1975-09-01
+TEST-004,TEST Northern Star Shipping Co,Entité,PRK,ONU,Navire / transport (démo),
+TEST-005,TEST Mohamed Al-Sayed Haddad,Personne,SYR,France,Gel national terrorisme (démo),1981-01-20
+TEST-006,TEST Caribbean Bridge Remit SA,Entité,HTI,ONU,Soutien aux gangs (démo),
+TEST-007,TEST Olga Sergeyevna Morozova,Personne,BLR,UE,Gel d'avoirs (démo),1972-11-05
+TEST-008,TEST Sahel Gold Export SARL,Entité,MLI,UE,Gel ciblé (démo),

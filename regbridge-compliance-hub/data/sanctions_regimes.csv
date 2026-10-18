@@ -1,0 +1,44 @@
+iso3,pays,autorite,nature,base_legale,depuis,intensite
+RUS,Russie,UE,Sectoriel + gel d'avoirs + interdictions d'import/export,Règl. (UE) 833/2014 et 269/2014,2014-07-31,Très élevé
+RUS,Russie,OFAC,"Gel SDN, sanctions secondaires, plafonnement pétrole",EO 14024,2021-04-15,Très élevé
+BLR,Biélorussie,UE,Sectoriel + gel d'avoirs,Règl. (UE) 765/2006,2006-05-18,Élevé
+IRN,Iran,ONU,Rétablissement des sanctions (snapback) prolifération,Rés. 1737 et suivantes,2025-09-28,Très élevé
+IRN,Iran,UE,"Gel d'avoirs, restrictions financières, prolifération et droits de l'homme",Règl. (UE) 267/2012 et 359/2011,2012-03-23,Très élevé
+IRN,Iran,OFAC,Embargo global,ITSR 31 CFR 560,1995-03-15,Très élevé
+PRK,Corée du Nord,ONU,Embargo global prolifération,Rés. 1718 (2006),2006-10-14,Très élevé
+PRK,Corée du Nord,UE,Embargo + gel d'avoirs,Règl. (UE) 2017/1509,2017-08-30,Très élevé
+CUB,Cuba,OFAC,Embargo global (CACR),31 CFR 515,1963-07-08,Très élevé
+SYR,Syrie,UE,"Levée de la plupart des mesures économiques (mai 2025), maintien gel ciblé et armes",Règl. (UE) 36/2012 modifié,2025-05-28,Élevé
+SYR,Syrie,ONU,Régime Al-Qaida / HTS (gel ciblé),Rés. 1267/1989/2253,2014-05-14,Élevé
+VEN,Venezuela,UE,Embargo armes + gel d'avoirs,Règl. (UE) 2017/2063,2017-11-13,Élevé
+VEN,Venezuela,OFAC,"Sanctions sectorielles (PDVSA, gouvernement)","EO 13850, 13884",2019-08-05,Élevé
+MMR,Myanmar,UE,Embargo armes + gel d'avoirs,Règl. (UE) 401/2013,2013-04-29,Élevé
+AFG,Afghanistan,ONU,"Régime 1988 (Taliban) – gel, voyage, armes",Rés. 1988 (2011),2011-06-17,Élevé
+LBY,Libye,ONU,Embargo armes + gel d'avoirs,Rés. 1970 (2011),2011-02-26,Élevé
+SDN,Soudan,ONU,"Darfour – embargo armes, gel",Rés. 1591 (2005),2005-03-29,Élevé
+SSD,Soudan du Sud,ONU,Embargo armes,Rés. 2428 (2018),2018-07-13,Modéré
+COD,RD Congo,ONU,Embargo armes + gel ciblé,Rés. 1533 (2004),2004-03-12,Modéré
+CAF,Centrafrique,ONU,Embargo armes (allégé) + gel ciblé,Rés. 2127 (2013),2013-12-05,Modéré
+SOM,Somalie,ONU,"Al-Shabaab – gel ciblé, embargo armes",Rés. 2713 (2023),2023-12-01,Élevé
+YEM,Yémen,ONU,"Gel ciblé (Houthis), embargo armes ciblé",Rés. 2140 (2014),2014-02-26,Élevé
+HTI,Haïti,ONU,"Gel ciblé (gangs), embargo armes",Rés. 2653 (2022),2022-10-21,Modéré
+LBN,Liban,OFAC,Hezbollah – SDGT,EO 13224,2001-09-23,Modéré
+IRQ,Irak,ONU,Régime résiduel (ex-régime),Rés. 1483 (2003),2003-05-22,Faible
+NIC,Nicaragua,UE,Gel d'avoirs ciblé,Règl. (UE) 2019/1716,2019-10-14,Modéré
+MLI,Mali,UE,Gel d'avoirs ciblé,Règl. (UE) 2017/1770,2017-09-28,Modéré
+GIN,Guinée,UE,Gel d'avoirs ciblé,Règl. (UE) 1284/2009,2009-12-22,Faible
+GNB,Guinée-Bissau,ONU,Interdiction de voyage ciblée,Rés. 2048 (2012),2012-05-18,Faible
+BDI,Burundi,UE,Gel d'avoirs ciblé,Règl. (UE) 2015/1755,2015-10-01,Faible
+ZWE,Zimbabwe,UE,Embargo armes,Décision 2011/101/PESC,2002-02-18,Faible
+TUN,Tunisie,UE,Détournement de fonds publics,Règl. (UE) 101/2011,2011-02-04,Faible
+MDA,Moldavie,UE,Actions de déstabilisation,Règl. (UE) 2023/888,2023-04-28,Faible
+GTM,Guatemala,UE,Atteinte à la démocratie,Règl. (UE) 2024/287,2024-01-12,Faible
+TUR,Turquie,UE,Forages non autorisés en Méditerranée orientale,Règl. (UE) 2019/1890,2019-11-11,Faible
+CHN,Chine,UE,Droits de l'homme (régime mondial),Règl. (UE) 2020/1998,2021-03-22,Faible
+UKR,Ukraine,UE,"Crimée/Sébastopol et territoires occupés (Donetsk, Louhansk, Zaporijia, Kherson)",Règl. (UE) 692/2014 et 2022/263,2014-06-23,Élevé
+PSE,Palestine,UE,Hamas / Jihad islamique – gel ciblé,Règl. (UE) 2024/386,2024-01-19,Modéré
+MEX,Mexique,OFAC,Cartels désignés FTO/SDGT,EO 14157,2025-02-20,Modéré
+*,Thématique,UE,Régime mondial cyberattaques,Règl. (UE) 2019/796,2019-05-17,Variable
+*,Thématique,UE,Régime terrorisme (liste UE autonome),Règl. (CE) 2580/2001,2001-12-27,Variable
+*,Thématique,UE,Armes chimiques,Règl. (UE) 2018/1542,2018-10-15,Variable
+*,Thématique,France,Gel des avoirs national (DG Trésor) – terrorisme,CMF L.562-2 et s.,2016-06-03,Variable

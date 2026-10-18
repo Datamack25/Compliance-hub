@@ -1,0 +1,26 @@
+phase,etape,description,livrables,duree_semaines,responsable,secteur
+1. Cadrage,Lancement et cadrage du projet,"Comité de lancement, périmètre (entités, produits, pays), gouvernance projet","Note de cadrage, planning",1,Direction / RCSI,COMMUN
+1. Cadrage,Diagnostic de maturité (gap analysis),"Évaluation des exigences CMF et AMLR, entretiens, revue documentaire","Rapport de diagnostic, score de maturité",3,Consultant / Conformité,COMMUN
+2. Gouvernance,Désignation des responsables,"Membre de la direction responsable LCB-FT, responsable conformité, déclarant/correspondant Tracfin","Décisions de nomination, fiches de poste",1,Direction générale,COMMUN
+2. Gouvernance,Comité LCB-FT et reporting,"Création d'un comité trimestriel, tableau de bord et indicateurs","Charte du comité, tableau de bord",2,Conformité,COMMUN
+3. Risques,Cartographie des risques LCB-FT,"Identification et cotation des risques (clients, produits, canaux, pays, opérations)",Cartographie Excel validée,4,Conformité / Métiers,COMMUN
+3. Risques,Classification des clients (scoring),Paramétrage du score de risque client et des niveaux de vigilance,Matrice de scoring,2,Conformité / IT,COMMUN
+4. Procédures,Rédaction du corpus procédural,"Procédures KYC, vigilance renforcée, PPE, surveillance, DS, gel, conservation",Procédures et politique d'acceptation clients,4,Conformité,COMMUN
+5. KYC,Remédiation du stock clients,"Priorisation par risque (AMLR art. 26), relances, restrictions","Plan de remédiation, courriers",8,Opérations KYC,COMMUN
+6. Outils,Filtrage sanctions et PPE,"Choix/paramétrage de l'outil, listes UE/ONU/DG Trésor, tests d'efficacité","Outil en production, PV de tests",4,IT / Conformité,COMMUN
+6. Outils,Surveillance des opérations,"Scénarios calibrés sur le profil financier et les pays effectifs, gestion des alertes","Catalogue de scénarios, SLA",6,IT / Conformité,COMMUN
+7. Formation,Plan de formation et sensibilisation,"Modules par population, quiz, certificats, registre","Plan de formation, attestations",2,Conformité / RH,COMMUN
+8. Contrôle,Dispositif de contrôle permanent (2e niveau),"Plan de contrôle, échantillonnage, fiches de contrôle, indicateurs",Plan de contrôle annuel,3,Contrôle permanent,COMMUN
+8. Contrôle,Contrôle périodique (3e niveau),Intégration du dispositif LCB-FT au plan d'audit,Plan d'audit pluriannuel,1,Audit interne,COMMUN
+9. AMLR 2027,Préparation AMLR / AMLA,"Alignement sur les RTS AMLA, calcul des BE, règles PPE, plafond espèces","Feuille de route AMLR, attestation de préparation",6,Conformité,COMMUN
+10. Pilotage,Revue et amélioration continue,"Revue annuelle, rapport au superviseur, réentraînement des modèles","Rapport annuel, plan d'actions N+1",2,Conformité / Direction,COMMUN
+6. Outils,Due diligence des correspondants bancaires,"Questionnaires Wolfsberg, revue des banques correspondantes hors UE",Dossiers correspondants,3,Conformité,BANQUE
+6. Outils,Dispositif agents et IBAN virtuels,"Contrôle des agents/distributeurs, traçabilité des IBAN virtuels, détection des mules","Procédure agents, scénarios mules",4,Conformité / Partenariats,FINTECH
+6. Outils,Contrôles rachats et dénouements,"Alertes de rachats anticipés, contrôle des tiers payeurs et bénéficiaires",Scénarios assurance,3,Conformité / Gestion,ASSURANCE
+6. Outils,Identification des joueurs et suivi des gains,"Seuils d'identification, origine des fonds, intégrité sportive","Procédure joueurs, reporting ANJ",3,Conformité / Opérations,JEUX
+6. Outils,Vigilance acquéreurs et prix,"Origine des fonds, BE des SCI, comparaison DVF",Fiche transaction,2,Direction d'agence,IMMOBILIER
+6. Outils,Travel Rule et réseau d'agents,"Contrôle TFR, scoring des corridors et des agents","Procédure TFR, audits agents",4,Conformité / Réseau,TRANSFERT
+2. Gouvernance,Agrément CASP (MiCA),"Dossier d'agrément, fin du régime transitoire PSAN",Agrément CASP,8,Direction / Juridique,CRYPTO
+6. Outils,Analyse blockchain et Travel Rule,"Outil d'analytics, vérification des wallets non hébergés > 1 000 €",Outil en production,4,IT / Conformité,CRYPTO
+6. Outils,Agrégation multi-guichets,"Identification au-delà des seuils, détection des fractionnements",Requêtes d'agrégation,2,Conformité,CHANGE
+3. Risques,Programme anticorruption Sapin II,"Cartographie anticorruption, évaluation des tiers, contrôles comptables","Cartographie AFA, procédure tiers",6,Conformité,ENTREPRISE

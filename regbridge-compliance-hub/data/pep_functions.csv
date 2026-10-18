@@ -1,0 +1,30 @@
+iso3,pays,source,fonction,niveau_risque
+FRA,France,Nationale (JOUE C/2023/724),Président de la République,Élevé
+FRA,France,Nationale (JOUE C/2023/724),Premier ministre,Élevé
+FRA,France,Nationale (JOUE C/2023/724),Membres du Gouvernement,Élevé
+FRA,France,Nationale (JOUE C/2023/724),Président du Sénat,Élevé
+FRA,France,Nationale (JOUE C/2023/724),Président de l'Assemblée nationale,Élevé
+FRA,France,Nationale (JOUE C/2023/724),Députés et sénateurs,Élevé
+FRA,France,Nationale (JOUE C/2023/724),Dirigeants des partis ou groupements politiques,Élevé
+FRA,France,Nationale (JOUE C/2023/724),Président et membres du Conseil constitutionnel,Élevé
+FRA,France,Nationale (JOUE C/2023/724),Membres du Conseil d'État (fonctions juridictionnelles),Élevé
+FRA,France,Nationale (JOUE C/2023/724),Magistrats de la Cour des comptes,Élevé
+FRA,France,Nationale (JOUE C/2023/724),Membres de la Cour de cassation,Élevé
+FRA,France,Nationale (JOUE C/2023/724),Secrétaire général du Conseil constitutionnel,Élevé
+FRA,France,Nationale (JOUE C/2023/724),Membres du Conseil général de la Banque de France,Élevé
+FRA,France,Nationale (JOUE C/2023/724),Ambassadeurs et chargés d'affaires,Élevé
+FRA,France,Nationale (JOUE C/2023/724),Chef d'état-major des armées et chefs d'état-major des armées,Élevé
+FRA,France,Nationale (JOUE C/2023/724),"Dirigeants d'entreprises publiques (DG, DGD, directoire, CA)",Élevé
+FRA,France,Nationale (JOUE C/2023/724),Dirigeants de sociétés > 50 M€ de CA détenues majoritairement par des collectivités,Élevé
+*,Tous pays,Catégorie GAFI / AMLR,Chef d'État / de gouvernement,Très élevé
+*,Tous pays,Catégorie GAFI / AMLR,Ministre / secrétaire d'État,Très élevé
+*,Tous pays,Catégorie GAFI / AMLR,Parlementaire,Élevé
+*,Tous pays,Catégorie GAFI / AMLR,Membre d'une cour suprême / constitutionnelle,Élevé
+*,Tous pays,Catégorie GAFI / AMLR,Dirigeant de banque centrale,Élevé
+*,Tous pays,Catégorie GAFI / AMLR,Ambassadeur / officier supérieur des armées,Élevé
+*,Tous pays,Catégorie GAFI / AMLR,Dirigeant d'entreprise publique,Élevé
+*,Tous pays,Catégorie GAFI / AMLR,Dirigeant de parti politique,Élevé
+*,Tous pays,Catégorie GAFI / AMLR,Dirigeant d'organisation internationale,Modéré
+*,Tous pays,Catégorie GAFI / AMLR,Membre de la famille d'une PPE,Selon PPE
+*,Tous pays,Catégorie GAFI / AMLR,Personne étroitement associée à une PPE,Selon PPE
+*,Tous pays,Catégorie GAFI / AMLR,Élu régional / maire > 50 000 hab. (AMLR art. 2),Modéré

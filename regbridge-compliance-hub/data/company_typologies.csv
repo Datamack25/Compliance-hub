@@ -1,0 +1,29 @@
+secteur,typologie,coefficient,activite_principale
+BANQUE,Banque de détail / réseau,1.0,"Banque de détail, crédits"
+BANQUE,Banque privée / gestion de fortune,1.25,Gestion de fortune
+BANQUE,Banque d'affaires / BFI,1.1,"BFI, trade finance"
+BANQUE,Néobanque,1.2,"Onboarding digital, cartes"
+BANQUE,Banque de financement d'entreprises en difficulté,1.15,"Crédits, affacturage"
+FINTECH,Établissement de paiement (EP),1.1,"Comptes de paiement, virements"
+FINTECH,Établissement de monnaie électronique (EME),1.25,"ME, cartes prépayées"
+FINTECH,PSP / acquéreur e-commerce,1.15,Acquisition marchands
+FINTECH,Agent de prestataire de services de paiement,1.05,Distribution
+FINTECH,Plateforme de financement participatif,1.1,Crowdfunding
+ASSURANCE,Assureur vie / capitalisation,1.15,Épargne
+ASSURANCE,Assureur non-vie,0.85,IARD
+ASSURANCE,Courtier / intermédiaire en assurance,0.95,Distribution
+JEUX,Casino terrestre,1.2,Espèces
+JEUX,Opérateur de jeux en ligne,1.1,Comptes joueurs
+JEUX,Opérateur de paris sportifs / hippiques,1.1,Paris
+IMMOBILIER,Agence immobilière,1.0,Transactions
+IMMOBILIER,Marchand de biens / promoteur,1.15,Achat-revente
+IMMOBILIER,Gestion locative / location saisonnière haut de gamme,1.0,Location
+TRANSFERT,Société de transfert d'argent (MTO),1.25,Transferts internationaux
+TRANSFERT,Agent / sous-agent MTO,1.15,Encaissement espèces
+CRYPTO,CASP – plateforme d'échange,1.25,Échange crypto-fiat
+CRYPTO,CASP – conservation (custody),1.1,Conservation
+CRYPTO,Émetteur de jetons / stablecoins (EMT/ART),1.2,Émission
+CHANGE,Bureau de change manuel,1.15,Espèces
+ENTREPRISE,PME exportatrice,1.0,Export
+ENTREPRISE,Grand groupe international,1.1,Multi-pays
+ENTREPRISE,Négociant en métaux précieux / art,1.25,Biens de valeur

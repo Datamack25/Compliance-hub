@@ -1,0 +1,19 @@
+secteur,fraude,indicateurs,controles
+FINTECH,Fraude à l'authentification / ATO,Changement d'appareil + ajout bénéficiaire + virement max,"Authentification forte, délai sur nouveau bénéficiaire"
+FINTECH,Fraude au faux conseiller bancaire,"Virements instantanés vers néocomptes, appel en cours","Messages d'alerte, VoP, délais"
+FINTECH,Chargeback / friendly fraud,Taux de rétrofacturation > 1 %,"Monitoring marchand, 3DS"
+BANQUE,Fraude documentaire au crédit,"Bulletins de salaire falsifiés, IBAN récents",Contrôle documentaire automatisé
+BANQUE,Fraude au chèque,Chèques volés/falsifiés déposés sur comptes récents,"Délai d'indisponibilité, FNCI"
+ASSURANCE,Sinistres fictifs ou majorés,"Déclarations répétées, factures non conformes","Scoring sinistres, expertise"
+ASSURANCE,Usurpation de bénéficiaire,Changement de clause bénéficiaire tardif,Vérification identité au dénouement
+JEUX,Matchs truqués,Mises massives sur événements mineurs,"Monitoring intégrité, ANJ"
+JEUX,Bonus abuse / multi-comptes,Même appareil/IP sur plusieurs comptes,Device fingerprinting
+IMMOBILIER,Fraude au virement de l'acompte (FOVI notaire),Changement d'IBAN par mail,"Contre-appel, IBAN sécurisé"
+IMMOBILIER,Faux mandats / vente par non-propriétaire,"Propriétaire injoignable, urgence",Vérification titre de propriété
+TRANSFERT,Arnaques sentimentales / romance scam,Envois répétés de personnes âgées vers l'étranger,"Questionnaire anti-arnaque, refus"
+TRANSFERT,Complicité d'agent,"Agent avec volumes anormaux, fractionnement",Audit et scoring des agents
+CRYPTO,Pig butchering / faux investissements,Dépôts croissants vers plateforme inconnue,"Alertes clients, analyse on-chain"
+CRYPTO,Piratage de comptes / SIM swap,Changement de numéro + retrait total,"2FA hors SMS, délai de retrait"
+ENTREPRISE,Fraude au président,Demande urgente et confidentielle de virement international,"Double signature, procédure de rappel"
+ENTREPRISE,Faux fournisseur / changement d'IBAN,Nouvel IBAN dans un pays différent,Vérification indépendante du RIB
+CHANGE,Faux billets,Coupures neuves en série,"Détecteurs, formation"

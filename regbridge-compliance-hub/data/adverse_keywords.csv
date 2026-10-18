@@ -1,0 +1,31 @@
+mot_cle,langue,poids,categorie
+blanchiment,fr,3,BC
+money laundering,en,3,BC
+corruption,fr,3,Corruption
+pot-de-vin,fr,3,Corruption
+bribery,en,3,Corruption
+fraude,fr,2,Fraude
+fraud,en,2,Fraude
+escroquerie,fr,2,Fraude
+scam,en,2,Fraude
+détournement,fr,2,Corruption
+embezzlement,en,2,Corruption
+sanction,fr,2,Sanctions
+sanctioned,en,3,Sanctions
+terrorisme,fr,4,FT
+terrorism,en,4,FT
+trafic,fr,2,Criminalité
+trafficking,en,3,Criminalité
+cartel,en,3,Criminalité
+mis en examen,fr,3,Judiciaire
+condamné,fr,3,Judiciaire
+indicted,en,3,Judiciaire
+convicted,en,3,Judiciaire
+perquisition,fr,2,Judiciaire
+arrested,en,2,Judiciaire
+évasion fiscale,fr,2,Fiscal
+tax evasion,en,2,Fiscal
+abus de biens sociaux,fr,3,Corruption
+Ponzi,en,3,Fraude
+Pandora Papers,en,2,Opacité
+Panama Papers,en,2,Opacité

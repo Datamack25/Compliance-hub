@@ -1,0 +1,96 @@
+id,secteur,categorie,facteur,probabilite,impact,risque_brut,dispositif_attenuation,reference
+BANQUE-01,BANQUE,Clientèle,Personnes politiquement exposées (PPE) et proches,3,4,12,"Filtrage PPE à l'entrée en relation et en continu, accord de la direction, origine du patrimoine",CMF L.561-10 2°; AMLR art. 42-46
+BANQUE-02,BANQUE,Clientèle,Clients non-résidents / pays tiers à haut risque,3,4,12,"Vigilance renforcée art. L.561-10 4°, contrôle des flux par pays",CMF L.561-10; AMLR art. 29-31
+BANQUE-03,BANQUE,Clientèle,"Structures opaques, trusts, sociétés-écrans",3,4,12,"Identification des bénéficiaires effectifs (RBE), seuil 25 %, organigramme",CMF R.561-1; AMLR art. 51-58
+BANQUE-04,BANQUE,Clientèle,Professionnels à forte intensité d'espèces,4,3,12,"Profil de fonctionnement attendu, seuils espèces, justificatifs",ASR 2023 §2.2.1
+BANQUE-05,BANQUE,Clientèle,Clients faisant l'objet de presse négative / réquisitions,3,4,12,"Filtrage presse négative, vigilance renforcée, examen renforcé",Décision ACPR Delubac 2025 (grief 4)
+BANQUE-06,BANQUE,Produits,Gestion de fortune / banque privée,3,4,12,"Origine des fonds et du patrimoine, revue annuelle",ASR 2023 §3.2.3
+BANQUE-07,BANQUE,Produits,Correspondance bancaire hors UE,3,4,12,"Questionnaire Wolfsberg, due diligence correspondant, interdiction banques fictives",CMF L.561-10-3; AMLR art. 36
+BANQUE-08,BANQUE,Produits,Trade finance,2,3,6,"Contrôle documentaire, prix anormaux, double usage, navires",ASR 2023 §3.2.5
+BANQUE-09,BANQUE,Produits,Crédit à la consommation (risque FT),3,3,9,Détection micro-crédits avant départ zone de conflit,ASR 2023 §3.2.7
+BANQUE-10,BANQUE,Canaux,Entrée en relation à distance,3,3,9,"Solution PVID / eIDAS, contrôles anti-fraude documentaire",CMF R.561-5-1; AMLR art. 22
+BANQUE-11,BANQUE,Canaux,Recours à des intermédiaires / apporteurs,2,3,6,"Contrats, audits, tierce introduction encadrée",CMF L.561-7
+BANQUE-12,BANQUE,Géographie,Flux vers/depuis pays GAFI liste grise/noire,3,4,12,Surveillance des opérations effectives (pas seulement déclaratif),Décision ACPR Delubac 2025 (grief 3)
+BANQUE-13,BANQUE,Géographie,"Activité en Outre-mer (espèces, proximité zones à risque)",3,3,9,"Seuils adaptés, typologies ultramarines",ASR 2023 §2.2.4; Tracfin cas 5
+BANQUE-14,BANQUE,Opérations,Dépôts d'espèces importants ou fractionnés,4,3,12,"Scénarios de fractionnement, seuils, COSI",CMF L.561-15-1
+BANQUE-15,BANQUE,Opérations,Opérations incohérentes avec le profil financier,3,4,12,Modèles d'alerte intégrant revenus/patrimoine/CA déclarés,Décision ACPR Delubac 2025 (grief 1)
+BANQUE-16,BANQUE,Opérations,Stock d'alertes non traitées / délais excessifs,3,4,12,"Pilotage des stocks, SLA, effectifs dédiés",Décision ACPR Delubac 2025 (grief 2)
+BANQUE-17,BANQUE,Dispositif,Défaut ou retard de déclaration de soupçon,2,4,8,"Arbre de décision DS, comité, délais, traçabilité",CMF L.561-15; décision Delubac (griefs 6-7)
+BANQUE-18,BANQUE,Dispositif,Gel des avoirs – filtrage incomplet,2,4,8,"Filtrage temps réel des virements, mise à jour quotidienne listes",CMF L.562-4-1; arrêté 6 janv. 2021
+FINTECH-01,FINTECH,Clientèle,Mules financières recrutées sur réseaux sociaux,4,4,16,"Détection de comptes de passage, device fingerprinting, vélocité",ASR 2023 §3.3; Tracfin 2023
+FINTECH-02,FINTECH,Clientèle,Usurpation d'identité / faux documents,4,3,12,"Vérification biométrique, liveness, contrôle MRZ",ASR 2023 §2.2.3
+FINTECH-03,FINTECH,Clientèle,"Marchands à risque (jeux, crypto, contenus adultes, nutraceutiques)",3,3,9,"KYB marchand, MCC, contrôle site web, chargebacks",Schémas cartes; DSP2
+FINTECH-04,FINTECH,Clientèle,PPE et clients de pays tiers à haut risque,2,4,8,"Filtrage PPE/sanctions automatisé, vigilance renforcée",AMLR art. 29-46
+FINTECH-05,FINTECH,Produits,IBAN virtuels et comptes de cantonnement,3,4,12,"Traçabilité du donneur d'ordre final, contrôle des agents",ASR 2023 §2.2.2
+FINTECH-06,FINTECH,Produits,Monnaie électronique anonyme / cartes prépayées,4,4,16,"Plafonds, interdiction ME anonyme pour paiements à distance",CMF R.561-16-1; AMLR art. 19
+FINTECH-07,FINTECH,Produits,Paiements instantanés (SCT Inst),3,3,9,"Filtrage sanctions quotidien, vérification bénéficiaire (VoP)",Règl. (UE) 2024/886
+FINTECH-08,FINTECH,Canaux,Distribution via agents et distributeurs de ME,3,3,9,"Contrôle des agents, formation, audits",CMF L.523-1; L.525-8
+FINTECH-09,FINTECH,Canaux,Onboarding 100 % digital,4,3,12,"PVID, contrôles d'IP/VPN, appareils",AMLR art. 22
+FINTECH-10,FINTECH,Géographie,Corridors Europe-Afrique-Caraïbes,3,3,9,"Scoring corridor, plafonds par pays",ASR 2023 §3.3.3
+FINTECH-11,FINTECH,Opérations,Comptes de passage (crédit/débit rapides),4,4,16,"Ratio entrée/sortie, durée de détention des fonds",Tracfin cas 17
+FINTECH-12,FINTECH,Opérations,Fraude au virement / APP fraud,4,3,12,"Analyse comportementale, délais de rétention",PSR (projet); Règl. 2024/886
+FINTECH-13,FINTECH,Opérations,Fractionnement sous les seuils,3,3,9,Agrégation multi-comptes et multi-cartes,CMF L.561-15
+FINTECH-14,FINTECH,Dispositif,Externalisation KYC / outils fournisseurs,3,3,9,"Contrôle des PSEE, DORA, audits",DORA 2022/2554; arrêté 3 nov. 2014
+FINTECH-15,FINTECH,Dispositif,Croissance rapide non accompagnée du dispositif LCB-FT,3,4,12,"Plan de staffing conformité, KPI d'alertes",ASR 2023 §3.3.2
+ASSURANCE-01,ASSURANCE,Clientèle,Souscripteurs PPE ou non-résidents,2,4,8,"Filtrage PPE, origine des fonds",CMF L.561-10
+ASSURANCE-02,ASSURANCE,Clientèle,Bénéficiaire du contrat ≠ souscripteur sans lien apparent,3,3,9,"Contrôle au dénouement, lien souscripteur/bénéficiaire",CMF R.561-12
+ASSURANCE-03,ASSURANCE,Produits,Assurance-vie et capitalisation (primes élevées),3,3,9,"Origine des fonds au-delà de seuils, justificatifs",ASR 2023 §5.2
+ASSURANCE-04,ASSURANCE,Produits,Rachats anticipés malgré pénalités,3,3,9,"Alerte rachat précoce, analyse de cohérence",Lignes directrices ACPR assurance
+ASSURANCE-05,ASSURANCE,Produits,Contrats de capitalisation au porteur,2,4,8,Identification du porteur à chaque opération,CGI 990 A; CMF
+ASSURANCE-06,ASSURANCE,Produits,Assurance rançon (rançongiciels),3,3,9,Filtrage sanctions des bénéficiaires de rançon,ASR 2023 §5.3
+ASSURANCE-07,ASSURANCE,Canaux,Distribution via courtiers / CGP,3,3,9,"Conventions, audits des intermédiaires",ASR 2023 §6
+ASSURANCE-08,ASSURANCE,Géographie,Primes payées depuis l'étranger / tiers payeurs,3,3,9,Interdiction/justification tiers payeur,CMF L.561-6
+ASSURANCE-09,ASSURANCE,Opérations,Versements libres en espèces ou fractionnés,2,3,6,"Refus espèces, cumul des versements",CMF L.112-6
+ASSURANCE-10,ASSURANCE,Opérations,Avances et nantissements de contrats,2,3,6,Contrôle des avances successives,ASR 2023 §5.2
+ASSURANCE-11,ASSURANCE,Fraude,Fraude à l'assurance (sinistres fictifs),3,2,6,"Scoring sinistres, ALFA, contrôles terrain",Code des assurances
+JEUX-01,JEUX,Clientèle,Joueurs sans ressources licites suffisantes,3,4,12,"Origine des fonds au-delà de 2 000 €, cohérence profil",Tracfin cas 9; CMF L.561-13
+JEUX-02,JEUX,Clientèle,Joueurs PPE / joueurs étrangers,2,3,6,Filtrage PPE/sanctions à l'enregistrement,CMF L.561-10
+JEUX-03,JEUX,Clientèle,Prête-noms / comptes joueurs multiples,3,3,9,"Contrôle identité, device, adresses IP",ANJ – lignes directrices LCB-FT
+JEUX-04,JEUX,Produits,Rachat de tickets gagnants,3,4,12,"Traçabilité des gains, identification au paiement",Tracfin 2023
+JEUX-05,JEUX,Produits,Poker et jeux entre joueurs (chip dumping),3,3,9,Détection transferts inter-joueurs,ANJ
+JEUX-06,JEUX,Produits,Paris sportifs (matchs truqués),3,4,12,"Monitoring cotes anormales, ANJ, intégrité",Convention de Macolin
+JEUX-07,JEUX,Canaux,"Jeux en ligne (comptes multiples, VPN)",3,3,9,"Géolocalisation, empreinte appareil",Loi 2010-476
+JEUX-08,JEUX,Opérations,Mises en espèces élevées / échange plaques-espèces,4,3,12,"Seuils d'identification, registre",CMF R.561-10; Tracfin cas 9
+JEUX-09,JEUX,Opérations,Faible activité de jeu après dépôt (blanchiment par alimentation),3,3,9,"Ratio mises/dépôts, retraits rapides",ANJ
+JEUX-10,JEUX,Opérations,Gains fréquents et conséquents incohérents,3,3,9,Analyse des gains déclarés,Tracfin cas 2
+IMMOBILIER-01,IMMOBILIER,Clientèle,Acquéreurs via SCI ou sociétés étrangères,3,4,12,Identification des bénéficiaires effectifs,CMF L.561-2 8°; Tracfin cas 7
+IMMOBILIER-02,IMMOBILIER,Clientèle,Acquéreurs PPE / non-résidents,3,4,12,"Filtrage PPE, origine des fonds",CMF L.561-10
+IMMOBILIER-03,IMMOBILIER,Produits,Biens de prestige / immobilier de luxe,3,4,12,Vigilance renforcée au-delà de seuils,ASR 2023
+IMMOBILIER-04,IMMOBILIER,Produits,Vente à prix décoté / montages successifs,3,4,12,Comparaison prix marché (DVF),Tracfin cas 7
+IMMOBILIER-05,IMMOBILIER,Canaux,Mandats sans rencontre physique,2,3,6,Vérification à distance renforcée,CMF R.561-5-2
+IMMOBILIER-06,IMMOBILIER,Opérations,Acquisition sans prêt bancaire / apport important,3,4,12,Justification origine des fonds,Tracfin cas 7
+IMMOBILIER-07,IMMOBILIER,Opérations,Fonds provenant de pays tiers à haut risque,3,4,12,Vigilance renforcée géographique,AMLR art. 29
+IMMOBILIER-08,IMMOBILIER,Opérations,Location saisonnière avec loyers anormaux,2,3,6,Cohérence loyers marché,Tracfin
+IMMOBILIER-09,IMMOBILIER,Dispositif,Absence de classification des risques chez les agents,3,3,9,"Cartographie, formation, procédures",Contrôles DGCCRF
+TRANSFERT-01,TRANSFERT,Clientèle,Expéditeurs multiples vers un même bénéficiaire collecteur,4,4,16,Analyse de réseau expéditeurs/bénéficiaires,Tracfin cas 17
+TRANSFERT-02,TRANSFERT,Clientèle,Clientèle occasionnelle non identifiée,4,3,12,Identification dès le 1er euro (transfert de fonds),CMF R.561-10 II
+TRANSFERT-03,TRANSFERT,Produits,Transferts payés en espèces,4,4,16,"Plafonds, justificatifs, fractionnement",ASR 2023 §3.3.3
+TRANSFERT-04,TRANSFERT,Canaux,Réseau d'agents peu contrôlés,4,3,12,"Audits agents, mystery shopping, résiliation",CMF L.523-1
+TRANSFERT-05,TRANSFERT,Canaux,Hawala / systèmes de compensation informels,3,4,12,Détection d'agents non déclarés,GAFI 2026 hawala
+TRANSFERT-06,TRANSFERT,Géographie,"Corridors à risque (zones de conflit, liste grise)",4,4,16,"Scoring corridor, refus pays sous embargo",GAFI; UE 2016/1675
+TRANSFERT-07,TRANSFERT,Opérations,Volume et fréquence élevés par expéditeur,4,3,12,"Seuils de vélocité, agrégation",Tracfin cas 17
+TRANSFERT-08,TRANSFERT,Opérations,Informations incomplètes sur le donneur d'ordre (TFR),3,4,12,Contrôle des données accompagnant les virements,Règl. (UE) 2023/1113
+TRANSFERT-09,TRANSFERT,Opérations,Financement du terrorisme (petits montants),3,4,12,"Scénarios FT, zones sensibles",Tracfin cas 15-16
+CRYPTO-01,CRYPTO,Clientèle,Clients utilisant VPN / anonymisation,4,4,16,"Blocage TOR/VPN, géolocalisation",MiCA; TFR
+CRYPTO-02,CRYPTO,Clientèle,Projets crypto promus sur réseaux sociaux (rug pull),3,4,12,"Liste noire AMF, due diligence projets",Tracfin cas 3
+CRYPTO-03,CRYPTO,Produits,Privacy coins / mixeurs / tumblers,3,4,12,"Interdiction, analyse on-chain",AMLR art. 79
+CRYPTO-04,CRYPTO,Produits,NFT à valorisation spectaculaire,3,3,9,Analyse de wash trading,Tracfin cas 11
+CRYPTO-05,CRYPTO,Produits,Wallets non hébergés (self-hosted),4,3,12,Vérification propriété au-delà de 1 000 €,Règl. (UE) 2023/1113 art. 14
+CRYPTO-06,CRYPTO,Canaux,Plateformes DeFi / bridges cross-chain,3,4,12,"Analyse blockchain, scoring des contreparties",GAFI R.15
+CRYPTO-07,CRYPTO,Géographie,CASP non régulés / pays sans Travel Rule,3,4,12,Due diligence contreparties VASP,TFR art. 19
+CRYPTO-08,CRYPTO,Opérations,Micro-transactions vers wallets défavorablement connus,3,4,12,Outils de blockchain analytics,Tracfin cas 13
+CRYPTO-09,CRYPTO,Opérations,Conversion rapide fiat→crypto→fiat,4,3,12,"Détection de rebonds, durée de détention",ASR 2023 §4.2
+CRYPTO-10,CRYPTO,Dispositif,Transition PSAN → CASP MiCA (fin régime transitoire 1er juil. 2026),3,3,9,"Agrément CASP, mise à jour procédures",MiCA art. 143
+CHANGE-01,CHANGE,Clientèle,Clientèle occasionnelle et touristes,4,3,12,"Identification au-delà de seuils, cumul",CMF R.561-10
+CHANGE-02,CHANGE,Produits,Change de grosses coupures / devises à risque,4,3,12,"Seuils, justificatifs origine",ASR 2023 §3.5
+CHANGE-03,CHANGE,Géographie,Zones frontalières / Outre-mer,3,3,9,Seuils adaptés,ASR 2023 §2.2.4
+CHANGE-04,CHANGE,Opérations,Opérations fractionnées sur plusieurs bureaux,3,3,9,Agrégation multi-sites,CMF L.561-15
+CHANGE-05,CHANGE,Opérations,Change suivi d'un transport physique d'espèces,3,4,12,Rappel obligation déclarative douane,Règl. (UE) 2018/1672
+ENTREPRISE-01,ENTREPRISE,Tiers,Intermédiaires / agents commerciaux à l'international,3,4,12,"Évaluation des tiers, clauses anticorruption",Loi Sapin II art. 17
+ENTREPRISE-02,ENTREPRISE,Tiers,Fournisseurs dans des pays sous sanctions,2,4,8,"Filtrage sanctions des tiers, export control",Règl. (UE) 833/2014; 2021/821
+ENTREPRISE-03,ENTREPRISE,Clientèle,Clients en lien avec PPE / marchés publics,3,3,9,"Due diligence, registre cadeaux",Sapin II; Tracfin cas 14
+ENTREPRISE-04,ENTREPRISE,Opérations,Fraude au président / faux fournisseur (FOVI),4,3,12,"Double validation, rappel contre-appel",Bonnes pratiques Banque de France
+ENTREPRISE-05,ENTREPRISE,Opérations,Facturation fictive / surfacturation,3,3,9,Rapprochement commande/livraison,Tracfin cas 10
+ENTREPRISE-06,ENTREPRISE,Opérations,Détournement de subventions publiques,3,3,9,Contrôle des aides perçues,Tracfin cas 4 et 6
+ENTREPRISE-07,ENTREPRISE,Produits,Biens à double usage / contournement de sanctions,2,4,8,"Classification douanière, contrôles de destination finale",Règl. (UE) 2021/821
+ENTREPRISE-08,ENTREPRISE,Dispositif,Absence de cartographie anticorruption,3,3,9,"Cartographie AFA, code de conduite",Recommandations AFA 2020

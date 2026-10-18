@@ -1,0 +1,31 @@
+id,module,question,bonne_reponse,distracteurs
+Q001,Fondamentaux LCB-FT,Quelles sont les trois étapes classiques du blanchiment ?,"Placement, empilement, intégration","Collecte, transfert, retrait|Dépôt, conversion, retrait|Identification, vérification, déclaration"
+Q002,Fondamentaux LCB-FT,À quelle autorité la déclaration de soupçon est-elle adressée en France ?,Tracfin,ACPR|AMF|Procureur de la République
+Q003,Fondamentaux LCB-FT,Le client peut-il être informé de l'envoi d'une déclaration de soupçon ?,"Non, c'est interdit (tipping-off)","Oui, systématiquement|Oui, s'il le demande|Oui, après 30 jours"
+Q004,Fondamentaux LCB-FT,Durée de conservation des documents KYC après la fin de la relation ?,5 ans,1 an|3 ans|10 ans
+Q005,Fondamentaux LCB-FT,"Selon l'ASR 2023 de l'ACPR, quel est le niveau de risque de la transmission de fonds ?",Très élevé,Faible|Modéré|Élevé
+Q006,KYC / CDD,Seuil de détention définissant le bénéficiaire effectif d'une société ?,"Plus de 25 % du capital ou des droits de vote, ou contrôle",Plus de 10 %|Plus de 50 %|Plus de 33 %
+Q007,KYC / CDD,Que faire si l'identification du client est impossible ?,Ne pas entrer en relation et envisager une DS,Ouvrir le compte en mode dégradé|Demander un délai de 6 mois|Ouvrir avec un plafond
+Q008,KYC / CDD,L'AMLR (art. 26) impose pour le stock clients existants :,"Une remédiation fondée sur les risques, prioritairement les clients à haut risque",Aucune action|Une clôture des comptes anciens|Une revue tous les 10 ans
+Q009,KYC / CDD,Quand l'AMLR devient-il applicable ?,10 juillet 2027,1er janvier 2026|10 juillet 2025|1er janvier 2030
+Q010,PPE,Une PPE l'est-elle encore après la fin de ses fonctions ?,"Oui, au moins 12 mois après la cessation des fonctions","Non, immédiatement plus|Oui, 3 mois|Oui, à vie systématiquement"
+Q011,PPE,Qui doit autoriser l'entrée en relation avec une PPE ?,Un membre de la direction (senior management),Le chargé de clientèle seul|Tracfin|Le client lui-même
+Q012,PPE,Quelle publication liste les fonctions PPE nationales des États membres ?,Communication de la Commission au JOUE (C/2023/724),Le rapport annuel Tracfin|La liste GAFI|Le registre RBE
+Q013,Sanctions & gel,Quelle autorité française publie le registre national des gels ?,La DG Trésor,L'ACPR|La Banque de France|Le ministère de l'Intérieur
+Q014,Sanctions & gel,Pays inscrits sur la liste noire du GAFI (juin 2026) ?,"Corée du Nord, Iran, Myanmar","Russie, Syrie, Cuba|Iran, Venezuela, Haïti|Afghanistan, Yémen, Libye"
+Q015,Sanctions & gel,Le règlement (UE) 2024/886 impose pour les paiements instantanés :,Un filtrage quotidien des clients contre les listes de gel,Aucun filtrage|Un filtrage mensuel|Un filtrage uniquement à l'entrée en relation
+Q016,Sanctions & gel,Quels pays ont été ajoutés à la liste grise GAFI en juin 2026 ?,Bosnie-Herzégovine et Irak,Algérie et Namibie|Monaco et Bulgarie|Kenya et Liban
+Q017,Surveillance & DS,"Dans la décision Delubac (2025), quel était le stock d'alertes non traitées ?",Plus de 27 000 alertes,Environ 500|Environ 2 000|Aucune
+Q018,Surveillance & DS,La surveillance des liens avec les pays à risque doit porter sur :,"Les opérations effectivement réalisées, pas seulement les déclarations initiales",Uniquement les déclarations à l'entrée en relation|Uniquement les clients étrangers|Uniquement les espèces
+Q019,Surveillance & DS,Une DS doit être envoyée :,"Préalablement à l'exécution de l'opération, sauf impossibilité",Uniquement après clôture du compte|Une fois par an|Sur demande du client
+Q020,Crypto-actifs,Au-delà de quel montant le CASP doit-il vérifier la propriété d'un wallet non hébergé ?,1 000 €,100 €|10 000 €|15 000 €
+Q021,Crypto-actifs,Date de fin du régime transitoire PSAN en France vers l'agrément MiCA ?,1er juillet 2026,30 décembre 2024|1er janvier 2028|10 juillet 2027
+Q022,Crypto-actifs,Un indicateur Tracfin pour l'exploitation sexuelle de mineurs via crypto :,Montants faibles (< 50 €) vers des wallets défavorablement connus,Gros virements SEPA|Achat d'immobilier|Assurance-vie
+Q023,Fraude,Indicateur typique d'une mule financière :,Crédit suivi d'un débit quasi immédiat vers des tiers,Épargne régulière|Prélèvements de loyer|Salaire stable
+Q024,Fraude,Meilleure parade à la fraude au faux fournisseur :,Contre-appel sur un numéro connu avant tout changement d'IBAN,Payer plus vite|Accepter les IBAN par mail|Supprimer la double validation
+Q025,Jeux & hasard,Indicateur de blanchiment par le jeu (Tracfin cas 9) :,Mises en espèces sans ressources licites identifiées,Mises faibles régulières|Gains déclarés au fisc|Paiement par carte du joueur
+Q026,Immobilier,Indicateur Tracfin dans l'immobilier (cas 7) :,Prix de vente bas vs marché et absence de prêt bancaire,Recours à un notaire|Diagnostic énergétique|Bien en résidence principale
+Q027,Assurance,Indicateur de risque en assurance-vie :,"Rachat anticipé malgré pénalités, versement par un tiers",Versements programmés|Clause bénéficiaire standard|Contrat de 15 ans
+Q028,AMLR / AMLA,Où siège l'AMLA ?,Francfort,Paris|Bruxelles|Luxembourg
+Q029,AMLR / AMLA,Combien d'entités l'AMLA supervisera-t-elle directement (à partir de 2028) ?,Environ 40,Environ 400|Toutes les banques|Aucune
+Q030,AMLR / AMLA,Plafond européen des paiements en espèces prévu par l'AMLR ?,10 000 €,1 000 €|5 000 €|15 000 €

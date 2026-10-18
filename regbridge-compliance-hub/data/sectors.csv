@@ -1,0 +1,10 @@
+code,secteur,superviseur,niveau_asr,base_legale,perimetre
+BANQUE,Banque,ACPR,Modéré à élevé,CMF L.561-2 1°; arrêté du 6 janv. 2021,"Banque de détail, gestion de fortune, correspondance bancaire, trade finance, crédit"
+FINTECH,Fintech de paiement (EP/EME),ACPR,Élevé à très élevé,CMF L.561-2 1° et 1° bis; DSP2,"Comptes de paiement, IBAN virtuels, monnaie électronique, cartes prépayées, agents"
+ASSURANCE,Assurance,ACPR,Faible à modéré,CMF L.561-2 2°,"Assurance-vie, capitalisation, rachats anticipés, assurance rançon"
+JEUX,"Jeux et paris (casinos, opérateurs en ligne)",ANJ / SCCJ,Élevé,CMF L.561-2 9° et 9° bis,"Casinos, paris sportifs/hippiques, poker en ligne, cercles de jeux"
+IMMOBILIER,Immobilier,DGCCRF,Élevé,CMF L.561-2 8°,"Agents immobiliers, marchands de biens, promoteurs, gestion locative haut de gamme"
+TRANSFERT,Transmission de fonds (MTO),ACPR,Très élevé,CMF L.561-2 1°; Règl. (UE) 2023/1113,"Transferts en espèces, corridors à risque, agents, hawala"
+CRYPTO,Crypto-actifs (PSAN/CASP),AMF / ACPR,Très élevé,MiCA 2023/1114; TFR 2023/1113; CMF L.54-10-1,"Conversion fiat-crypto, wallets non hébergés, mixeurs, DeFi, NFT"
+CHANGE,Change manuel,ACPR,Élevé,CMF L.561-2 7°,"Change d'espèces, clientèle occasionnelle, frontières"
+ENTREPRISE,Entreprise non financière / Corporate,Selon assujettissement,Variable,Loi Sapin II; CMF L.561-2 (si assujettie),"Anticorruption, sanctions/export, fraude fournisseurs, tiers"

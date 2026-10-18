@@ -1,0 +1,19 @@
+titre,url,description,categorie
+GAFI – Listes noire et grise,https://www.fatf-gafi.org/en/countries/black-and-grey-lists.html,"Juridictions sous surveillance renforcée et appels à l'action, mises à jour à chaque plénière.",Pays à risque
+AMLA – Autorité européenne LCB-FT,https://www.amla.europa.eu,"Site officiel de l'AMLA : consultations, RTS/ITS, calendrier de supervision directe.",Réglementation
+AMLR – Règlement (UE) 2024/1624,https://eur-lex.europa.eu/eli/reg/2024/1624/oj,Texte intégral du règlement uniforme LCB-FT applicable au 10 juillet 2027.,Réglementation
+ACPR – LCB-FT,https://acpr.banque-france.fr/fr/controler/lutte-contre-le-blanchiment-de-capitaux-et-le-financement-du-terrorisme,"Lignes directrices, analyses sectorielles et décisions de la Commission des sanctions.",Superviseur
+Tracfin – Publications,https://www.economie.gouv.fr/tracfin/publications,"Rapports annuels, état de la menace et lettres d'information aux déclarants.",Typologies
+DG Trésor – Registre national des gels,https://gels-avoirs.dgtresor.gouv.fr,Registre consolidé des personnes et entités faisant l'objet d'un gel en France.,Sanctions
+Carte des sanctions de l'UE,https://www.sanctionsmap.eu,Visualisation des régimes de mesures restrictives de l'UE par pays.,Sanctions
+OFAC – Sanctions List Search,https://sanctionssearch.ofac.treas.gov,Recherche dans la liste SDN et autres listes américaines.,Sanctions
+ONU – Liste consolidée du Conseil de sécurité,https://main.un.org/securitycouncil/fr/content/un-sc-consolidated-list,Liste consolidée des sanctions du Conseil de sécurité.,Sanctions
+OpenSanctions,https://www.opensanctions.org,"Base ouverte de sanctions, PPE et entités d'intérêt (données consolidées).",Données
+Basel AML Index,https://index.baselgovernance.org,Classement annuel des risques de blanchiment par pays.,Pays à risque
+Transparency International – IPC,https://www.transparency.org/en/cpi,Indice de perception de la corruption par pays.,Corruption
+Europol – IOCTA / criminalité financière,https://www.europol.europa.eu/crime-areas/economic-crime/money-laundering,Analyses Europol sur le blanchiment et la criminalité organisée.,Menace
+EBA – Lignes directrices LCB-FT,https://www.eba.europa.eu/regulation-and-policy/anti-money-laundering-and-countering-financing-terrorism,"Orientations facteurs de risque, de-risking, accès aux services.",Réglementation
+ICIJ – Enquêtes,https://www.icij.org/investigations/,"Enquêtes internationales (Pandora, FinCEN Files) utiles pour la presse négative.",Presse négative
+OCCRP,https://www.occrp.org/en,Journalisme d'investigation sur la corruption et le crime organisé.,Presse négative
+AFA – Agence française anticorruption,https://www.agence-francaise-anticorruption.gouv.fr,"Recommandations Sapin II, guides et contrôles.",Anticorruption
+ANJ – Autorité nationale des jeux,https://anj.fr,Cadre LCB-FT des opérateurs de jeux.,Jeux

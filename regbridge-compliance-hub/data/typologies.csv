@@ -1,0 +1,25 @@
+id,theme,intitule,secteurs,criteres_alerte,source
+T01,Art,Blanchiment par l'achat d'œuvres d'art aux enchères,BANQUE;ENTREPRISE,Difficulté d'identification des BE; modification du nom de l'acquéreur; paiement fractionné; incohérence valeur/surface financière,Tracfin 2023-24 cas 1
+T02,Trafic de stupéfiants,Blanchiment du produit du trafic de stupéfiants,BANQUE;JEUX;TRANSFERT,Dépôts d'espèces importants; comptes à l'étranger non déclarés; gains de jeux fréquents; voyages payés pour des tiers,Tracfin 2023-24 cas 2
+T03,Cryptoactifs,Rug pull scam (escroquerie au projet crypto),CRYPTO;BANQUE,Promotion sur réseaux sociaux; cryptoactifs sur liste noire AMF; secteur blockchain/NFT,Tracfin 2023-24 cas 3
+T04,Détournement de fonds publics,Détournement de fonds européens,BANQUE;ENTREPRISE,Sociétés sans activité réelle; opérations incohérentes avec l'objet social; centralisation sur compte tiers,Tracfin 2023-24 cas 4
+T05,Escroquerie,Escroquerie à la défiscalisation Girardin (Outre-mer),BANQUE;ASSURANCE,Versements « Girardin » ou depuis SNC; absence d'agrément fiscal; conseiller non immatriculé,Tracfin 2023-24 cas 5
+T06,Fraude aux finances publiques,Fraude à MaPrimeRénov',BANQUE;ENTREPRISE,Sociétés récentes sans salariés; absence RGE; aides publiques exclusives au crédit,Tracfin 2023-24 cas 6
+T07,Immobilier,Montage de ventes à prix décotés,IMMOBILIER;BANQUE,Prix bas vs marché; absence de prêt; acquéreurs non-résidents; presse négative,Tracfin 2023-24 cas 7
+T08,Ingérence étrangère,Trafic d'influence via association culturelle,BANQUE;FINTECH,Virements de tiers depuis l'étranger; présence de PPE; lien avec pays sous sanctions,Tracfin 2023-24 cas 8
+T09,Jeu,Blanchiment par le jeu,JEUX;BANQUE,Mises en espèces; absence de ressources licites; mouvements internationaux,Tracfin 2023-24 cas 9
+T10,Manipulation de comptabilité,Escroquerie à la technologie inexistante,BANQUE;ENTREPRISE,Factures à la matérialité incertaine; surévaluation d'actifs; faible masse salariale,Tracfin 2023-24 cas 10
+T11,NFT,Fraude fiscale par l'utilisation de NFT,CRYPTO;BANQUE,Hausse spectaculaire de valeur d'un NFT; plus-value non déclarée,Tracfin 2023-24 cas 11
+T12,Opacification de l'origine des fonds,Trust et fraude fiscale,BANQUE;ASSURANCE,Sociétés-écrans; pays liste grise GAFI; trust non enregistré au registre des fiducies,Tracfin 2023-24 cas 12
+T13,Pédocriminalité,Cryptoactifs et exploitation sexuelle de mineurs,CRYPTO;FINTECH;TRANSFERT,Micro-montants < 50 € en crypto; comptes chez plusieurs PSAN; wallets défavorablement connus,Tracfin 2023-24 cas 13
+T14,Probité,Prise illégale d'intérêt et corruption,BANQUE;ENTREPRISE,Délais courts d'appel d'offres; sous-traitance sans prestation; bénéficiaire titulaire de mandat public,Tracfin 2023-24 cas 14
+T15,Réseaux sociaux,FT via rémunération d'influenceurs,FINTECH;BANQUE,Transferts vers réseau social; portefeuille ME; presse négative,Tracfin 2023-24 cas 15
+T16,Terrorisme,FT via cagnotte en ligne,FINTECH;BANQUE;TRANSFERT,Changement de comportement; cagnotte par client idéologiquement marqué; envois vers zones sensibles,Tracfin 2023-24 cas 16
+T17,Trafic de stupéfiants,Réseau de collecte par transferts de fonds,TRANSFERT;FINTECH,Plusieurs expéditeurs vers un collecteur; cartes prépayées multiples; absence de lien économique,Tracfin 2023-24 cas 17
+T18,Fraude,Mules financières (comptes de passage),FINTECH;BANQUE,Crédit puis débit immédiat; jeunes clients; device partagé; virements instantanés,ASR 2023; Europol EMMA
+T19,Sanctions,Contournement des sanctions via pays tiers,BANQUE;ENTREPRISE;TRANSFERT,Réexportations via Turquie/Asie centrale/EAU; biens à double usage; sociétés récemment créées,Règl. 833/2014 art. 12g; FinCEN/FCA alerts
+T20,Fraude,Fraude au président / faux IBAN fournisseur,ENTREPRISE;BANQUE,Changement d'IBAN; urgence; confidentialité; pays de destination inhabituel,OSMP Banque de France
+T21,Commerce,Blanchiment commercial (TBML) – sur/sous-facturation,BANQUE;ENTREPRISE,Prix anormaux; marchandises incohérentes; tiers payeurs,GAFI TBML 2020
+T22,Assurance,Rachat anticipé de contrat d'assurance-vie,ASSURANCE,Rachat précoce malgré pénalités; versement par un tiers; bénéficiaire sans lien,ACPR lignes directrices
+T23,Cryptoactifs,"Mixeurs, chain-hopping et bridges",CRYPTO,Passage par mixeurs; conversions rapides multi-chaînes; DEX,GAFI VA 2025
+T24,Corruption,Corruption d'agent public étranger via intermédiaire,ENTREPRISE;BANQUE,Commissions élevées; sociétés offshore; intermédiaire sans substance,OCDE; Sapin II

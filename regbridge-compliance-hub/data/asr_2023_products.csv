@@ -1,0 +1,27 @@
+produit,secteur,menace,vulnerabilite,risque_global
+Actifs numériques,CRYPTO,Très élevée,Très élevée,Très élevé
+Transmission de fonds,TRANSFERT,Très élevée,Très élevée,Très élevé
+Monnaie électronique,FINTECH,Élevée,Très élevée,Très élevé
+Change manuel,CHANGE,Très élevée,Modérée,Élevé
+Établissement de paiement,FINTECH,Élevée,Élevée,Élevé
+Intermédiaire en financement participatif (IFP),FINTECH,Élevée,Élevée,Élevé
+Gestion de fortune,BANQUE,Élevée,Élevée,Élevé
+Correspondance bancaire hors UE,BANQUE,Élevée,Élevée,Élevé
+Crédit à la consommation (FT),BANQUE,Élevée,Élevée,Élevé
+Banque de détail,BANQUE,Élevée,Modérée,Modéré
+Correspondance bancaire intra-UE,BANQUE,Élevée,Modérée,Modéré
+Assurance rançon,ASSURANCE,Élevée,Modérée,Modéré
+Services d'investissement (BC),BANQUE,Modérée,Modérée,Modéré
+BFI et crédits aux entreprises (BC),BANQUE,Modérée,Modérée,Modéré
+Trade finance,BANQUE,Modérée,Modérée,Modéré
+Assurance-vie,ASSURANCE,Modérée,Modérée,Modéré
+Crédit immobilier de luxe,IMMOBILIER,Modérée,Modérée,Modéré
+Courtiers en assurance-vie,ASSURANCE,Modérée,Modérée,Modéré
+Crédit à la consommation (BC),BANQUE,Modérée,Élevée,Modéré
+Leasing,BANQUE,Modérée,Faible,Faible
+Affacturage,BANQUE,Modérée,Faible,Faible
+Cautionnement et nantissement,BANQUE,Faible,Faible,Faible
+Crédit immobilier (hors luxe),IMMOBILIER,Faible,Faible,Faible
+Courtiers OBSP et d'assurance (hors vie),ASSURANCE,Faible,Faible,Faible
+Activités de crédit hors conso,BANQUE,Faible,Modérée,Faible
+Assurance non-vie (hors rançon),ASSURANCE,Faible,Modérée,Faible
