@@ -1,35 +1,171 @@
-"""Comptes utilisateurs, offres payantes et codes d'activation (SQLite + bcrypt).
+"""Comptes utilisateurs, offres payantes, codes d'activation et certificats.
+
+Stockage (v1.2) — registres CSV dans data/ :
+- users.csv          : comptes (identifiant unique RB-XXXX-XXXX, e-mail, mot de passe et clé de récupération hachés bcrypt…)
+- licence_codes.csv  : codes d'activation émis / utilisés
+- certificates.csv   : certificats de formation délivrés
+Les sessions (jetons de reconnexion) restent en SQLite (data/app.db), car elles sont temporaires.
+
+Persistance sur Streamlit Community Cloud : le disque de l'application est effacé à chaque redémarrage.
+Pour conserver les comptes, renseigner dans les secrets un dépôt GitHub PRIVÉ de sauvegarde :
+    GITHUB_TOKEN = "github_pat_..."         (droits « Contents : read & write » sur ce dépôt uniquement)
+    GITHUB_DATA_REPO = "votre-compte/regbridge-data"
+Les registres CSV y sont alors restaurés au démarrage et sauvegardés après chaque modification.
 
 Offres :
-- free        « Découverte »  : tableau de bord, pays & sanctions (consultation), formation (sans certificat)
+- free        « Découverte »   : tableau de bord, pays & sanctions (consultation), formation (sans certificat)
 - pro         « Professionnel » : tous les agents et générateurs
-- enterprise  « Entreprise »  : Pro + kit ZIP multi-secteurs, laboratoire ML (auto-amélioration), multi-utilisateurs
-
-Paiement : lien de paiement Stripe configurable dans .streamlit/secrets.toml (STRIPE_LINK_PRO /
-STRIPE_LINK_ENTERPRISE). Après paiement, l'administrateur délivre un code d'activation (onglet Admin)
-que l'utilisateur saisit dans « Mon compte ». Chaque nouveau compte bénéficie d'un essai Pro de 7 jours.
+- enterprise  « Entreprise »   : Pro + kit ZIP multi-secteurs, laboratoire ML, multi-utilisateurs
 """
 from __future__ import annotations
 
+import base64
 import os
 import re
 import secrets
 import sqlite3
+import threading
 from contextlib import contextmanager
 from datetime import datetime, timedelta
 
 import bcrypt
+import pandas as pd
+import requests
 import streamlit as st
 
 from core.paths import DATA
 
 DB = DATA / "app.db"
+USERS_CSV = DATA / "users.csv"
+CODES_CSV = DATA / "licence_codes.csv"
+CERTS_CSV = DATA / "certificates.csv"
+USER_COLS = ["user_id", "email", "name", "company", "sector", "pwd_hash", "recovery_hash", "plan", "plan_expiry", "role",
+             "created", "last_login"]
+CODE_COLS = ["code", "plan", "days", "created", "used_by", "used_at"]
+CERT_COLS = ["cert_id", "email", "name", "module", "score", "issued"]
 PLANS = {
     "free": {"label": "Découverte", "rank": 0, "price": "0 €"},
     "pro": {"label": "Professionnel", "rank": 1, "price": "49 € / mois"},
     "enterprise": {"label": "Entreprise", "rank": 2, "price": "199 € / mois"},
 }
 TRIAL_DAYS = 7
+_LOCK = threading.Lock()
+_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"  # sans 0/O/1/I pour éviter les confusions
+
+
+# =============================================================================== utilitaires
+def _secret(key: str, default=None):
+    try:
+        return st.secrets.get(key, os.environ.get(key, default))
+    except Exception:
+        return os.environ.get(key, default)
+
+
+def _hash(pwd: str) -> str:
+    return bcrypt.hashpw(pwd.encode(), bcrypt.gensalt()).decode()
+
+
+def _check(pwd: str, h: str) -> bool:
+    try:
+        return bool(h) and bcrypt.checkpw(pwd.encode(), str(h).encode())
+    except Exception:
+        return False
+
+
+def _rand(n: int) -> str:
+    return "".join(secrets.choice(_ALPHABET) for _ in range(n))
+
+
+def new_user_id() -> str:
+    return f"RB-{_rand(4)}-{_rand(4)}"
+
+
+def new_recovery_key() -> str:
+    return f"{_rand(4)}-{_rand(4)}-{_rand(4)}-{_rand(4)}"
+
+
+def _norm_key(k: str) -> str:
+    return re.sub(r"[^A-Z0-9]", "", str(k).upper())
+
+
+def valid_password(pwd: str) -> str | None:
+    if len(pwd) < 8:
+        return "Le mot de passe doit contenir au moins 8 caractères."
+    if not re.search(r"[A-Z]", pwd) or not re.search(r"[0-9]", pwd):
+        return "Le mot de passe doit contenir au moins une majuscule et un chiffre."
+    return None
+
+
+# =============================================================================== sauvegarde GitHub (optionnelle)
+def _gh():
+    tok, repo = _secret("GITHUB_TOKEN", ""), _secret("GITHUB_DATA_REPO", "")
+    return (tok, repo) if tok and repo else (None, None)
+
+
+def backup_enabled() -> bool:
+    return _gh()[0] is not None
+
+
+def _gh_url(repo, name):
+    return f"https://api.github.com/repos/{repo}/contents/regbridge/{name}"
+
+
+def _gh_pull(name: str, path) -> bool:
+    tok, repo = _gh()
+    if not tok:
+        return False
+    try:
+        r = requests.get(_gh_url(repo, name), headers={"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json"}, timeout=10)
+        if r.ok:
+            path.write_bytes(base64.b64decode(r.json()["content"]))
+            return True
+    except Exception:
+        pass
+    return False
+
+
+def _gh_push(name: str, path):
+    tok, repo = _gh()
+    if not tok:
+        return
+    def run():
+        try:
+            h = {"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json"}
+            cur = requests.get(_gh_url(repo, name), headers=h, timeout=10)
+            body = {"message": f"Sauvegarde {name} — {datetime.now():%Y-%m-%d %H:%M}",
+                    "content": base64.b64encode(path.read_bytes()).decode()}
+            if cur.ok:
+                body["sha"] = cur.json()["sha"]
+            requests.put(_gh_url(repo, name), headers=h, json=body, timeout=15)
+        except Exception:
+            pass
+    threading.Thread(target=run, daemon=True).start()
+
+
+# =============================================================================== registres CSV
+def _read(path, cols) -> pd.DataFrame:
+    if not path.exists() or path.stat().st_size == 0:
+        return pd.DataFrame(columns=cols)
+    df = pd.read_csv(path, dtype=str, keep_default_na=False)
+    for c in cols:
+        if c not in df.columns:
+            df[c] = ""
+    return df[cols]
+
+
+def _write(path, df: pd.DataFrame):
+    tmp = path.with_suffix(".tmp")
+    df.to_csv(tmp, index=False)
+    os.replace(tmp, path)
+    _gh_push(path.name, path)
+
+
+def users_df() -> pd.DataFrame:
+    return _read(USERS_CSV, USER_COLS)
+
+
+def _save_users(df):
+    _write(USERS_CSV, df)
 
 
 @contextmanager
@@ -43,81 +179,139 @@ def conn():
         c.close()
 
 
-def _secret(key: str, default=None):
-    try:
-        return st.secrets.get(key, os.environ.get(key, default))
-    except Exception:
-        return os.environ.get(key, default)
-
-
 def init_db():
-    with conn() as c:
-        c.execute("""CREATE TABLE IF NOT EXISTS users(
-            id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT UNIQUE NOT NULL, name TEXT, company TEXT, sector TEXT,
-            pwd_hash TEXT NOT NULL, plan TEXT DEFAULT 'free', plan_expiry TEXT, role TEXT DEFAULT 'user',
-            created TEXT, last_login TEXT)""")
-        c.execute("""CREATE TABLE IF NOT EXISTS licence_codes(
-            code TEXT PRIMARY KEY, plan TEXT, days INTEGER, created TEXT, used_by TEXT, used_at TEXT)""")
-        c.execute("""CREATE TABLE IF NOT EXISTS sessions(token TEXT PRIMARY KEY, email TEXT, expires TEXT)""")
-        c.execute("""CREATE TABLE IF NOT EXISTS certificates(
-            cert_id TEXT PRIMARY KEY, email TEXT, name TEXT, module TEXT, score REAL, issued TEXT)""")
-        admin_email = _secret("ADMIN_EMAIL", "admin@regbridge.fr")
+    """Crée les registres, restaure la sauvegarde GitHub et migre l'ancienne base SQLite si besoin."""
+    if st.session_state.get("_auth_init"):
+        return
+    with _LOCK:
+        for name, path in (("users.csv", USERS_CSV), ("licence_codes.csv", CODES_CSV), ("certificates.csv", CERTS_CSV)):
+            if not path.exists():
+                _gh_pull(name, path)
+        with conn() as c:
+            c.execute("CREATE TABLE IF NOT EXISTS sessions(token TEXT PRIMARY KEY, email TEXT, expires TEXT)")
+            tables = {r[0] for r in c.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+            df = users_df()
+            # migration v1.0/1.1 (SQLite) -> CSV
+            if "users" in tables:
+                for r in c.execute("SELECT * FROM users"):
+                    if r["email"] not in set(df["email"]):
+                        df.loc[len(df)] = [new_user_id(), r["email"], r["name"] or "", r["company"] or "", r["sector"] or "", r["pwd_hash"], "",
+                                           r["plan"] or "free", r["plan_expiry"] or "", r["role"] or "user", r["created"] or "", r["last_login"] or ""]
+            if "licence_codes" in tables and not CODES_CSV.exists():
+                _write(CODES_CSV, pd.DataFrame([dict(r) for r in c.execute("SELECT * FROM licence_codes")], columns=CODE_COLS).fillna(""))
+            if "certificates" in tables and not CERTS_CSV.exists():
+                _write(CERTS_CSV, pd.DataFrame([dict(r) for r in c.execute("SELECT * FROM certificates")], columns=CERT_COLS).fillna(""))
+        admin_email = str(_secret("ADMIN_EMAIL", "admin@regbridge.fr")).strip().lower()
         admin_pwd = _secret("ADMIN_PASSWORD", "Admin!2026")
-        if not c.execute("SELECT 1 FROM users WHERE email=?", (admin_email,)).fetchone():
-            c.execute("INSERT INTO users(email,name,company,sector,pwd_hash,plan,plan_expiry,role,created) VALUES(?,?,?,?,?,?,?,?,?)",
-                      (admin_email, "Administrateur", "RegBridge Conseil", "BANQUE", _hash(admin_pwd), "enterprise",
-                       "2099-12-31", "admin", datetime.now().isoformat()))
+        if admin_email not in set(df["email"]):
+            df.loc[len(df)] = ["RB-ADMN-0001", admin_email, "Administrateur", "RegBridge Conseil", "BANQUE", _hash(admin_pwd), "",
+                               "enterprise", "2099-12-31", "admin", datetime.now().isoformat(timespec="seconds"), ""]
+        if not USERS_CSV.exists() or len(df) != len(users_df()):
+            _save_users(df)
+        for path, cols in ((CODES_CSV, CODE_COLS), (CERTS_CSV, CERT_COLS)):
+            if not path.exists():
+                _write(path, pd.DataFrame(columns=cols))
+    st.session_state["_auth_init"] = True
 
 
-def _hash(pwd: str) -> str:
-    return bcrypt.hashpw(pwd.encode(), bcrypt.gensalt()).decode()
+# =============================================================================== comptes
+def _find(df: pd.DataFrame, ident: str) -> int | None:
+    ident = str(ident).strip()
+    m = df.index[(df["email"] == ident.lower()) | (df["user_id"].str.upper() == ident.upper())]
+    return int(m[0]) if len(m) else None
 
 
-def _check(pwd: str, h: str) -> bool:
-    try:
-        return bcrypt.checkpw(pwd.encode(), h.encode())
-    except Exception:
-        return False
-
-
-def valid_password(pwd: str) -> str | None:
-    if len(pwd) < 8:
-        return "Le mot de passe doit contenir au moins 8 caractères."
-    if not re.search(r"[A-Z]", pwd) or not re.search(r"[0-9]", pwd):
-        return "Le mot de passe doit contenir au moins une majuscule et un chiffre."
-    return None
-
-
-def register(email, name, company, sector, pwd) -> tuple[bool, str]:
+def register(email, name, company, sector, pwd) -> tuple[bool, str, dict | None]:
+    """Crée le compte. Retourne (ok, message, {user_id, recovery_key}) — la clé n'est affichée qu'une fois."""
     email = email.strip().lower()
     if not re.match(r"^[^@\s]+@[^@\s]+\.[^@\s]+$", email):
-        return False, "Adresse e-mail invalide."
+        return False, "Adresse e-mail invalide.", None
     err = valid_password(pwd)
     if err:
-        return False, err
-    try:
-        with conn() as c:
-            expiry = (datetime.now() + timedelta(days=TRIAL_DAYS)).date().isoformat()
-            c.execute("INSERT INTO users(email,name,company,sector,pwd_hash,plan,plan_expiry,role,created) VALUES(?,?,?,?,?,?,?,?,?)",
-                      (email, name.strip(), company.strip(), sector, _hash(pwd), "pro", expiry, "user", datetime.now().isoformat()))
-        return True, f"Compte créé — essai Professionnel offert jusqu'au {expiry}."
-    except sqlite3.IntegrityError:
-        return False, "Un compte existe déjà avec cette adresse."
+        return False, err, None
+    with _LOCK:
+        df = users_df()
+        if email in set(df["email"]):
+            return False, "Un compte existe déjà avec cette adresse. Utilisez « Mot de passe oublié » si besoin.", None
+        uid = new_user_id()
+        while uid in set(df["user_id"]):
+            uid = new_user_id()
+        key = new_recovery_key()
+        expiry = (datetime.now() + timedelta(days=TRIAL_DAYS)).date().isoformat()
+        df.loc[len(df)] = [uid, email, name.strip(), company.strip(), sector, _hash(pwd), _hash(_norm_key(key)), "pro", expiry, "user",
+                           datetime.now().isoformat(timespec="seconds"), ""]
+        _save_users(df)
+    return True, f"Compte créé — essai Professionnel offert jusqu'au {expiry}.", {"user_id": uid, "recovery_key": key}
 
 
-def login(email, pwd) -> dict | None:
-    with conn() as c:
-        r = c.execute("SELECT * FROM users WHERE email=?", (email.strip().lower(),)).fetchone()
-        if r and _check(pwd, r["pwd_hash"]):
-            c.execute("UPDATE users SET last_login=? WHERE id=?", (datetime.now().isoformat(), r["id"]))
-            return dict(r)
-    return None
+def login(ident, pwd) -> dict | None:
+    """Connexion par e-mail OU identifiant unique (RB-XXXX-XXXX)."""
+    with _LOCK:
+        df = users_df()
+        i = _find(df, ident)
+        if i is None or not _check(pwd, df.at[i, "pwd_hash"]):
+            return None
+        df.at[i, "last_login"] = datetime.now().isoformat(timespec="seconds")
+        _save_users(df)
+        return df.loc[i].to_dict()
 
 
 def refresh(email) -> dict | None:
-    with conn() as c:
-        r = c.execute("SELECT * FROM users WHERE email=?", (email,)).fetchone()
-        return dict(r) if r else None
+    df = users_df()
+    i = _find(df, email)
+    return df.loc[i].to_dict() if i is not None else None
+
+
+def reset_password(email: str, user_id: str, recovery_key: str, new_pwd: str) -> tuple[bool, str, str | None]:
+    """Réinitialisation par e-mail + identifiant unique + clé de récupération. Une nouvelle clé est générée."""
+    err = valid_password(new_pwd)
+    if err:
+        return False, err, None
+    with _LOCK:
+        df = users_df()
+        i = _find(df, email)
+        if i is None or df.at[i, "user_id"].upper() != user_id.strip().upper() or not _check(_norm_key(recovery_key), df.at[i, "recovery_hash"]):
+            return False, "Informations de récupération incorrectes (e-mail, identifiant ou clé).", None
+        key = new_recovery_key()
+        df.at[i, "pwd_hash"], df.at[i, "recovery_hash"] = _hash(new_pwd), _hash(_norm_key(key))
+        _save_users(df)
+    return True, "Mot de passe réinitialisé. Une nouvelle clé de récupération a été générée.", key
+
+
+def regenerate_recovery_key(email: str) -> str:
+    with _LOCK:
+        df = users_df()
+        i = _find(df, email)
+        key = new_recovery_key()
+        df.at[i, "recovery_hash"] = _hash(_norm_key(key))
+        _save_users(df)
+    return key
+
+
+def admin_reset_password(email: str) -> tuple[str, str]:
+    """Réinitialisation par l'administrateur : mot de passe temporaire + nouvelle clé de récupération."""
+    tmp = f"Rb{_rand(6)}9"
+    with _LOCK:
+        df = users_df()
+        i = _find(df, email)
+        key = new_recovery_key()
+        df.at[i, "pwd_hash"], df.at[i, "recovery_hash"] = _hash(tmp), _hash(_norm_key(key))
+        _save_users(df)
+    return tmp, key
+
+
+def change_password(email, old, new) -> tuple[bool, str]:
+    err = valid_password(new)
+    if err:
+        return False, err
+    with _LOCK:
+        df = users_df()
+        i = _find(df, email)
+        if i is None or not _check(old, df.at[i, "pwd_hash"]):
+            return False, "Mot de passe actuel incorrect."
+        df.at[i, "pwd_hash"] = _hash(new)
+        _save_users(df)
+    return True, "Mot de passe modifié."
 
 
 def effective_plan(user: dict | None) -> str:
@@ -126,81 +320,96 @@ def effective_plan(user: dict | None) -> str:
     exp = user.get("plan_expiry")
     if user.get("plan") != "free" and exp and exp < datetime.now().date().isoformat():
         return "free"
-    return user.get("plan", "free")
+    return user.get("plan") or "free"
 
 
 def has_access(user: dict | None, needed: str) -> bool:
     return PLANS[effective_plan(user)]["rank"] >= PLANS[needed]["rank"]
 
 
-def change_password(email, old, new) -> tuple[bool, str]:
-    u = refresh(email)
-    if not u or not _check(old, u["pwd_hash"]):
-        return False, "Mot de passe actuel incorrect."
-    err = valid_password(new)
-    if err:
-        return False, err
-    with conn() as c:
-        c.execute("UPDATE users SET pwd_hash=? WHERE email=?", (_hash(new), email))
-    return True, "Mot de passe modifié."
+def list_users():
+    df = users_df().drop(columns=["pwd_hash", "recovery_hash"])
+    return df.to_dict("records")
 
 
+def set_plan(email, plan, expiry):
+    with _LOCK:
+        df = users_df()
+        i = _find(df, email)
+        df.at[i, "plan"], df.at[i, "plan_expiry"] = plan, expiry
+        _save_users(df)
+
+
+def delete_user(email):
+    with _LOCK:
+        df = users_df()
+        df = df[~((df["email"] == email) & (df["role"] != "admin"))]
+        _save_users(df)
+
+
+# =============================================================================== codes d'activation
 def create_code(plan: str, days: int) -> str:
     code = f"RB-{plan[:3].upper()}-" + secrets.token_hex(4).upper()
-    with conn() as c:
-        c.execute("INSERT INTO licence_codes(code,plan,days,created) VALUES(?,?,?,?)", (code, plan, days, datetime.now().isoformat()))
+    with _LOCK:
+        df = _read(CODES_CSV, CODE_COLS)
+        df.loc[len(df)] = [code, plan, str(days), datetime.now().isoformat(timespec="seconds"), "", ""]
+        _write(CODES_CSV, df)
     return code
 
 
 def redeem(email: str, code: str) -> tuple[bool, str]:
     code = code.strip().upper()
-    with conn() as c:
-        r = c.execute("SELECT * FROM licence_codes WHERE code=?", (code,)).fetchone()
-        if not r:
+    with _LOCK:
+        cd = _read(CODES_CSV, CODE_COLS)
+        m = cd.index[cd["code"] == code]
+        if not len(m):
             return False, "Code inconnu."
-        if r["used_by"]:
+        j = m[0]
+        if cd.at[j, "used_by"]:
             return False, "Code déjà utilisé."
-        u = c.execute("SELECT * FROM users WHERE email=?", (email,)).fetchone()
+        df = users_df()
+        i = _find(df, email)
+        plan, days = cd.at[j, "plan"], int(float(cd.at[j, "days"]))
         base = datetime.now().date()
-        if u["plan"] == r["plan"] and u["plan_expiry"] and u["plan_expiry"] > base.isoformat():
-            base = datetime.fromisoformat(u["plan_expiry"]).date()
-        exp = (base + timedelta(days=int(r["days"]))).isoformat()
-        c.execute("UPDATE users SET plan=?, plan_expiry=? WHERE email=?", (r["plan"], exp, email))
-        c.execute("UPDATE licence_codes SET used_by=?, used_at=? WHERE code=?", (email, datetime.now().isoformat(), code))
-    return True, f"Offre {PLANS[r['plan']]['label']} activée jusqu'au {exp}."
-
-
-def list_users():
-    with conn() as c:
-        return [dict(r) for r in c.execute("SELECT id,email,name,company,sector,plan,plan_expiry,role,created,last_login FROM users ORDER BY id")]
+        if df.at[i, "plan"] == plan and df.at[i, "plan_expiry"] and df.at[i, "plan_expiry"] > base.isoformat():
+            base = datetime.fromisoformat(df.at[i, "plan_expiry"]).date()
+        exp = (base + timedelta(days=days)).isoformat()
+        df.at[i, "plan"], df.at[i, "plan_expiry"] = plan, exp
+        cd.at[j, "used_by"], cd.at[j, "used_at"] = email, datetime.now().isoformat(timespec="seconds")
+        _save_users(df)
+        _write(CODES_CSV, cd)
+    return True, f"Offre {PLANS[plan]['label']} activée jusqu'au {exp}."
 
 
 def list_codes():
-    with conn() as c:
-        return [dict(r) for r in c.execute("SELECT * FROM licence_codes ORDER BY created DESC")]
+    return _read(CODES_CSV, CODE_COLS).iloc[::-1].to_dict("records")
 
 
-def set_plan(email, plan, expiry):
-    with conn() as c:
-        c.execute("UPDATE users SET plan=?, plan_expiry=? WHERE email=?", (plan, expiry, email))
-
-
-def delete_user(email):
-    with conn() as c:
-        c.execute("DELETE FROM users WHERE email=? AND role!='admin'", (email,))
-
-
+# =============================================================================== certificats
 def save_certificate(cert_id, email, name, module, score):
-    with conn() as c:
-        c.execute("INSERT OR REPLACE INTO certificates VALUES(?,?,?,?,?,?)", (cert_id, email, name, module, score, datetime.now().isoformat()))
+    with _LOCK:
+        df = _read(CERTS_CSV, CERT_COLS)
+        df = df[df["cert_id"] != cert_id]
+        df.loc[len(df)] = [cert_id, email, name, module, str(score), datetime.now().isoformat(timespec="seconds")]
+        _write(CERTS_CSV, df)
 
 
 def verify_certificate(cert_id) -> dict | None:
-    with conn() as c:
-        r = c.execute("SELECT * FROM certificates WHERE cert_id=?", (cert_id.strip().upper(),)).fetchone()
-        return dict(r) if r else None
+    df = _read(CERTS_CSV, CERT_COLS)
+    m = df[df["cert_id"] == cert_id.strip().upper()]
+    if not len(m):
+        return None
+    r = m.iloc[0].to_dict()
+    r["score"] = float(r["score"] or 0)
+    return r
 
 
+def certificates_of(email) -> list[dict]:
+    df = _read(CERTS_CSV, CERT_COLS)
+    return df[df["email"] == email].drop(columns=["email"]).iloc[::-1].to_dict("records")
+
+
+# =============================================================================== sessions
 def payment_links() -> dict:
     return {"pro": _secret("STRIPE_LINK_PRO", ""), "enterprise": _secret("STRIPE_LINK_ENTERPRISE", "")}
 

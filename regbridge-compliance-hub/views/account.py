@@ -10,7 +10,7 @@ hero("Mon compte & abonnement", f"{u['email']} — offre {auth.PLANS[plan]['labe
 c1, c2 = st.columns(2)
 with c1:
     section("Profil")
-    st.markdown(f"**Nom :** {u.get('name')}  \n**Société :** {u.get('company')}  \n**Secteur :** {u.get('sector')}  \n"
+    st.markdown(f"**Identifiant unique :** `{u.get('user_id')}`  \n**E-mail :** {u.get('email')}  \n**Nom :** {u.get('name')}  \n**Société :** {u.get('company')}  \n**Secteur :** {u.get('sector')}  \n"
                 f"**Offre :** {auth.PLANS[plan]['label']}" + (f" (jusqu'au {u.get('plan_expiry')})" if plan != "free" else ""))
     with st.form("pwd"):
         old = st.text_input("Mot de passe actuel", type="password")
@@ -18,6 +18,13 @@ with c1:
         if st.form_submit_button("Changer le mot de passe"):
             ok, msg = auth.change_password(u["email"], old, new)
             (st.success if ok else st.error)(msg)
+    section("Clé de récupération")
+    st.caption("La clé permet de réinitialiser le mot de passe (onglet « Mot de passe oublié »). Générer une nouvelle clé invalide l'ancienne.")
+    if st.button("Générer une nouvelle clé de récupération"):
+        key = auth.regenerate_recovery_key(u["email"])
+        st.success(f"Nouvelle clé : **{key}** — à conserver, elle ne sera plus affichée.")
+        st.download_button("⬇️ Télécharger", f"Identifiant : {u.get('user_id')}\nClé de récupération : {key}\n".encode("utf-8"),
+                           f"RegBridge_{u.get('user_id')}.txt")
 with c2:
     section("Activer un code")
     code = st.text_input("Code d'activation (reçu après paiement)")

@@ -40,17 +40,39 @@ def landing():
                 st.write("")
     with right:
         section("Accès")
-        t1, t2, t3 = st.tabs(["Se connecter", "Créer un compte", "Vérifier un certificat"])
+        new_acc = st.session_state.get("new_account")
+        if new_acc:
+            st.success("✅ Compte créé avec succès. Conservez précieusement ces informations : la clé de récupération "
+                       "n'est affichée qu'une seule fois et permet de réinitialiser votre mot de passe.")
+            st.markdown(f'<div class="rb-card"><h4>Votre identifiant unique</h4><p style="font-family:JetBrains Mono,monospace;'
+                        f'font-size:1.35rem;color:#0B1F3A">{new_acc["user_id"]}</p>'
+                        f'<h4 style="margin-top:12px">Votre clé de récupération</h4><p style="font-family:JetBrains Mono,monospace;'
+                        f'font-size:1.15rem;color:#B54708">{new_acc["recovery_key"]}</p></div>', unsafe_allow_html=True)
+            memo = (f"RegBridge Compliance Hub — informations de compte\n\nE-mail : {new_acc['email']}\n"
+                    f"Identifiant unique : {new_acc['user_id']}\nClé de récupération : {new_acc['recovery_key']}\n\n"
+                    "Connexion possible avec l'e-mail ou l'identifiant unique.\n"
+                    "En cas d'oubli du mot de passe : onglet « Mot de passe oublié » (e-mail + identifiant + clé).\n")
+            b1, b2 = st.columns(2)
+            b1.download_button("⬇️ Télécharger ces informations", memo.encode("utf-8"), f"RegBridge_{new_acc['user_id']}.txt", use_container_width=True)
+            if b2.button("Accéder à mon espace →", type="primary", use_container_width=True):
+                auth.start(auth.refresh(new_acc["email"]))
+                del st.session_state["new_account"]
+                st.rerun()
+            st.stop()
+        t1, t2, t3, t4 = st.tabs(["Se connecter", "Créer un compte", "Mot de passe oublié", "Vérifier un certificat"])
         with t1:
             with st.form("login"):
-                email = st.text_input("E-mail")
+                ident = st.text_input("E-mail ou identifiant unique (RB-XXXX-XXXX)")
                 pwd = st.text_input("Mot de passe", type="password")
                 if st.form_submit_button("Connexion", type="primary", use_container_width=True):
-                    u = auth.login(email, pwd)
+                    u = auth.login(ident, pwd)
                     if u:
                         auth.start(u)
                         st.rerun()
-                    st.error("Identifiants incorrects.")
+                    elif auth.refresh(ident) is None:
+                        st.error("Aucun compte trouvé pour cet e-mail / identifiant. Créez un compte ou vérifiez la saisie.")
+                    else:
+                        st.error("Mot de passe incorrect. Utilisez l'onglet « Mot de passe oublié » si besoin.")
             st.caption("Compte de démonstration administrateur : admin@regbridge.fr / Admin!2026 (à changer via les secrets).")
         with t2:
             with st.form("signup"):
@@ -59,17 +81,39 @@ def landing():
                 sector = st.selectbox("Secteur", list(SECTOR_LABELS), format_func=SECTOR_LABELS.get)
                 email = st.text_input("E-mail professionnel")
                 pwd = st.text_input("Mot de passe (8+ caractères, 1 majuscule, 1 chiffre)", type="password")
+                pwd2 = st.text_input("Confirmer le mot de passe", type="password")
                 ok_cgu = st.checkbox("J'accepte les conditions d'utilisation et la politique de confidentialité")
                 if st.form_submit_button("Créer mon compte — essai Pro 7 jours", type="primary", use_container_width=True):
                     if not ok_cgu:
                         st.warning("Merci d'accepter les conditions.")
+                    elif pwd != pwd2:
+                        st.error("Les deux mots de passe ne correspondent pas.")
                     else:
-                        ok, msg = auth.register(email, name, company, sector, pwd)
-                        (st.success if ok else st.error)(msg)
+                        ok, msg, info = auth.register(email, name, company, sector, pwd)
                         if ok:
-                            auth.start(auth.login(email, pwd))
+                            st.session_state["new_account"] = {**info, "email": email.strip().lower()}
                             st.rerun()
+                        st.error(msg)
         with t3:
+            st.caption("Renseignez l'e-mail, l'identifiant unique et la clé de récupération attribués à la création du compte.")
+            with st.form("reset"):
+                r_email = st.text_input("E-mail du compte")
+                r_uid = st.text_input("Identifiant unique (RB-XXXX-XXXX)")
+                r_key = st.text_input("Clé de récupération (XXXX-XXXX-XXXX-XXXX)")
+                r_pwd = st.text_input("Nouveau mot de passe", type="password")
+                r_pwd2 = st.text_input("Confirmer le nouveau mot de passe", type="password")
+                if st.form_submit_button("Réinitialiser le mot de passe", type="primary", use_container_width=True):
+                    if r_pwd != r_pwd2:
+                        st.error("Les deux mots de passe ne correspondent pas.")
+                    else:
+                        ok, msg, key = auth.reset_password(r_email, r_uid, r_key, r_pwd)
+                        if ok:
+                            st.success(msg)
+                            st.info(f"Nouvelle clé de récupération (à conserver) : **{key}**")
+                        else:
+                            st.error(msg)
+            st.caption("Clé perdue ? L'administrateur peut réinitialiser le compte depuis la console d'administration.")
+        with t4:
             cid = st.text_input("N° de certificat (ex. RB-XXXXXXXXXX)")
             if st.button("Vérifier") and cid:
                 c = auth.verify_certificate(cid)

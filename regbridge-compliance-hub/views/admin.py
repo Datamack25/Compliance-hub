@@ -17,7 +17,7 @@ if u["email"] == "admin@regbridge.fr":
 users = pd.DataFrame(auth.list_users())
 k1, k2, k3 = st.columns(3)
 with k1: kpi("Utilisateurs", len(users))
-with k2: kpi("Comptes payants actifs", int(((users["plan"] != "free") & (users["plan_expiry"] >= date.today().isoformat())).sum()), "", "green")
+with k2: kpi("Comptes payants actifs", int(((users["plan"] != "free") & (users["plan_expiry"].astype(str) >= date.today().isoformat())).sum()), "", "green")
 with k3: kpi("Exécutions d'agents", len(load("agent_log.csv")), "", "teal")
 
 t1, t2 = st.tabs(["👥 Utilisateurs", "🎟️ Codes d'activation"])
@@ -31,9 +31,20 @@ with t1:
         auth.set_plan(em, pl, ex.isoformat())
         st.success("Offre mise à jour.")
         st.rerun()
-    if st.button("Supprimer l'utilisateur sélectionné"):
+    a1, a2 = st.columns(2)
+    if a1.button("🔑 Réinitialiser le mot de passe du compte sélectionné"):
+        tmp, key = auth.admin_reset_password(em)
+        st.success(f"Mot de passe temporaire : **{tmp}** · nouvelle clé de récupération : **{key}** — à transmettre à l'utilisateur.")
+    if a2.button("🗑️ Supprimer l'utilisateur sélectionné"):
         auth.delete_user(em)
         st.rerun()
+    st.download_button("⬇️ Exporter le registre des comptes (CSV, sans mots de passe)",
+                       users.to_csv(index=False).encode("utf-8"), "registre_comptes.csv")
+    if auth.backup_enabled():
+        st.success("Sauvegarde GitHub active : les registres (comptes, codes, certificats) sont sauvegardés à chaque modification.")
+    else:
+        st.warning("Sauvegarde GitHub non configurée : sur Streamlit Cloud, les comptes sont perdus à chaque redémarrage. "
+                   "Ajoutez GITHUB_TOKEN et GITHUB_DATA_REPO (dépôt privé) dans les secrets.")
 with t2:
     c1, c2, c3 = st.columns(3)
     pl = c1.selectbox("Offre du code", ["pro", "enterprise"], format_func=lambda k: auth.PLANS[k]["label"])

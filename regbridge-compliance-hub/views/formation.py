@@ -87,8 +87,7 @@ with t1:
     st.download_button("Feuille d'émargement (Word)", word.training_attendance(u.get("company") or "", module),
                        file_name="Emargement_formation.docx")
 with t2:
-    with auth.conn() as c:
-        rows = [dict(r) for r in c.execute("SELECT cert_id,name,module,score,issued FROM certificates WHERE email=? ORDER BY issued DESC", (u["email"],))]
+    rows = auth.certificates_of(u["email"])
     table(pd.DataFrame(rows), hide_index=True, use_container_width=True) if rows else st.info("Aucun certificat pour le moment.")
 with t3:
     cid = st.text_input("N° de certificat")
